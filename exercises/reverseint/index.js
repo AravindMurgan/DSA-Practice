@@ -173,13 +173,63 @@
 
 ////ReverseInt//// -2 
 
-console.log( reverseInt(-500));
-function reverseInt(num){
+// console.log( reverseInt(-500));
+// function reverseInt(num){
 
-    const reversed = num.toString().split('').reverse().join('');
-    parseInt(reversed);
+//     const reversed = num.toString().split('').reverse().join('');
+//     parseInt(reversed);
    
-   return parseInt(reversed) * Math.sign(num)
-}
+//    return parseInt(reversed) * Math.sign(num)
+// }
+
+// const word = "Hello There";
+
+// const chars = {};
 
 
+// // word.forEach((char)=>console.log(char))//
+
+// for(let char of word){
+
+//     if(!chars[char]){
+
+//         console.log(chars[char]);
+//         chars[char] = 1;
+//     }else{
+//         chars[char] ++;
+//     }
+//     console.log(chars);
+// }
+// console.log(chars);
+
+/////////////////////MaxChar
+
+maxChar('aooooooaa')
+
+function maxChar(word){
+    let max = 0;
+    let maxChar = '';
+
+    const  obj = {};
+    for(let char of word){
+         if(obj[char]){
+            obj[char] ++;
+        }else{
+            obj[char] = 1;
+
+        }
+    }
+
+    for(let char in obj){
+        console.log(char);
+        if(obj[char]>max){
+            max=obj[char];
+            console.log(  max=obj[char]);
+            maxChar = char;
+            console.log( maxChar = char);
+            
+        }
+    }
+    console.log(maxChar);
+   
+}   
