@@ -146,4 +146,15 @@
 // }
 
 // const output = palindrome('abba');
-// cons
+// console.log(output);
+
+// module.exports = palindrome;
+
+
+// /////Palindrome ALternate solution///////
+// const output = palindrome('abba');
+
+// // function palindrome(str){
+// //     str.split('').every((char,idx)=>{ console.log(char === str[str.length -idx -1]) },console.log(str.length))
+// }
+
