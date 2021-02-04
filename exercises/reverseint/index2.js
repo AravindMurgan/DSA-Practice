@@ -8,9 +8,11 @@
 // //   reverseInt(-15) === -51
 // //   reverseInt(-90) === -9
 
-reverseInt(8989)
+console.log( reverseInt(-500));
 function reverseInt(num){
 
-    const output = parseInt( num.toString().split('').reverse().join('')) + 1
-    console.log(output);
+    const reversed = num.toString().split('').reverse().join('');
+    parseInt(reversed);
+   
+   return parseInt(reversed) * Math.sign(num)
 }

@@ -158,3 +158,28 @@
 // //     str.split('').every((char,idx)=>{ console.log(char === str[str.length -idx -1]) },console.log(str.length))
 // }
 
+////ReverseInt////
+
+// console.log( reverseInt(-500));
+// function reverseInt(num){
+
+//     const output = parseInt( num.toString().split('').reverse().join(''));
+   
+//     if(num < 0){
+//         return output * -1
+//     }
+//     return output;
+// }
+
+////ReverseInt//// -2 
+
+console.log( reverseInt(-500));
+function reverseInt(num){
+
+    const reversed = num.toString().split('').reverse().join('');
+    parseInt(reversed);
+   
+   return parseInt(reversed) * Math.sign(num)
+}
+
+
