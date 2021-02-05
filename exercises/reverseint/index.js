@@ -202,34 +202,57 @@
 // }
 // console.log(chars);
 
-/////////////////////MaxChar
+// /////////////////////MaxChar
 
-maxChar('aooooooaa')
+// maxChar('aooooooaa')
 
-function maxChar(word){
-    let max = 0;
-    let maxChar = '';
+// function maxChar(word){
+//     let max = 0;
+//     let maxChar = '';
 
-    const  obj = {};
-    for(let char of word){
-         if(obj[char]){
-            obj[char] ++;
-        }else{
-            obj[char] = 1;
+//     const  obj = {};
+//     for(let char of word){
+//          if(obj[char]){
+//             obj[char] ++;
+//         }else{
+//             obj[char] = 1;
 
-        }
-    }
+//         }
+//     }
 
-    for(let char in obj){
-        console.log(char);
-        if(obj[char]>max){
-            max=obj[char];
-            console.log(  max=obj[char]);
-            maxChar = char;
-            console.log( maxChar = char);
+//     for(let char in obj){
+//         console.log(char);
+//         if(obj[char]>max){
+//             max=obj[char];
+//             console.log(  max=obj[char]);
+//             maxChar = char;
+//             console.log( maxChar = char);
             
-        }
-    }
-    console.log(maxChar);
+//         }
+//     }
+//     console.log(maxChar);
    
-}   
+// }   
+
+
+// //FizzBuzzz/////
+
+// const output = fizzBuzz(15);
+// console.log(output);
+// function fizzBuzz(n) {
+
+//    for(let i = 1; i<=n; i++){
+
+//        if(i % 3 === 0 && i % 5 === 0){
+//            console.log( 'fizzbuzz');
+//        }else if(i % 3 ===0){
+//            console.log('fizz') ;
+//        }else if(i % 5 ===0){
+//            console.log('buzz');
+//        } else{
+//            console.log(i);
+//        }
+       
+
+//    }
+// }
