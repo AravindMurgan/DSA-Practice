@@ -255,4 +255,21 @@
 //     console.log(stuff1+stuff2+stuff3+stuff4)
 // }
 
-//Practicing Array Chunk Problems
+// //timeout///
+
+// console.log('a');
+
+// let jhonDoe = setTimeout(()=>{
+//     console.log('b')
+// },1);
+
+// let jimmy = setTimeout(()=>{
+//     console.log('c')
+// },10)
+
+// let tom = setTimeout(()=>{
+//     console.log('d')
+// },0);
+// let jason = setTimeout(()=>{
+//     console.log('e')
+// })
