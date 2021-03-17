@@ -16,9 +16,7 @@
 
 // // reverseInt(15);
 
-	
 // // module.exports = reverseInt;
-
 
 // // function reverseInt(word) {
 
@@ -28,17 +26,15 @@
 
 // // reverseInt('apple');
 
-	
 // // module.exports = reverseInt;
 
 // function reverseChar(word){
 
 // 	// word.forEach((letter)=>console.log(letter));
-	
+
 //     let reversed = '';
 //     for(let letter of word){
-       
-        
+
 //         reversed = letter + reversed;
 // 	}
 // 	debugger;
@@ -47,7 +43,6 @@
 
 // let output = reverseChar('123456');
 // console.log(output);
-
 
 // --- Directions
 // Given an integer, return an integer that is the reverse
@@ -67,9 +62,7 @@
 
 // reverseInt(15);
 
-	
 // module.exports = reverseInt;
-
 
 // function reverseInt(word) {
 
@@ -79,9 +72,7 @@
 
 // reverseInt('apple');
 
-	
 // module.exports = reverseInt;
-
 
 //Reverse String - 1
 
@@ -94,7 +85,6 @@
 // let output = reverseInt('12345');
 // console.log(output);
 
-
 //Reverse String - 2
 
 // function reverseChar(word){
@@ -102,8 +92,7 @@
 //     // word.forEach((letter)=>console.log(letter));
 //     let reversed = '';
 //     for(let letter of word){
-       
-        
+
 //         reversed = letter + reversed;
 //     }
 //     return reversed;
@@ -115,13 +104,12 @@
 /////String Reversal////
 
 // function reverseChar(word){
-   
+
 // 	// word.forEach((letter)=>console.log(letter));
-	
+
 //     let reversed = '';
 //     for(let letter of word){
-       
-       
+
 //         reversed = letter + reversed;
 // 	}
 
@@ -131,7 +119,6 @@
 // let output = reverseChar('123456');
 // debugger;
 // console.log(output);
-
 
 // function palindrome(str) {
 
@@ -150,7 +137,6 @@
 
 // module.exports = palindrome;
 
-
 // /////Palindrome ALternate solution///////
 // const output = palindrome('abba');
 
@@ -164,28 +150,27 @@
 // function reverseInt(num){
 
 //     const output = parseInt( num.toString().split('').reverse().join(''));
-   
+
 //     if(num < 0){
 //         return output * -1
 //     }
 //     return output;
 // }
 
-////ReverseInt//// -2 
+////ReverseInt//// -2
 
 // console.log( reverseInt(-500));
 // function reverseInt(num){
 
 //     const reversed = num.toString().split('').reverse().join('');
 //     parseInt(reversed);
-   
+
 //    return parseInt(reversed) * Math.sign(num)
 // }
 
 // const word = "Hello There";
 
 // const chars = {};
-
 
 // // word.forEach((char)=>console.log(char))//
 
@@ -227,26 +212,24 @@
 //             console.log(  max=obj[char]);
 //             maxChar = char;
 //             console.log( maxChar = char);
-            
+
 //         }
 //     }
 //     console.log(maxChar);
-   
-// }   
+
+// }
 
 // function reverseInt(num){
-    
+
 //     const reversed = num.toString().split('').reverse().join('');
 //     const output = parseInt(reversed);
 //     console.log(output)
-    
-    
+
 // }
 
 // reverseInt(59656);
 
 // //Spread Operator///
-
 
 // const stuff = [24,'Aravind','Murugan','Likes Beers'];
 
@@ -273,3 +256,49 @@
 // let jason = setTimeout(()=>{
 //     console.log('e')
 // })
+
+///async await ///
+// let num = 0;
+// const myFunc =  async ()=>{
+//      num += await 2;
+//      console.log(num)
+// }
+
+// myFunc();
+// num += 1;
+// console.log(num);
+
+//
+
+///Module Pattern/// IIFEE
+
+// let myModule = {
+//     data: [],
+//     render: () => {
+
+//     },
+//     add: () => {
+
+//     },
+//     remove: () => {
+
+//     }
+// };
+
+let myModule = (() => {
+	let myData = {
+		data: ['hello'],
+		render: () => {},
+		add: () => {
+			console.log('helo');
+		},
+		remove: () => {},
+	};
+
+	return {
+		data: myData.add,
+	};
+})();
+
+
+myModule.data();
