@@ -285,20 +285,83 @@
 //     }
 // };
 
-let myModule = (() => {
-	let myData = {
-		data: ['hello'],
-		render: () => {},
-		add: () => {
-			console.log('helo');
-		},
-		remove: () => {},
-	};
+// let myModule = (() => {
+// 	let myData = {
+// 		data: ['hello'],
+// 		render: () => {},
+// 		add: () => {
+// 			console.log('helo');
+// 		},
+// 		remove: () => {},
+// 	};
 
-	return {
-		data: myData.add,
-	};
-})();
+// 	return {
+// 		data: myData.add,
+// 	};
+// })();
 
+// myModule.data();
 
-myModule.data();
+// ///Params///
+// let f = function(a,b){
+
+//     if(arguments.length === f.length){
+//         console.log('Match')
+//     }else{
+//         console.log('No match')
+//     }
+
+// }
+
+// f(1)
+// f(1,2)
+// f(1,2,3)
+
+////DSA Prep starting for next offer - 17.03.2021
+
+///CHUNK PROBLEM////
+// --- Directions
+// Given an array and chunk size, divide the array into many subarrays
+// where each subarray is of length size
+// --- Examples
+// chunk([1, 2, 3, 4], 2) --> [[ 1, 2], [3, 4]]
+// chunk([1, 2, 3, 4, 5], 2) --> [[ 1, 2], [3, 4], [5]]
+// chunk([1, 2, 3, 4, 5, 6, 7, 8], 3) --> [[ 1, 2, 3], [4, 5, 6], [7, 8]]
+// chunk([1, 2, 3, 4, 5], 4) --> [[ 1, 2, 3, 4], [5]]
+// chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
+
+// function chunk(array, size) {
+// 	let chunked = [];
+// 	console.log(chunked);
+// 	for (let element of array) {
+// 		let last = chunked[chunked.length - 1];
+
+// 		if (!last || last.length === size) {
+// 			chunked.push([element]);
+// 		} else {
+// 			last.push(element);
+// 		}
+
+// 		return chunked;
+// 	}
+// }
+
+let output = chunk([1, 2, 3, 4], 2);
+console.log(output);
+
+function chunk(array, size) {
+	let arr = [];
+	while (array.length > 0) {
+		arr.push(array.slice(0, size));
+	}
+
+	return arr;
+}
+
+// let op = splic([1,2,3])
+// console.log(op);
+// function splic(arr){
+//    console.log(arr.splice(0,2)); arr.slice(0,2);
+//     return arr
+
+// }
