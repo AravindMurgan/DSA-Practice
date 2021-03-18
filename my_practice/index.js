@@ -371,7 +371,6 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 let outpu = anagrams('RAIL! SAFETYm!', 'fairy talese');
-console.log(outpu);
 function anagrams(stringA, stringB) {
 	let Astring = buildCharMap(stringA);
 	let BString = buildCharMap(stringB);
@@ -393,7 +392,6 @@ function buildCharMap(str) {
 }
 
 let output = buildCharMap('hello');
-console.log(output);
 
 ///sec solution//
 const Anagrams = (stringA, stringB) => {
@@ -402,12 +400,11 @@ const Anagrams = (stringA, stringB) => {
 	const dirB = {};
 	stringA = stringA.replace(/[^\w]/g, '').toLocaleLowerCase().split('');
 	stringB = stringB.replace(/[^\w]/g, '').toLocaleLowerCase().split('');
-	
+
 	stringA.forEach((char) => (dirA[char] = dirA[char] + 1 || 1));
 	stringB.forEach((char) => (dirB[char] = dirB[char] + 1 || 1));
-	console.log(dirB);
+
 	const keys = Object.keys(dirA);
-	console.log(keys);
 	return stringA.length !== stringB.length
 		? false
 		: keys.every((key) => dirA[key] === dirB[key]);
@@ -416,3 +413,56 @@ const Anagrams = (stringA, stringB) => {
 /////LeetCode-Top interview questions practice --- give ur best maa is with u!!!
 
 //1.Two Sum///
+
+// let twoSum = function (nums, target) {
+// 	const bucket = {};
+// 	for (let i = 0; i < nums.length; i++) {
+// 		if (target - nums[i] in bucket) {
+// 			return [bucket[target - nums[i]], i];
+// 		}
+// 		bucket[nums[i]] = i;
+
+// 	}
+// };
+
+// output = twoSum([2, 7, 11, 15], 9);
+// console.log(output);
+
+// /better solution//
+// let twoSum = function (num, target) {
+// 	let comp = new Map();
+// 	let len = num.length;
+
+// 	for (let i = 0; i < len; i++) {
+// 		if (comp[num[i]] >= 0) {
+// 			return [comp[num[i]], i];
+// 		}
+
+// 		comp[target - num[i]] = i;
+// 	}
+
+// 	return [];
+// };
+
+////2nd betterone
+
+var twoSum = function(nums, target) {
+    let memo = {}
+	
+    
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] in memo) {
+            return [memo[nums[i]], i]
+        } else {
+            memo[target - nums[i]] = i
+			console.log(memo);
+        }
+		
+    }
+	
+};
+
+
+output = twoSum([2, 7, 11, 15], 9);
+console.log(output);
+
