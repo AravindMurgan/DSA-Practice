@@ -370,10 +370,17 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-anagrams('rail safety', 'fairy tales');
+let outpu = anagrams('RAIL! SAFETYm!', 'fairy talese');
+console.log(outpu);
 function anagrams(stringA, stringB) {
 	let Astring = buildCharMap(stringA);
 	let BString = buildCharMap(stringB);
+
+	if (Object.keys(Astring).length === Object.keys(BString).length) {
+		return true;
+	} else {
+		return false;
+	}
 }
 
 function buildCharMap(str) {
@@ -387,3 +394,25 @@ function buildCharMap(str) {
 
 let output = buildCharMap('hello');
 console.log(output);
+
+///sec solution//
+const Anagrams = (stringA, stringB) => {
+	const dirA = {};
+
+	const dirB = {};
+	stringA = stringA.replace(/[^\w]/g, '').toLocaleLowerCase().split('');
+	stringB = stringB.replace(/[^\w]/g, '').toLocaleLowerCase().split('');
+	
+	stringA.forEach((char) => (dirA[char] = dirA[char] + 1 || 1));
+	stringB.forEach((char) => (dirB[char] = dirB[char] + 1 || 1));
+	console.log(dirB);
+	const keys = Object.keys(dirA);
+	console.log(keys);
+	return stringA.length !== stringB.length
+		? false
+		: keys.every((key) => dirA[key] === dirB[key]);
+};
+
+/////LeetCode-Top interview questions practice --- give ur best maa is with u!!!
+
+//1.Two Sum///
