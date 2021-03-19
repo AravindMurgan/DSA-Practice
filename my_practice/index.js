@@ -479,15 +479,29 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-output = anagrams('rail safety', 'fairy tales');
-console.log(output);
+// output = anagrams('rail safety', 'fairy tales');
+// console.log(output);
 
-function anagrams(stringA, stringB) {
-	return cleanString(stringA) === cleanString(stringB);
+// function anagrams(stringA, stringB) {
+// 	return cleanString(stringA) === cleanString(stringB);
+// }
+
+// function cleanString(str) {
+// 	return str.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('');
+// }
+
+//2.captilization
+
+// --- Directions
+// Write a function that accepts a string.  The function should
+// capitalize the first letter of each word in the string then
+// return the capitalized string.
+// --- Examples
+//   capitalize('a short sentence') --> 'A Short Sentence'
+//   capitalize('a lazy fox') --> 'A Lazy Fox'
+//   capitalize('look, it is working!') --> 'Look, It Is Working!'
+
+function capitalize(str) {
+
+	
 }
-
-function cleanString(str) {
-	return str.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('');
-}
-
-
