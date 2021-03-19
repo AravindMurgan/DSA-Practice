@@ -466,7 +466,7 @@
 
 ////Coming back to Udmey Course///
 
-1.//Anagrams//
+1; //Anagrams//
 
 ///Anagrams  = a=hello b=olleh => no .of letter should be same and avoid extra space and non word
 // --- Directions
@@ -501,16 +501,44 @@
 //   capitalize('a lazy fox') --> 'A Lazy Fox'
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
- output= capitalize('look, it is working!')
- console.log(output);
-function capitalize(str) {
+//  output= capitalize('look, it is working!')
+//  console.log(output);
+// function capitalize(str) {
 
-	let words = [];
+// 	let words = [];
 
-	for(let word of str.split(' ')){
-		words.push(word[0].toUpperCase() + word.slice(1));
+// 	for(let word of str.split(' ')){
+// 		words.push(word[0].toUpperCase() + word.slice(1));
+// 	}
+// 	return words.join(' ')
+
+// }
+
+//3.Printing Steps//
+
+// --- Directions
+// Write a function that accepts a positive number N.
+// The function should console log a step shape
+// with N levels using the # character.  Make sure the
+// step has spaces on the right hand side!
+// --- Examples
+//   steps(2)
+//       '# '
+//       '##'
+//   steps(3)
+//       '#  '
+//       '## '
+//       '###'
+//   steps(4)
+//       '#   '
+//       '##  '
+//       '### '
+//       '####'
+
+function steps(n) {
+	for (let i = 0; i <= n; i++) {
+		console.log('# ');
+		
 	}
-	return words.join(' ')
-
-	
 }
+steps(2)
