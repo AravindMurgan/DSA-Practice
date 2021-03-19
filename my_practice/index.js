@@ -501,18 +501,17 @@
 //   capitalize('a lazy fox') --> 'A Lazy Fox'
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
-//  output= capitalize('look, it is working!')
-//  console.log(output);
-// function capitalize(str) {
+ output= capitalize('look, it is working!')
+function capitalize(str) {
 
-// 	let words = [];
+	let words = [];
 
-// 	for(let word of str.split(' ')){
-// 		words.push(word[0].toUpperCase() + word.slice(1));
-// 	}
-// 	return words.join(' ')
+	for(let word of str.split(' ')){
+		words.push(word[0].toUpperCase() + word.slice(1));
+	}
+	return words.join(' ')
 
-// }
+}
 
 //3.Printing Steps//
 
@@ -555,6 +554,6 @@ output = steps(2);
 
 function steps(n) {
     for (let count = 1; count <= n; count++) {
-        console.log('#'.repeat(count) + ' '.repeat(n - count));
+        '#'.repeat(count) + ' '.repeat(n - count)
     }
-}1
+}
