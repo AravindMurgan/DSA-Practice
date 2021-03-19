@@ -370,45 +370,45 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-let outpu = anagrams('RAIL! SAFETYm!', 'fairy talese');
-function anagrams(stringA, stringB) {
-	let Astring = buildCharMap(stringA);
-	let BString = buildCharMap(stringB);
+// let outpu = anagrams('RAIL! SAFETYm!', 'fairy talese');
+// function anagrams(stringA, stringB) {
+// 	let Astring = buildCharMap(stringA);
+// 	let BString = buildCharMap(stringB);
 
-	if (Object.keys(Astring).length === Object.keys(BString).length) {
-		return true;
-	} else {
-		return false;
-	}
-}
+// 	if (Object.keys(Astring).length === Object.keys(BString).length) {
+// 		return true;
+// 	} else {
+// 		return false;
+// 	}
+// }
 
-function buildCharMap(str) {
-	let charMap = {};
+// function buildCharMap(str) {
+// 	let charMap = {};
 
-	for (let char of str.replace(/[^\w]/g, '').toLowerCase()) {
-		charMap[char] = charMap[char] + 1 || 1;
-	}
-	return charMap;
-}
+// 	for (let char of str.replace(/[^\w]/g, '').toLowerCase()) {
+// 		charMap[char] = charMap[char] + 1 || 1;
+// 	}
+// 	return charMap;
+// }
 
-let output = buildCharMap('hello');
+// let output = buildCharMap('hello');
 
 ///sec solution//
-const Anagrams = (stringA, stringB) => {
-	const dirA = {};
+// const Anagrams = (stringA, stringB) => {
+// 	const dirA = {};
 
-	const dirB = {};
-	stringA = stringA.replace(/[^\w]/g, '').toLocaleLowerCase().split('');
-	stringB = stringB.replace(/[^\w]/g, '').toLocaleLowerCase().split('');
+// 	const dirB = {};
+// 	stringA = stringA.replace(/[^\w]/g, '').toLocaleLowerCase().split('');
+// 	stringB = stringB.replace(/[^\w]/g, '').toLocaleLowerCase().split('');
 
-	stringA.forEach((char) => (dirA[char] = dirA[char] + 1 || 1));
-	stringB.forEach((char) => (dirB[char] = dirB[char] + 1 || 1));
+// 	stringA.forEach((char) => (dirA[char] = dirA[char] + 1 || 1));
+// 	stringB.forEach((char) => (dirB[char] = dirB[char] + 1 || 1));
 
-	const keys = Object.keys(dirA);
-	return stringA.length !== stringB.length
-		? false
-		: keys.every((key) => dirA[key] === dirB[key]);
-};
+// 	const keys = Object.keys(dirA);
+// 	return stringA.length !== stringB.length
+// 		? false
+// 		: keys.every((key) => dirA[key] === dirB[key]);
+// };
 
 /////LeetCode-Top interview questions practice --- give ur best maa is with u!!!
 
@@ -446,23 +446,48 @@ const Anagrams = (stringA, stringB) => {
 
 ////2nd betterone
 
-var twoSum = function(nums, target) {
-    let memo = {}
-	
-    
-    for (let i = 0; i < nums.length; i++) {
-        if (nums[i] in memo) {
-            return [memo[nums[i]], i]
-        } else {
-            memo[target - nums[i]] = i
-			console.log(memo);
-        }
-		
-    }
-	
-};
+// var twoSum = function(nums, target) {
+//     let memo = {}
 
+//     for (let i = 0; i < nums.length; i++) {
+//         if (nums[i] in memo) {
+//             return [memo[nums[i]], i]
+//         } else {
+//             memo[target - nums[i]] = i
+// 			console.log(memo);
+//         }
 
-output = twoSum([2, 7, 11, 15], 9);
+//     }
+
+// };
+
+// output = twoSum([2, 7, 11, 15], 9);
+// console.log(output);
+
+////Coming back to Udmey Course///
+
+1.//Anagrams//
+
+///Anagrams  = a=hello b=olleh => no .of letter should be same and avoid extra space and non word
+// --- Directions
+// Check to see if two provided strings are anagrams of eachother.
+// One string is an anagram of another if it uses the same characters
+// in the same quantity. Only consider characters, not spaces
+// or punctuation.  Consider capital letters to be the same as lower case
+// --- Examples
+//   anagrams('rail safety', 'fairy tales') --> True
+//   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
+//   anagrams('Hi there', 'Bye there') --> False
+
+output = anagrams('rail safety', 'fairy tales');
 console.log(output);
+
+function anagrams(stringA, stringB) {
+	return cleanString(stringA) === cleanString(stringB);
+}
+
+function cleanString(str) {
+	return str.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('');
+}
+
 
