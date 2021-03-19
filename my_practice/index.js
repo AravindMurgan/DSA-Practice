@@ -536,9 +536,25 @@
 //       '####'
 
 function steps(n) {
-	for (let i = 0; i <= n; i++) {
-		console.log('# ');
-		
+	//row//
+	for (let row = 0; row < n; row++) {
+		let stair = '';
+		for (let column = 0; column < n; column++) {
+			if (column <= row) {
+				stair += '#';
+			} else {
+				stair += ' ';
+			}
+			
+		}
+		console.log(stair);
 	}
 }
-steps(2)
+output = steps(2);
+
+
+// function steps(n) {
+//     for (let count = 1; count <= n; count++) {
+//         console.log('#'.repeat(count) + ' '.repeat(n - count));
+//     }
+// }1
