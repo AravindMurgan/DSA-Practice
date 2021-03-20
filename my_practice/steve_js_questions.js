@@ -12,8 +12,10 @@ function steps(num) {
 				stair += ' ';
 			}
 		}
-		console.log(stair);
+		
 	}
+ 
+  
 }
 
-steps(2);
+ console.log(steps(2)); ;

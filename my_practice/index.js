@@ -549,12 +549,15 @@ function capitalize(str) {
 	
 // 	}
 // }
-output = steps(5);
-console.log(output);
+// output = steps(5);
+// console.log(output);
 
-function steps(n) {
-    for (let count = 1; count <= n; count++) {
-    console.log( '#'.repeat(count) + ' '.repeat(n - count));
-    }
+// function steps(n) {
+//     for (let count = 1; count <= n; count++) {
+//     console.log( '#'.repeat(count) + ' '.repeat(n - count));
+//     }
 	
-}
+// }
+
+
+///Recusrive solution//
