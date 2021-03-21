@@ -17,3 +17,14 @@
 function pyramid(n) {}
 
 module.exports = pyramid;
+
+
+function test(a,b){
+    if(a === 5 && b  === 6){
+        return true
+    }else{
+        return false
+    }
+}
+
+console.log(test(4,6));

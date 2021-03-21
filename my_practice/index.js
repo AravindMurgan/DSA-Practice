@@ -8,7 +8,7 @@
 // //   reverseInt(-15) === -51
 // //   reverseInt(-90) === -9
 
-const { setupMaster } = require("node:cluster");
+// const { setupMaster } = require('node:cluster');
 
 // function reverseInt(numbers) {
 
@@ -594,4 +594,40 @@ function capitalize(str) {
 // }
 // steps(2);
 
+// --- Directions
+// Write a function that accepts a positive number N.
+// The function should console log a pyramid shape
+// with N levels using the # character.  Make sure the
+// pyramid has spaces on both the left *and* right hand sides
+// --- Examples
+//   pyramid(1)
+//       '#'
+//   pyramid(2)
+//       ' # '
+//       '###'
+//   pyramid(3)
+//       '  #  '
+//       ' ### '
+//       '#####'
 
+function pyramid(n) {
+
+	
+	let midpoint = Math.floor((2*n - 1)/2)
+	//row/
+	for(let row=0; row<n; row ++){
+		let steps = '';
+		for(let column=0; column < n*2 -1; column ++){
+
+			if(midpoint - row <= column && midpoint + row >= column){
+				steps += '#';
+			}else{
+				steps += ' ';
+			}
+		}
+		
+	}
+
+}
+
+pyramid(3)
