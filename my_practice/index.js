@@ -573,26 +573,26 @@ function capitalize(str) {
 // printNum(10)
 
 //Print-Steps in recursive///
-// function steps(n, row = 0, stair = '') {
-// 	//base//
-// 	if (n === row) {
-// 		return;
-// 	}
+function steps(n, row = 0, stair = '') {
+	//base//
+	if (n === row) {
+		return;
+	}
 
-// 	if (n === stair.length) {
-// 		return steps(n, row + 1);
-// 	}
+	if (n === stair.length) {
+		return steps(n, row + 1);
+	}
 
-// 	if(stair.length <= row ){
-// 		stair += '#';
-// 	}else{
-// 		stair += ' ';
-// 	}
+	if(stair.length <= row ){
+		stair += '#';
+	}else{
+		stair += ' ';
+	}
 
-// 	steps(n,row,stair)
+	steps(n,row,stair)
 
-// }
-// steps(2);
+}
+steps(2);
 
 // --- Directions
 // Write a function that accepts a positive number N.
@@ -608,26 +608,26 @@ function capitalize(str) {
 //   pyramid(3)
 //       '  #  '
 //       ' ### '
-//       '#####'
+// //       '#####'
 
-function pyramid(n) {
+// function pyramid(n) {
 
 	
-	let midpoint = Math.floor((2*n - 1)/2)
-	//row/
-	for(let row=0; row<n; row ++){
-		let steps = '';
-		for(let column=0; column < n*2 -1; column ++){
+// 	let midpoint = Math.floor((2*n - 1)/2)
+// 	//row/
+// 	for(let row=0; row<n; row ++){
+// 		let steps = '';
+// 		for(let column=0; column < n*2 -1; column ++){
 
-			if(midpoint - row <= column && midpoint + row >= column){
-				steps += '#';
-			}else{
-				steps += ' ';
-			}
-		}
+// 			if(midpoint - row <= column && midpoint + row >= column){
+// 				steps += '#';
+// 			}else{
+// 				steps += ' ';
+// 			}
+// 		}
 		
-	}
+// 	}
 
-}
+// }
 
-pyramid(3)
+// pyramid(3)
