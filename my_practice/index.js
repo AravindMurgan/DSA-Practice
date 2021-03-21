@@ -8,6 +8,8 @@
 // //   reverseInt(-15) === -51
 // //   reverseInt(-90) === -9
 
+const { setupMaster } = require("node:cluster");
+
 // function reverseInt(numbers) {
 
 // 	return numbers.split('').reverse().join('');
@@ -501,16 +503,14 @@
 //   capitalize('a lazy fox') --> 'A Lazy Fox'
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
- output= capitalize('look, it is working!')
+output = capitalize('look, it is working!');
 function capitalize(str) {
-
 	let words = [];
 
-	for(let word of str.split(' ')){
+	for (let word of str.split(' ')) {
 		words.push(word[0].toUpperCase() + word.slice(1));
 	}
-	return words.join(' ')
-
+	return words.join(' ');
 }
 
 //3.Printing Steps//
@@ -544,9 +544,9 @@ function capitalize(str) {
 // 			} else {
 // 				stair += ' ';
 // 			}
-			
+
 // 		}
-	
+
 // 	}
 // }
 // output = steps(5);
@@ -556,8 +556,42 @@ function capitalize(str) {
 //     for (let count = 1; count <= n; count++) {
 //     console.log( '#'.repeat(count) + ' '.repeat(n - count));
 //     }
-	
+
 // }
 
-
 ///Recusrive solution//
+// function printNum(num){
+
+// 	//base-case//
+// 	if(num === 0){
+// 		return;
+// 	}
+// 	console.log(num);
+// 	printNum(num -1)
+
+// }
+// printNum(10)
+
+//Print-Steps in recursive///
+// function steps(n, row = 0, stair = '') {
+// 	//base//
+// 	if (n === row) {
+// 		return;
+// 	}
+
+// 	if (n === stair.length) {
+// 		return steps(n, row + 1);
+// 	}
+
+// 	if(stair.length <= row ){
+// 		stair += '#';
+// 	}else{
+// 		stair += ' ';
+// 	}
+
+// 	steps(n,row,stair)
+
+// }
+// steps(2);
+
+
