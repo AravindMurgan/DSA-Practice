@@ -14,17 +14,26 @@
 //       ' ### '
 //       '#####'
 
-function pyramid(n) {}
+function pyramid(n, row = 0, stair = '') {
+	if (row === n) {
+		return;
+	}
+
+	if (n * 2 - 1 === stair.length) {
+		console.log(stair);
+		return pyramid(n, row + 1);
+	}
+
+	let add;
+	let midpoint = Math.floor((2 * n - 1) / 2);
+	if (midpoint - row <= stair.length && midpoint + row >= stair.length) {
+		add = '#';
+	} else {
+		add = ' ';
+	}
+
+	pyramid(n, row, stair + add);
+}
+pyramid(3);
 
 module.exports = pyramid;
-
-
-function test(a,b){
-    if(a === 5 && b  === 6){
-        return true
-    }else{
-        return false
-    }
-}
-
-console.log(test(4,6));

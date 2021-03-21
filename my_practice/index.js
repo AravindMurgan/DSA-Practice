@@ -608,7 +608,7 @@ steps(2);
 //   pyramid(3)
 //       '  #  '
 //       ' ### '
-// //       '#####'
+// //    '#####'
 
 // function pyramid(n) {
 
@@ -621,7 +621,7 @@ steps(2);
 
 // 			if(midpoint - row <= column && midpoint + row >= column){
 // 				steps += '#';
-// 			}else{
+// 			}else{ 
 // 				steps += ' ';
 // 			}
 // 		}
