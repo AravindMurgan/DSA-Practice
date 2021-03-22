@@ -572,27 +572,27 @@ function capitalize(str) {
 // }
 // printNum(10)
 
-//Print-Steps in recursive///
-function steps(n, row = 0, stair = '') {
-	//base//
-	if (n === row) {
-		return;
-	}
+// //Print-Steps in recursive///
+// function steps(n, row = 0, stair = '') {
+// 	//base//
+// 	if (n === row) {
+// 		return;
+// 	}
 
-	if (n === stair.length) {
-		return steps(n, row + 1);
-	}
+// 	if (n === stair.length) {
+// 		return steps(n, row + 1);
+// 	}
 
-	if(stair.length <= row ){
-		stair += '#';
-	}else{
-		stair += ' ';
-	}
+// 	if(stair.length <= row ){
+// 		stair += '#';
+// 	}else{
+// 		stair += ' ';
+// 	}
 
-	steps(n,row,stair)
+// 	steps(n,row,stair)
 
-}
-steps(2);
+// }
+// steps(2);
 
 // --- Directions
 // Write a function that accepts a positive number N.
@@ -612,7 +612,6 @@ steps(2);
 
 // function pyramid(n) {
 
-	
 // 	let midpoint = Math.floor((2*n - 1)/2)
 // 	//row/
 // 	for(let row=0; row<n; row ++){
@@ -621,13 +620,39 @@ steps(2);
 
 // 			if(midpoint - row <= column && midpoint + row >= column){
 // 				steps += '#';
-// 			}else{ 
+// 			}else{
 // 				steps += ' ';
 // 			}
 // 		}
-		
+
 // 	}
 
 // }
 
 // pyramid(3)
+
+///find vowles//
+// --- Directions
+// Write a function that returns the number of vowels
+// used in a string.  Vowels are the characters 'a', 'e'
+// 'i', 'o', and 'u'.
+// --- Examples
+//   vowels('Hi There!') --> 3
+//   vowels('Why do you ask?') --> 4
+//   vowels('Why?') --> 0
+
+function vowels(str) {
+	// console.log(str.replace(/[^\w]/g, '').toLowerCase().includes('aeiou'));
+	let count = 0;
+	let checker = ['a', 'e', 'i', 'o', 'u'];
+
+	for (let char of str.toLowerCase()) {
+		if (checker.includes(char)) {
+			 count++;
+		}
+	}
+	return count;
+
+}
+
+console.log(vowels('Why do you ask?'));

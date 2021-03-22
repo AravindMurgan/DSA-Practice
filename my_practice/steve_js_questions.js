@@ -43,3 +43,17 @@ function pyramid(n, row = 0, stair = '') {
 	pyramid(n, row, stair + add);
 }
 pyramid(3);
+
+
+let input = 'g  eeks   for ge  eeks  ';
+// console.log(Input.replace(/[^\w]/g, ''));
+// console.log(Input);
+
+
+input = 'prabhat kumar singh';
+
+for(let str of input.split(' ')){
+	let inital = str[0].toUpperCase();
+	
+	console.log(inital);
+}
