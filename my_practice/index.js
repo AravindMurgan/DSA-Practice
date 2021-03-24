@@ -657,59 +657,58 @@ function capitalize(str) {
 
 // console.log(vowels('Why do you ask?'));
 
-// function matrix(n) {
-// 	//array//
-// 	let results = [];
+function matrix(n) {
+	//array//
+	let results = [];
 
-// 	//no of n arrays//
-// 	for (let i = 0; i < n; i++) {
-// 		results.push([]);
-// 	}
+	//no of n arrays//
+	for (let i = 0; i < n; i++) {
+		results.push([]);
+	}
 
-// 	//variables
-// 	let counter = 1;
-// 	let startRow = 0;
-// 	let endRow = n - 1;
-// 	let startColumn = 0;
-// 	let endColumn = n - 1;
+	//variables
+	let counter = 1;
+	let startRow = 0;
+	let endRow = n - 1;
+	let startColumn = 0;
+	let endColumn = n - 1;
 
-// 	while (startRow <= endRow && startColumn <= endColumn) {
-// 		//toprow--1st piece//
-// 		for (let i = startColumn; i <= endColumn; i++) {
-// 			results[startRow][i] = counter;
-// 			counter++;
-// 		}
-// 		startRow++;
+	while (startRow <= endRow && startColumn <= endColumn) {
+		//toprow--1st piece//
+		for (let i = startColumn; i <= endColumn; i++) {
+			results[startRow][i] = counter;
+			counter++;
+		}
+		startRow++;
 
-// 		//secondrow - 2nd piece//
-// 		for (let i = startRow; i <= endRow; i++) {
-// 			results[i][endColumn] = counter;
-// 			counter++;
-// 		}
+		//secondrow - 2nd piece//
+		for (let i = startRow; i <= endRow; i++) {
+			results[i][endColumn] = counter;
+			counter++;
+		}
 
-// 		endColumn--;
+		endColumn--;
 
-// 		//bottomrow  -3rd piece//
-// 		for (let i = endColumn; i >= startColumn; i--) {
-// 			results[endRow][i] = counter;
-// 			counter++;
-// 		}
+		//bottomrow  -3rd piece//
+		for (let i = endColumn; i >= startColumn; i--) {
+			results[endRow][i] = counter;
+			counter++;
+		}
 
-// 		endRow--;
+		endRow--;
 
-// 		//1strow element - 4th piece//
-// 		for (let i = endRow; i >= startRow; i--) {
-// 			results[i][startColumn] = counter;
-// 			counter++;
-// 		}
-// 		startColumn++;
-// 	}
+		//1strow element - 4th piece//
+		for (let i = endRow; i >= startRow; i--) {
+			results[i][startColumn] = counter;
+			counter++;
+		}
+		startColumn++;
+	}
 
-// 	return results;
-// }
+	return results;
+}
 
-// matrix(3);
-// console.log(matrix(3));
+matrix(3);
 
 ////Spiral MAtrix - II
 
@@ -719,7 +718,6 @@ var spiralOrder = function (matrix) {
 		bottom = matrix.length - 1,
 		left = 0;
 	const size = matrix.length * matrix[0].length;
-	// console.log(matrix[0].length);
 	const res = [];
 	// [1,2,3,6,9,8,7,4,5]
 	while (res.length < size) {
@@ -790,7 +788,6 @@ function spiralMatrix(matrix) {
 	}
 
 	return results;
-	
 }
 
 spiralMatrix([
@@ -798,4 +795,3 @@ spiralMatrix([
 	[4, 5, 6],
 	[7, 8, 9],
 ]);
-
