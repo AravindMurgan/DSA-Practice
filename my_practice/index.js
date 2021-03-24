@@ -760,7 +760,6 @@ function spiralMatrix(matrix) {
 	let endRow = matrix[0].length - 1;
 	let startColumn = 0;
 	let endColumn = matrix[0].length - 1;
-	let counter = 0;
 
 	const results = [];
 
@@ -781,10 +780,10 @@ function spiralMatrix(matrix) {
 			results.push(matrix[endColumn][i]);
 		}
 
-		//4th-piece --middle row//
-		for (let i = startRow + 1; i <= endColumn; i++) {
-			results.push(matrix[i][startColumn]);
-		}
+		// //4th-piece --middle row//
+		// for(let i = bottom - 1; i > top ; i--  ){
+		// 	results.push(matrix[])
+		// }
 	}
 
 	return results;
@@ -795,3 +794,19 @@ spiralMatrix([
 	[4, 5, 6],
 	[7, 8, 9],
 ]);
+
+///Fibonacci//
+
+function fib(n) {
+	const results = [0, 1];
+
+	for (let i = 2; i <= n; i++) {
+		const a = results[i - 1];
+		const b = results[i - 2];
+	}
+
+	return results[n];
+}
+fib(4);
+console.log(fib(4));
+console.log('hello');
