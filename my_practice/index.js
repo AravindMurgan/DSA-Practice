@@ -641,18 +641,160 @@ function capitalize(str) {
 //   vowels('Why do you ask?') --> 4
 //   vowels('Why?') --> 0
 
-function vowels(str) {
-	// console.log(str.replace(/[^\w]/g, '').toLowerCase().includes('aeiou'));
-	let count = 0;
-	let checker = ['a', 'e', 'i', 'o', 'u'];
+// function vowels(str) {
+// 	// console.log(str.replace(/[^\w]/g, '').toLowerCase().includes('aeiou'));
+// 	let count = 0;
+// 	let checker = ['a', 'e', 'i', 'o', 'u'];
 
-	for (let char of str.toLowerCase()) {
-		if (checker.includes(char)) {
-			 count++;
+// 	for (let char of str.toLowerCase()) {
+// 		if (checker.includes(char)) {
+// 			 count++;
+// 		}
+// 	}
+// 	return count;
+
+// }
+
+// console.log(vowels('Why do you ask?'));
+
+// function matrix(n) {
+// 	//array//
+// 	let results = [];
+
+// 	//no of n arrays//
+// 	for (let i = 0; i < n; i++) {
+// 		results.push([]);
+// 	}
+
+// 	//variables
+// 	let counter = 1;
+// 	let startRow = 0;
+// 	let endRow = n - 1;
+// 	let startColumn = 0;
+// 	let endColumn = n - 1;
+
+// 	while (startRow <= endRow && startColumn <= endColumn) {
+// 		//toprow--1st piece//
+// 		for (let i = startColumn; i <= endColumn; i++) {
+// 			results[startRow][i] = counter;
+// 			counter++;
+// 		}
+// 		startRow++;
+
+// 		//secondrow - 2nd piece//
+// 		for (let i = startRow; i <= endRow; i++) {
+// 			results[i][endColumn] = counter;
+// 			counter++;
+// 		}
+
+// 		endColumn--;
+
+// 		//bottomrow  -3rd piece//
+// 		for (let i = endColumn; i >= startColumn; i--) {
+// 			results[endRow][i] = counter;
+// 			counter++;
+// 		}
+
+// 		endRow--;
+
+// 		//1strow element - 4th piece//
+// 		for (let i = endRow; i >= startRow; i--) {
+// 			results[i][startColumn] = counter;
+// 			counter++;
+// 		}
+// 		startColumn++;
+// 	}
+
+// 	return results;
+// }
+
+// matrix(3);
+// console.log(matrix(3));
+
+////Spiral MAtrix - II
+
+var spiralOrder = function (matrix) {
+	let top = 0,
+		right = matrix[0].length - 1,
+		bottom = matrix.length - 1,
+		left = 0;
+	const size = matrix.length * matrix[0].length;
+	// console.log(matrix[0].length);
+	const res = [];
+	// [1,2,3,6,9,8,7,4,5]
+	while (res.length < size) {
+		for (let i = left; i <= right; i++) {
+			res.push(matrix[top][i]);
+		}
+
+		for (let i = top + 1; i <= bottom; i++) {
+			res.push(matrix[i][right]);
+		}
+
+		for (let i = right - 1; i >= left; i--) {
+			res.push(matrix[bottom][i]);
+		}
+
+		for (let i = bottom - 1; i > top; i--) {
+			res.push(matrix[i][left]);
+		}
+
+		top++;
+		right--;
+		left++;
+		bottom--;
+	}
+	return res.slice(0, size);
+};
+
+spiralOrder([
+	[1, 2, 3],
+	[4, 5, 6],
+	[7, 8, 9],
+]);
+// console.log(spiralOrder([[1,2,3],[4,5,6],[7,8,9]]));
+
+///Spiral-Matrix = II
+
+function spiralMatrix(matrix) {
+	//var//
+	let startRow = 0;
+	let endRow = matrix[0].length - 1;
+	let startColumn = 0;
+	let endColumn = matrix[0].length - 1;
+	let counter = 0;
+
+	const results = [];
+
+	//overall looping//
+	// [1,2,3,6,9,8,7,4,5]
+	while (startRow <= endRow && startColumn <= endColumn) {
+		// 1st piece- row/
+		for (let i = startRow; i <= endRow; i++) {
+			results.push(matrix[startColumn][i]);
+		}
+		//2nd piece// single element
+		for (let i = startRow + 1; i <= endRow; i++) {
+			results.push(matrix[i][endRow]);
+		}
+
+		//3rd--piece //botton row//
+		for (let i = endRow - 1; endRow >= startRow; i--) {
+			results.push(matrix[endColumn][i]);
+		}
+
+		//4th-piece --middle row//
+		for (let i = startRow + 1; i <= endColumn; i++) {
+			results.push(matrix[i][startColumn]);
 		}
 	}
-	return count;
 
+	return results;
+	
 }
 
-console.log(vowels('Why do you ask?'));
+spiralMatrix([
+	[1, 2, 3],
+	[4, 5, 6],
+	[7, 8, 9],
+]);
