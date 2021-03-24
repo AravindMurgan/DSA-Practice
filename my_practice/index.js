@@ -808,5 +808,4 @@ function fib(n) {
 	return results[n];
 }
 fib(4);
-console.log(fib(4));
-console.log('hello');
+
