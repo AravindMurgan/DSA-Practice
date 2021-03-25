@@ -865,24 +865,38 @@ class Queue {
 //    q.remove() // 2
 //    q.remove() // 'There'
 
-let Queue = require('./queue');
+// let Queue = require('./queue');
 
-function weave(sourceOne, sourceTwo) {
-	const q = new Queue();
+// function weave(sourceOne, sourceTwo) {
+// 	const q = new Queue();
 	
 
-	while (sourceOne.peek() || sourceTwo.peek()) {
-		if (sourceOne.peek()) {
-			q.add(sourceOne.remove());
-		}
+// 	while (sourceOne.peek() || sourceTwo.peek()) {
+// 		if (sourceOne.peek()) {
+// 			q.add(sourceOne.remove());
+// 		}
 
-		if (sourceTwo.peek()) {
-			q.add(sourceTwo.remove());
-		}
-	}
+// 		if (sourceTwo.peek()) {
+// 			q.add(sourceTwo.remove());
+// 		}
+// 	}
 
-	return q;
-}
+// 	return q;
+// }
 
-let wve = weave([1, 2, 3], [4, 5, 6]);
-console.log(wve);
+// let wve = weave([1, 2, 3], [4, 5, 6]);
+// console.log(wve);
+
+
+///LeetCode Queue problem///
+function RecentCounter () {
+    this.requests = [];
+};
+
+RecentCounter.prototype.ping = function(t) {
+    this.requests.push(t);
+    this.requests = this.requests.filter(x => x >= t - 3000);
+    return this.requests.length;
+};
+
+ console.log(ping.call(10)); 

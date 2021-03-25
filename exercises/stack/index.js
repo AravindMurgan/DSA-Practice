@@ -13,12 +13,15 @@
 class Stack {
 	constructor() {
 		this.data = [];
-		console.log(this.data);
+	
 	}
 
 	push(record) {
 		this.data.push(record);
+
+        return data
 	}
+   
 
 	pop() {
 		return this.data.pop();
@@ -29,5 +32,5 @@ class Stack {
 	}
 }
 
-
-module.exports = Stack;
+const q = new Stack();
+q.push('hello','hi');
