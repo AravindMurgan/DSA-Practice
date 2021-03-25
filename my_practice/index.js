@@ -657,155 +657,217 @@ function capitalize(str) {
 
 // console.log(vowels('Why do you ask?'));
 
-function matrix(n) {
-	//array//
-	let results = [];
+///Spiral Matrix - alternate solution//
 
-	//no of n arrays//
-	for (let i = 0; i < n; i++) {
-		results.push([]);
-	}
+// function matrix(n) {
+// 	//array//
+// 	let results = [];
 
-	//variables
-	let counter = 1;
-	let startRow = 0;
-	let endRow = n - 1;
-	let startColumn = 0;
-	let endColumn = n - 1;
+// 	//no of n arrays//
+// 	for (let i = 0; i < n; i++) {
+// 		results.push([]);
+// 	}
 
-	while (startRow <= endRow && startColumn <= endColumn) {
-		//toprow--1st piece//
-		for (let i = startColumn; i <= endColumn; i++) {
-			results[startRow][i] = counter;
-			counter++;
-		}
-		startRow++;
+// 	//variables
+// 	let counter = 1;
+// 	let startRow = 0;
+// 	let endRow = n - 1;
+// 	let startColumn = 0;
+// 	let endColumn = n - 1;
 
-		//secondrow - 2nd piece//
-		for (let i = startRow; i <= endRow; i++) {
-			results[i][endColumn] = counter;
-			counter++;
-		}
+// 	while (startRow <= endRow && startColumn <= endColumn) {
+// 		//toprow--1st piece//
+// 		for (let i = startColumn; i <= endColumn; i++) {
+// 			results[startRow][i] = counter;
+// 			counter++;
+// 		}
+// 		startRow++;
 
-		endColumn--;
+// 		//secondrow - 2nd piece//
+// 		for (let i = startRow; i <= endRow; i++) {
+// 			results[i][endColumn] = counter;
+// 			counter++;
+// 		}
 
-		//bottomrow  -3rd piece//
-		for (let i = endColumn; i >= startColumn; i--) {
-			results[endRow][i] = counter;
-			counter++;
-		}
+// 		endColumn--;
 
-		endRow--;
+// 		//bottomrow  -3rd piece//
+// 		for (let i = endColumn; i >= startColumn; i--) {
+// 			results[endRow][i] = counter;
+// 			counter++;
+// 		}
 
-		//1strow element - 4th piece//
-		for (let i = endRow; i >= startRow; i--) {
-			results[i][startColumn] = counter;
-			counter++;
-		}
-		startColumn++;
-	}
+// 		endRow--;
 
-	return results;
-}
+// 		//1strow element - 4th piece//
+// 		for (let i = endRow; i >= startRow; i--) {
+// 			results[i][startColumn] = counter;
+// 			counter++;
+// 		}
+// 		startColumn++;
+// 	}
 
-matrix(3);
+// 	return results;
+// }
+
+// matrix(3);
 
 ////Spiral MAtrix - II
 
-var spiralOrder = function (matrix) {
-	let top = 0,
-		right = matrix[0].length - 1,
-		bottom = matrix.length - 1,
-		left = 0;
-	const size = matrix.length * matrix[0].length;
-	const res = [];
-	// [1,2,3,6,9,8,7,4,5]
-	while (res.length < size) {
-		for (let i = left; i <= right; i++) {
-			res.push(matrix[top][i]);
-		}
+// var spiralOrder = function (matrix) {
+// 	let top = 0,
+// 		right = matrix[0].length - 1,
+// 		bottom = matrix.length - 1,
+// 		left = 0;
+// 	const size = matrix.length * matrix[0].length;
+// 	const res = [];
+// 	// [1,2,3,6,9,8,7,4,5]
+// 	while (res.length < size) {
+// 		for (let i = left; i <= right; i++) {
+// 			res.push(matrix[top][i]);
+// 		}
 
-		for (let i = top + 1; i <= bottom; i++) {
-			res.push(matrix[i][right]);
-		}
+// 		for (let i = top + 1; i <= bottom; i++) {
+// 			res.push(matrix[i][right]);
+// 		}
 
-		for (let i = right - 1; i >= left; i--) {
-			res.push(matrix[bottom][i]);
-		}
+// 		for (let i = right - 1; i >= left; i--) {
+// 			res.push(matrix[bottom][i]);
+// 		}
 
-		for (let i = bottom - 1; i > top; i--) {
-			res.push(matrix[i][left]);
-		}
+// 		for (let i = bottom - 1; i > top; i--) {
+// 			res.push(matrix[i][left]);
+// 		}
 
-		top++;
-		right--;
-		left++;
-		bottom--;
-	}
-	return res.slice(0, size);
-};
+// 		top++;
+// 		right--;
+// 		left++;
+// 		bottom--;
+// 	}
+// 	return res.slice(0, size);
+// };
 
-spiralOrder([
-	[1, 2, 3],
-	[4, 5, 6],
-	[7, 8, 9],
-]);
+// spiralOrder([
+// 	[1, 2, 3],
+// 	[4, 5, 6],
+// 	[7, 8, 9],
+// ]);
 // console.log(spiralOrder([[1,2,3],[4,5,6],[7,8,9]]));
 
 ///Spiral-Matrix = II
 
-function spiralMatrix(matrix) {
-	//var//
-	let startRow = 0;
-	let endRow = matrix[0].length - 1;
-	let startColumn = 0;
-	let endColumn = matrix[0].length - 1;
+// function spiralMatrix(matrix) {
+// 	//var//
+// 	let startRow = 0;
+// 	let endRow = matrix[0].length - 1;
+// 	let startColumn = 0;
+// 	let endColumn = matrix[0].length - 1;
 
-	const results = [];
+// 	const results = [];
 
-	//overall looping//
-	// [1,2,3,6,9,8,7,4,5]
-	while (startRow <= endRow && startColumn <= endColumn) {
-		// 1st piece- row/
-		for (let i = startRow; i <= endRow; i++) {
-			results.push(matrix[startColumn][i]);
-		}
-		//2nd piece// single element
-		for (let i = startRow + 1; i <= endRow; i++) {
-			results.push(matrix[i][endRow]);
-		}
+// 	//overall looping//
+// 	// [1,2,3,6,9,8,7,4,5]
+// 	while (startRow <= endRow && startColumn <= endColumn) {
+// 		// 1st piece- row/
+// 		for (let i = startRow; i <= endRow; i++) {
+// 			results.push(matrix[startColumn][i]);
+// 		}
+// 		//2nd piece// single element
+// 		for (let i = startRow + 1; i <= endRow; i++) {
+// 			results.push(matrix[i][endRow]);
+// 		}
 
-		//3rd--piece //botton row//
-		for (let i = endRow - 1; endRow >= startRow; i--) {
-			results.push(matrix[endColumn][i]);
-		}
+// 		//3rd--piece //botton row//
+// 		for (let i = endRow - 1; endRow >= startRow; i--) {
+// 			results.push(matrix[endColumn][i]);
+// 		}
 
-		// //4th-piece --middle row//
-		// for(let i = bottom - 1; i > top ; i--  ){
-		// 	results.push(matrix[])
-		// }
-	}
+// 		// //4th-piece --middle row//
+// 		// for(let i = bottom - 1; i > top ; i--  ){
+// 		// 	results.push(matrix[])
+// 		// }
+// 	}
 
-	return results;
-}
+// 	return results;
+// }
 
-spiralMatrix([
-	[1, 2, 3],
-	[4, 5, 6],
-	[7, 8, 9],
-]);
+// spiralMatrix([
+// 	[1, 2, 3],
+// 	[4, 5, 6],
+// 	[7, 8, 9],
+// ]);
 
 ///Fibonacci//
 
-function fib(n) {
-	const results = [0, 1];
+// function fib(n) {
+// 	const results = [0, 1];
 
-	for (let i = 2; i <= n; i++) {
-		const a = results[i - 1];
-		const b = results[i - 2];
+// 	for (let i = 2; i <= n; i++) {
+// 		const a = results[i - 1];
+// 		const b = results[i - 2];
+// 	}
+
+// 	return results[n];
+// }
+// fib(4);
+
+///Queue - DS problems/
+
+// --- Directions
+// Implement a 'peek' method in this Queue class.
+// Peek should return the last element (the next
+// one to be returned) from the queue *without*
+// removing it.
+
+class Queue {
+	constructor() {
+		this.data = [];
 	}
 
-	return results[n];
-}
-fib(4);
+	add(record) {
+		this.data.unshift(record);
+	}
 
+	remove() {
+		return this.data.pop();
+	}
+
+	peek() {
+		return this.data[this.data.length - 1];
+	}
+
+	myFunc(){
+		console.log('hello');
+	}
+
+	
+}
+
+
+// --- Directions
+// 1) Complete the task in weave/queue.js
+// 2) Implement the 'weave' function.  Weave
+// receives two queues as arguments and combines the
+// contents of each into a new, third queue.
+// The third queue should contain the *alterating* content
+// of the two queues.  The function should handle
+// queues of different lengths without inserting
+// 'undefined' into the new one.
+// *Do not* access the array inside of any queue, only
+// use the 'add', 'remove', and 'peek' functions.
+// --- Example
+//    const queueOne = new Queue();
+//    queueOne.add(1);
+//    queueOne.add(2);
+//    const queueTwo = new Queue();
+//    queueTwo.add('Hi');
+//    queueTwo.add('There');
+//    const q = weave(queueOne, queueTwo);
+//    q.remove() // 1
+//    q.remove() // 'Hi'
+//    q.remove() // 2
+//    q.remove() // 'There'
+
+const Queue = require('./queue');
+
+function weave(sourceOne, sourceTwo) {}

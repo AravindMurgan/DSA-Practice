@@ -5,23 +5,38 @@
 // removing it.
 
 class Queue {
-  constructor() {
-    this.data = [];
+	constructor() {
+		this.data = [];
+		myFunc();
+	}
 
-  }
+	add(record) {
+		this.data.unshift(record);
+	}
 
-  add(record) {
-    this.data.unshift(record);
-  }
+	remove() {
+		return this.data.pop();
+	}
 
-  remove() {
-    return this.data.pop();
-  }
+	peek() {
+		return this.data[this.data.length - 1];
+	}
 
-  peek() {
-     return this.data[this.data.length -1]
-  }
+	myFunc() {
+		let data = [1, 2, 3, 4, 5];
+		console.log(data.peek());
+	}
+
 
 }
 
 module.exports = Queue;
+
+
+function myfunc(){
+
+  let data = [1, 2, 3, 4, 5,6];
+  let peek = data[data.length -1];
+  console.log(peek);
+}
+myfunc()
