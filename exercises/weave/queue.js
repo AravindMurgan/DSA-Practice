@@ -7,7 +7,6 @@
 class Queue {
 	constructor() {
 		this.data = [];
-		myFunc();
 	}
 
 	add(record) {
@@ -21,22 +20,14 @@ class Queue {
 	peek() {
 		return this.data[this.data.length - 1];
 	}
-
-	myFunc() {
-		let data = [1, 2, 3, 4, 5];
-		console.log(data.peek());
-	}
-
-
 }
 
 module.exports = Queue;
 
+// function myfunc(){
 
-function myfunc(){
-
-  let data = [1, 2, 3, 4, 5,6];
-  let peek = data[data.length -1];
-  console.log(peek);
-}
-myfunc()
+//   let data = [1, 2, 3, 4, 5,6];
+//   let peek = data[data.length -1];
+//   console.log(peek);
+// }
+// myfunc()
