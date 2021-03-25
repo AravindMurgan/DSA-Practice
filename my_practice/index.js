@@ -836,13 +836,10 @@ class Queue {
 		return this.data[this.data.length - 1];
 	}
 
-	myFunc(){
+	myFunc() {
 		console.log('hello');
 	}
-
-	
 }
-
 
 // --- Directions
 // 1) Complete the task in weave/queue.js
@@ -868,28 +865,23 @@ class Queue {
 //    q.remove() // 2
 //    q.remove() // 'There'
 
-const Queue = require('./queue');
+let Queue = require('./queue');
 
 function weave(sourceOne, sourceTwo) {
-
 	const q = new Queue();
 
-	while(sourceOne.peek() || sourceTwo.peek() ){
-
-		if(sourceOne.peek()){
-			q.add(sourceOne.remove())
+	while (sourceOne.peek() || sourceTwo.peek()) {
+		if (sourceOne.peek()) {
+			q.add(sourceOne.remove());
 		}
 
-		if(sourceTwo.peek()){
-			q.add(sourceTwo.remove())
+		if (sourceTwo.peek()) {
+			q.add(sourceTwo.remove());
 		}
-		
-
 	}
 
 	return q;
-
-
-
-
 }
+
+let wve = weave([1, 2, 3], [4, 5, 6]);
+console.log(wve);

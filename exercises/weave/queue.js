@@ -20,6 +20,10 @@ class Queue {
 	peek() {
 		return this.data[this.data.length - 1];
 	}
+
+	myFunc() {
+		console.log('helo');
+	}
 }
 
 module.exports = Queue;
