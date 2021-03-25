@@ -11,33 +11,23 @@
 //   s.pop(); // returns 1
 
 class Stack {
-    constructor(){
-        this.data = [];
-        console.log(this.data);
-    }
+	constructor() {
+		this.data = [];
+		console.log(this.data);
+	}
 
-    push(){
-        return this.data.push()
-    }
+	push(record) {
+		this.data.push(record);
+	}
 
-    pop(){
-        return this.data.pop()
-    }
+	pop() {
+		return this.data.pop();
+	}
 
-    peek(){
-        return this.data[this.data.length -1];
-    }
-
-
+	peek() {
+		return this.data[this.data.length - 1];
+	}
 }
 
-let Stacks = require('./index');
-
-function myStack(n){
-
-    const s = new Stacks();
-    s.add(n)
-}
-myStack(1,2,3)
 
 module.exports = Stack;
