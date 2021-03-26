@@ -8,14 +8,12 @@
 //   palindrome("abcdefg") === false
 
 function palindrome(str) {
-  return str.split('').every((char, i) => {
-    return char === str[str.length - i - 1];
-  });
+	return str.split('').every((char, i) => {
+		return char === str[str.length - i - 1];
+	});
 }
 
-;
 console.log(palindrome('abba'));
-
 
 module.exports = palindrome;
 
@@ -28,4 +26,28 @@ module.exports = palindrome;
 //   return str === reversed;
 // }
 
+var isPalindrome = function (s) {
+	let nonreversed = s.toLowerCase().replace(/[^a-z\d]/g, '');
+	console.log(nonreversed);
+	let reversed = s.toLowerCase()
+		.replace(/[^a-z\d]/g, '').
+		split('')
+		.reverse()
+		.join('');
 
+    console.log(reversed);
+	return nonreversed === reversed;
+};
+
+console.log(isPalindrome('A man, a plan, _a canal: Panama'));
+
+
+var validPalindrome = function(s) {
+    
+  let reversed = s.split('').reverse().join('')
+  
+  return reversed === s
+  
+};
+
+console.log(validPalindrome('abca'));

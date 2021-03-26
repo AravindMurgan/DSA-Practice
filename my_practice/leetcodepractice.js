@@ -143,13 +143,37 @@
 
 // 3; /// Remove Vowel from  String//
 
-//i/p: 'aeoiu' o/p:''  , i/p: 'aaaaae' o/p:''
+// //i/p: 'aeoiu' o/p:''  , i/p: 'aaaaae' o/p:''
 
-function removeVowels(s){
+// function removeVowels(s){
 
-    return s.replace(/[aeiou]/g,'')
+//     return s.replace(/[aeiou]/g,'')
 
-}
+// }
 
 
-console.log(removeVowels('leetcode'));
+// console.log(removeVowels('leetcode'));
+
+
+// 4 /// Valid palidrome - II 680//
+
+var validPalindrome = function(s) {
+    debugger;
+    const check = (start, end, maxRemovals) => {
+      if (start >= end) return true
+      if (s[start] === s[end]) {
+        return check(start + 1, end - 1,maxRemovals)
+      }
+      
+      if (maxRemovals > 0) {
+        if (check(start + 1, end, maxRemovals - 1)) return true
+        return check(start, end - 1, maxRemovals - 1)
+      }
+      
+      return false
+    }
+    
+    return check(0, s.length - 1, 1)
+};
+
+validPalindrome('abca')
