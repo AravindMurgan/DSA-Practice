@@ -156,24 +156,34 @@
 
 
 // 4 /// Valid palidrome - II 680//
-
 var validPalindrome = function(s) {
     debugger;
-    const check = (start, end, maxRemovals) => {
-      if (start >= end) return true
-      if (s[start] === s[end]) {
-        return check(start + 1, end - 1,maxRemovals)
-      }
-      
-      if (maxRemovals > 0) {
-        if (check(start + 1, end, maxRemovals - 1)) return true
-        return check(start, end - 1, maxRemovals - 1)
-      }
-      
-      return false
-    }
+    s = s.replace(/[^A-Za-z0-9]/g, "").toLowerCase()
+    let left = 0, right = s.length-1
     
-    return check(0, s.length - 1, 1)
+    while(left < right){
+        if(s[left] !== s[right]){
+            return subpal(s,left+1,right) || subpal(s,left,right-1) 
+        }
+        left++
+        right--
+    }
+    return true
+    
 };
+
+var subpal = function(s,left,right) {
+  
+    while(left < right){
+        if(s[left] !== s[right]){
+            return false 
+        }
+        left++
+        right--
+    }
+    return true
+    
+};
+
 
 validPalindrome('abca')
