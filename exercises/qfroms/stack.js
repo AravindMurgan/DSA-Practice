@@ -1,4 +1,4 @@
-eclass Stack {
+class Stack {
   constructor() {
     this.data = [];
   }

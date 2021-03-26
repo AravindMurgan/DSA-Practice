@@ -89,3 +89,10 @@ function slowFib(n) {
 const fib = memoize(slowFib);
 
 console.log(fib(10));
+
+
+let arr = [1,2,3];
+
+
+console.log(arr.push());
+console.log(arr);

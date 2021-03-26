@@ -13,6 +13,10 @@ function palindrome(str) {
   });
 }
 
+;
+console.log(palindrome('abba'));
+
+
 module.exports = palindrome;
 
 // function palindrome(str) {
@@ -23,3 +27,5 @@ module.exports = palindrome;
 //
 //   return str === reversed;
 // }
+
+
