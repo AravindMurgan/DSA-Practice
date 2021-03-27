@@ -1,108 +1,135 @@
-// //
-// // function steps(num) {
+// // //
+// // // function steps(num) {
 
-// const { level } = require('chalk');
+// // const { level } = require('chalk');
 
-// // function steps(num) {
-// // 	for (let row = 0; row < num; row++) {
-// // 		let stair = '';
+// // // function steps(num) {
+// // // 	for (let row = 0; row < num; row++) {
+// // // 		let stair = '';
 
-// // 		for (let column = 0; column < num; column++) {
-// // 			if (column <= row) {
-// // 				stair += '#';
-// // 			} else {
-// // 				stair += ' ';
-// // 			}
-// // 		}
+// // // 		for (let column = 0; column < num; column++) {
+// // // 			if (column <= row) {
+// // // 				stair += '#';
+// // // 			} else {
+// // // 				stair += ' ';
+// // // 			}
+// // // 		}
 
+// // // 	}
+
+// // // }
+
+// // //  console.log(steps(2)); ;
+
+// // function pyramid(n, row = 0, stair = '') {
+// // 	let midpoint = Math.floor((2 * n - 1) / 2);
+
+// // 	//base-case//
+// // 	if (row === n) {
+// // 		return;
 // // 	}
 
+// // 	if (n * 2 - 1 === stair.length) {
+// // 		return pyramid(n, row + 1);
+// // 	}
+
+// // 	let add;
+// // 	if (midpoint - row <= stair.length && midpoint + row >= stair.length) {
+// // 		add = '#';
+// // 	} else {
+// // 		add = ' ';
+// // 	}
+
+// // 	pyramid(n, row, stair + add);
+// // }
+// // pyramid(3);
+
+// // let input = 'g  eeks   for ge  eeks  ';
+// // // console.log(Input.replace(/[^\w]/g, ''));
+// // // console.log(Input);
+
+// // input = 'prabhat kumar singh';
+
+// // for(let str of input.split(' ')){
+// // 	let inital = str[0].toUpperCase();
+
+// // 	console.log(inital);
 // // }
 
-// //  console.log(steps(2)); ;
+// //Fibbonaci -- recursion//
 
-// function pyramid(n, row = 0, stair = '') {
-// 	let midpoint = Math.floor((2 * n - 1) / 2);
+// //Generic-memoize function
 
-// 	//base-case//
-// 	if (row === n) {
-// 		return;
+// function memoize(fn) {
+// 	const cache = {};
+
+// 	return function (...args) {
+// 		if (cache[args]) {
+// 			return cache[args];
+// 		}
+
+// 		const result = fn.apply(this, args);
+// 		cache[args] = result;
+
+// 		return result;
+// 	};
+// }
+
+// function slowFib(n) {
+// 	if (n < 2) {
+// 		return n;
 // 	}
 
-// 	if (n * 2 - 1 === stair.length) {
-// 		return pyramid(n, row + 1);
-// 	}
+// 	return slowFib(n - 1) + slowFib(n - 2);
+// }
 
-// 	let add;
-// 	if (midpoint - row <= stair.length && midpoint + row >= stair.length) {
-// 		add = '#';
+// const fib = memoize(slowFib);
+
+// console.log(fib(10));
+
+// let arr = [1, 2, 3];
+
+// console.log(arr.push());
+// console.log(arr);
+
+// let s = '  -42';
+// s = s.replace(/[\s\W]/g, '');
+// let negative = s < 0;
+// let result = 0;
+// for (let char of s) {
+// 	if (char >= '0' && char <= '9') {
+// 		// result = char * 10 + (char- '0');
+// 		result = result * 10 + (char - '0');
+// 		console.log(result);
 // 	} else {
-// 		add = ' ';
 // 	}
-
-// 	pyramid(n, row, stair + add);
-// }
-// pyramid(3);
-
-// let input = 'g  eeks   for ge  eeks  ';
-// // console.log(Input.replace(/[^\w]/g, ''));
-// // console.log(Input);
-
-// input = 'prabhat kumar singh';
-
-// for(let str of input.split(' ')){
-// 	let inital = str[0].toUpperCase();
-
-// 	console.log(inital);
 // }
 
-//Fibbonaci -- recursion//
+// const make32Bit = (n) => {
+	
+// 	const minBound = -(2 ** 31);
+// 	const maxBound = 2 ** 31 - 1;
 
-//Generic-memoize function
+// 	return ((n) => {
+// 		return n < minBound ? minBound : n > maxBound ? maxBound : n;
+// 	})(n);
+// };
 
-function memoize(fn) {
-	const cache = {};
+// var myAtoi = function (s) {
+// 	debugger;
+// 	s = s.trimStart();
 
-	return function (...args) {
-		if (cache[args]) {
-			return cache[args];
-		}
+// 	s = parseInt(s);
+// 	console.log(s);
+	
 
-		const result = fn.apply(this, args);
-		cache[args] = result;
+// 	if (!s) return 0;
 
-		return result;
-	};
-}
+// 	return make32Bit(s);
+// };
 
-function slowFib(n) {
-	if (n < 2) {
-		return n;
-	}
 
-	return slowFib(n - 1) + slowFib(n - 2);
-}
+// console.log(myAtoi('words and 987'));
 
-const fib = memoize(slowFib);
 
-console.log(fib(10));
 
-let arr = [1, 2, 3];
-
-console.log(arr.push());
-console.log(arr);
-
-let s = '  -42';
-s = s.replace(/[\s\W]/g, '');
-let negative = s < 0;
-let result = 0;
-for (let char of s) {
-	let character = char - '0';
-	if (character > 0 && character <= 9) {
-		return (result = character * 10);
-	} else {
-	}
-
-	result = result + character;
-	console.log(result);
-}

@@ -194,28 +194,61 @@
 // console.log(reverse(123));
 
 //6/// Reverse Integer- 7//
-function reverseInt(x) {
-    debugger
-	let negative = x < 0;
-	let reversed = 0;
+// function reverseInt(x) {
+   
+// 	let negative = x < 0;
+// 	let reversed = 0;
 
-	if (negative) {
-		x *= -1;
+// 	if (negative) {
+// 		x *= -1;
+// 	}
+
+// 	while (x > 0) {
+// 		reversed = reversed * 10 + (x % 10);
+// 		x = Math.floor(x / 10);
+// 	}
+
+// 	if (reversed > 2 ** 31 - 1) {
+// 		return 0;
+// 	}
+
+// 	return negative ? reversed * -1 : reversed;
+// }
+
+///7-String to Integer (atoi) 8///
+
+
+// function myAtoi(n){
+       
+//     n = n.trimStart();
+    
+//     n= parseInt(n);
+    
+//     if(!n){
+//         return 0
+//     }
+    
+//     return make32bit(n)
+// }
+
+// function make32bit(n){
+//      const minBound = -(2 ** 31);
+//     const maxBound = 2 ** 31 - 1;
+    
+//     return n < minBound ? minBound : n > maxBound ? maxBound : n
+// }
+
+
+function atoi(){
+    s = s.replace(/[\s\W]/g, '');
+let negative = s < 0;
+let result = 0;
+for (let char of s) {
+	if (char >= '0' && char <= '9') {
+		// result = char * 10 + (char- '0');
+		result = result * 10 + (char - '0');
+		console.log(result);
+	} else {
 	}
-
-	while (x > 0) {
-		reversed = reversed * 10 + (x % 10);
-		x = Math.floor(x / 10);
-	}
-
-	if (reversed > 2 ** 31 - 1) {
-		return 0;
-	}
-
-	return negative ? reversed * -1 : reversed;
 }
-
-console.log(reverseInt(123));
-
-console.log(21%10 );
-console.log(Math.floor(123/10));
+}
