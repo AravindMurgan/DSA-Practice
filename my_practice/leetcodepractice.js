@@ -67,41 +67,37 @@
 // 	arr[j] = temp;
 // }
 
-
 // function reverseVowels(s){
-    
-    
+
 //     const vowels = {};
-    
+
 //     for(let char of s){
 //         vowels[char]=true;
 //     }
-    
+
 //     const characters = s.split('');
 //     let left = 0;
 //     let right = s.length -1;
-    
+
 //     while(left < right){
-        
+
 //         while(left < right && !(s[left] in vowels )){
-              
+
 //               left +=1;
 //         }
-        
+
 //         while(left < right && !(s[right] in vowels )){
-              
+
 //               right -=1;
 //         }
-        
+
 //         swap(characters,left,right);
 //         left +=1;
 //         right -=1;
-        
-        
-        
+
 //     }
 //     return characters.join('')
-        
+
 // }
 // console.log(reverseVowels('hello'));
 
@@ -111,24 +107,23 @@
 //     arr[j]= temp;
 // }
 
-
 // var reverseVowels = function(s) {
 //     let vowels = "AEIOUaeiou"
 //     let arr = s.split('')
-    
+
 //     let i=0;
 //     let j=arr.length-1;
 //     let temp = '';
-    
+
 //     while(i<j){
 //         if(vowels.indexOf(arr[i]) === -1){
 //             i++
 //         }
-        
+
 //         if(vowels.indexOf(arr[j]) === -1){
 //             j--
 //         }
-        
+
 //         if(vowels.indexOf(arr[i]) !== -1 && vowels.indexOf(arr[j]) !== -1){
 //             temp = arr[i]
 //             arr[i] = arr[j]
@@ -137,7 +132,7 @@
 //             j--
 //         }
 //     }
-    
+
 //     return arr.join('')
 // };
 
@@ -151,39 +146,76 @@
 
 // }
 
-
 // console.log(removeVowels('leetcode'));
 
-
 // 4 /// Valid palidrome - II 680//
-var validPalindrome = function(s) {
-    debugger;
-    s = s.replace(/[^A-Za-z0-9]/g, "").toLowerCase()
-    let left = 0, right = s.length-1
-    
-    while(left < right){
-        if(s[left] !== s[right]){
-            return subpal(s,left+1,right) || subpal(s,left,right-1) 
-        }
-        left++
-        right--
-    }
-    return true
-    
-};
+// var validPalindrome = function (s) {
+// 	debugger;
+// 	s = s.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
+// 	console.log(s);
+// 	let left = 0,
+// 		right = s.length - 1;
 
-var subpal = function(s,left,right) {
-  
-    while(left < right){
-        if(s[left] !== s[right]){
-            return false 
-        }
-        left++
-        right--
-    }
-    return true
-    
-};
+// 	while (left < right) {
+// 		if (s[left] !== s[right]) {
+// 			return subpal(s, left + 1, right) || subpal(s, left, right - 1);
+// 		}
+// 		left++;
+// 		right--;
+// 	}
+// 	return true;
+// };
 
+// var subpal = function (s, left, right) {
+// 	while (left < right) {
+// 		if (s[left] !== s[right]) {
+// 			return false;
+// 		}
+// 		left++;
+// 		right--;
+// 	}
+// 	return true;
+// }
 
-validPalindrome('abca')
+// console.log(validPalindrome('abc'));
+
+// 5/// Reverse Integer - II 680//
+
+// function reverse(x) {
+// 	if ((x <= 2) ^ (31 - 1) && (x >= -2) ^ 31) {
+// 		return 0;
+// 	}else{
+//         let reversed = x.toString().split('').reverse().join('');
+//         return reversed
+//     }
+
+// }
+
+// console.log(reverse(123));
+
+//6/// Reverse Integer- 7//
+function reverseInt(x) {
+    debugger
+	let negative = x < 0;
+	let reversed = 0;
+
+	if (negative) {
+		x *= -1;
+	}
+
+	while (x > 0) {
+		reversed = reversed * 10 + (x % 10);
+		x = Math.floor(x / 10);
+	}
+
+	if (reversed > 2 ** 31 - 1) {
+		return 0;
+	}
+
+	return negative ? reversed * -1 : reversed;
+}
+
+console.log(reverseInt(123));
+
+console.log(21%10 );
+console.log(Math.floor(123/10));

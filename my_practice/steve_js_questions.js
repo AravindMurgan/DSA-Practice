@@ -60,23 +60,20 @@
 
 //Generic-memoize function
 
-function memoize(fn){
-
+function memoize(fn) {
 	const cache = {};
 
-	return function(...args){
-
-		if(cache[args]){
-			return cache[args]
+	return function (...args) {
+		if (cache[args]) {
+			return cache[args];
 		}
 
-		const result = fn.apply(this,args);
+		const result = fn.apply(this, args);
 		cache[args] = result;
 
-		return result
-	}
+		return result;
+	};
 }
-
 
 function slowFib(n) {
 	if (n < 2) {
@@ -90,9 +87,22 @@ const fib = memoize(slowFib);
 
 console.log(fib(10));
 
-
-let arr = [1,2,3];
-
+let arr = [1, 2, 3];
 
 console.log(arr.push());
 console.log(arr);
+
+let s = '  -42';
+s = s.replace(/[\s\W]/g, '');
+let negative = s < 0;
+let result = 0;
+for (let char of s) {
+	let character = char - '0';
+	if (character > 0 && character <= 9) {
+		return (result = character * 10);
+	} else {
+	}
+
+	result = result + character;
+	console.log(result);
+}
