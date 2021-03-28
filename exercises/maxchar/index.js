@@ -7,32 +7,33 @@
 
 // function maxChar(str) {}
 
-// module.exports = maxChar;
+console.log(maxChar('tourist'));
 
-// maxChar('aooooooaa')
+function maxChar(word) {
+	let max = 0;
+	let maxChar = '';
 
-// function maxChar(word){
-//     let max = 0;
-//     let maxChar = '';
+	const obj = {};
+	for (let char of word) {
+		if (obj[char]) {
+			obj[char]++;
+		} else {
+			obj[char] = 1;
+		}
+	}
 
-//     const  obj = {};
-//     for(let char of word){
-//          if(obj[char]){
-//             obj[char] ++;
-//         }else{
-//             obj[char] = 1;
+	for (let char in obj) {
+		if (obj[char] > max) {
+			max = obj[char];
+			maxChar = char;
+			
+		}
+       
+	}
+    return maxChar;
+}
 
-//         }
-//     }
 
-//     for(let char in obj){
-//         if(obj[char]>max){
-//             max=obj[char];
-//             maxChar = char;
-            
-//         }
-//     }
-//     console.log(maxChar);
-    
-// }
-// console.log(obj);
+
+
+module.exports = maxChar;

@@ -133,3 +133,21 @@
 
 
 
+////Consecutive Characters///
+
+function ConChar(word){
+	let count =0;
+	let obj={};
+
+	for(let char of word){
+		if(obj[char]){
+			obj[char]++;
+		}else{
+			count = 1
+		}
+	}
+	return count
+
+
+}
+ConChar('leetcode')

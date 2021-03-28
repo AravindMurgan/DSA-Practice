@@ -195,7 +195,7 @@
 
 //6/// Reverse Integer- 7//
 // function reverseInt(x) {
-   
+
 // 	let negative = x < 0;
 // 	let reversed = 0;
 
@@ -217,38 +217,81 @@
 
 ///7-String to Integer (atoi) 8///
 
-
 // function myAtoi(n){
-       
+
 //     n = n.trimStart();
-    
+
 //     n= parseInt(n);
-    
+
 //     if(!n){
 //         return 0
 //     }
-    
+
 //     return make32bit(n)
 // }
 
 // function make32bit(n){
 //      const minBound = -(2 ** 31);
 //     const maxBound = 2 ** 31 - 1;
-    
+
 //     return n < minBound ? minBound : n > maxBound ? maxBound : n
 // }
 
+// function atoi(){
+//     s = s.replace(/[\s\W]/g, '');
+// let negative = s < 0;
+// let result = 0;
+// for (let char of s) {
+// 	if (char >= '0' && char <= '9') {
+// 		// result = char * 10 + (char- '0');
+// 		result = result * 10 + (char - '0');
+// 		console.log(result);
+// 	} else {
+// 	}
+// }
+// }
 
-function atoi(){
-    s = s.replace(/[\s\W]/g, '');
-let negative = s < 0;
-let result = 0;
-for (let char of s) {
-	if (char >= '0' && char <= '9') {
-		// result = char * 10 + (char- '0');
-		result = result * 10 + (char - '0');
-		console.log(result);
-	} else {
+///8 - 1446. Consecutive Characters ///
+// Input: s = "leetcode"
+// Output: 2
+
+// function consecutiveChar(s) {
+// 	let prev = s[0];
+// 	let count = 0;
+// 	let charLength = s.length;
+
+// 	for (let i = 1; i <= charLength; i++) {
+// 		console.log(s[i]);
+// 		if (s[i] !== prev) {
+// 			count = 1;
+// 			prev[i];
+// 		} else {
+// 			count++;
+// 		}
+// 	}
+
+// 	return count;
+// }
+
+// console.log(consecutiveChar('leetcode'));
+
+
+var maxPower = function (s) {
+	debugger
+	let prev = "";
+	let count = 0;
+	let result = 0;
+	for (let i = 0; i < s.length; i++) {
+	  if (s[i] !== prev) {
+		count = 1;
+		prev = s[i];
+	  } else {
+		count++;
+	  }
+  
+	  result = Math.max(count, result);
 	}
-}
-}
+	return result;
+  };
+
+  maxPower('leetcode')
