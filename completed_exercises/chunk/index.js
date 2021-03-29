@@ -9,7 +9,7 @@
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
 function chunk(array, size) {
-	debugger;
+
 	//declaring variable 'chunked' as an empty array
 	let chunked = [];
   let summa = [1,2,3,4];

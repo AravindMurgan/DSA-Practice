@@ -149,34 +149,60 @@
 
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
-function chunk(array, size) {
-	let chunked = [];
+// function chunk(array, size) {
+// 	let chunked = [];
 
-	
+// 	for (let element of array) {
+// 		let last = chunked[chunked.length - 1];
+// 		if (!last || last.length === size) {
+// 			chunked.push([element]);
+// 		} else {
+// 			last.push(element);
+// 		}
+// 	}
 
-	for (let element of array) {
-		let last = chunked[chunked.length - 1];
-		if (!last || last.length === size) {
-			chunked.push([element]);
+// 	return chunked;
+// }
+
+// console.log(chunk([1, 2, 3, 4, 5], 2));
+
+// function anagram(str) {
+// 	let prev = str[0];
+// 	let result = [];
+// 	for (let i = 1; i <= str.length; i++) {
+// 		if (str[i] === prev) {
+// 			result.array([str]);
+// 		}
+// 	}
+// }
+// anagram(['eat', 'tea', 'tan', 'ate', 'nat', 'bat']);
+
+//group Anagrams///
+
+var groupAnagrams = function (strs) {
+	debugger;
+	let length = strs.length;
+	let hash = {};
+	let result = [];
+	for (let i = 0; i < length; i++) {
+		let str = strs[i];
+		let sorted = str
+			.split('')
+			.sort((a, b) => (a > b ? -1 : 1))
+			.join('');
+
+		if (hash[sorted]) {
+			hash[sorted].push(str);
 		} else {
-			last.push(element);
+			hash[sorted] = [str];
 		}
 	}
+	for (let i in hash) {
+		result.push(hash[i]);
+	}
+	return result;
+};
 
-	return chunked;
-}
 
-console.log(chunk([1, 2, 3, 4, 5], 2));
+groupAnagrams(['eat', 'tea', 'tan', 'ate', 'nat', 'bat']);
 
-
-function maxChunksToSorted(arr){
-	let max = [];
-	
-	if(arr ===null || arr.length ===0 ) return 0;
-
-	max = arr.length;
-	max[0] = arr[0];
-	for(int )
-	
-
-}
