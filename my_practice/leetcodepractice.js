@@ -294,4 +294,4 @@ var maxPower = function (s) {
 	return result;
   };
 
-  maxPower('leetcode')
+  maxPower('leetcodeeee')
