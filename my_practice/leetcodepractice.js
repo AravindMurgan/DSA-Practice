@@ -275,23 +275,53 @@
 
 // console.log(consecutiveChar('leetcode'));
 
+// var maxPower = function (s) {
+// 	debugger
+// 	let prev = "";
+// 	let count = 0;
+// 	let result = 0;
+// 	for (let i = 0; i < s.length; i++) {
+// 	  if (s[i] !== prev) {
+// 		count = 1;
+// 		prev = s[i];
+// 	  } else {
+// 		count++;
+// 	  }
 
-var maxPower = function (s) {
-	debugger
-	let prev = "";
-	let count = 0;
-	let result = 0;
-	for (let i = 0; i < s.length; i++) {
-	  if (s[i] !== prev) {
-		count = 1;
-		prev = s[i];
-	  } else {
-		count++;
-	  }
-  
-	  result = Math.max(count, result);
+// 	  result = Math.max(count, result);
+// 	}
+// 	return result;
+//   };
+
+//   maxPower('leetcodeeee')
+
+///Group Anagarms - 49 ///
+
+function groupAnagrams(strs) {
+	let length = strs.length;
+	let result = [];
+	let hash = {};
+
+	for (let i = 0; i < length; i++) {
+		let str = strs[i];
+		let sorted = str
+			.split('')
+			.sort((a, b) => (a > b ? 1 : -1))
+			.join('');
+		if (hash[sorted]) {
+			hash[sorted].push(str);
+		} else {
+			hash[sorted] = [str];
+		}
+
+
 	}
-	return result;
-  };
 
-  maxPower('leetcodeeee')
+	for (let i in hash) {
+		result.push(hash[i]);
+	}
+
+	return result;
+}
+
+console.log(groupAnagrams(['eat', 'tea', 'tan', 'ate', 'nat', 'bat']));

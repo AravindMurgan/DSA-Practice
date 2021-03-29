@@ -206,3 +206,6 @@ var groupAnagrams = function (strs) {
 
 groupAnagrams(['eat', 'tea', 'tan', 'ate', 'nat', 'bat']);
 
+let obj = {tea: [1,2,3]};
+
+console.log(obj[tea]);
