@@ -9,31 +9,36 @@
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
 function chunk(array, size) {
-  const chunked = [];
-  let index = 0;
+	debugger;
+	//declaring variable 'chunked' as an empty array
+	let chunked = [];
+  let summa = [1,2,3,4];
 
-  while (index < array.length) {
-    chunked.push(array.slice(index, index + size));
-    index += size;
-  }
+	//for loop iterating through every element of our input array
+	for (let ele of array) {
+		//declaring variable 'last' as the last index of our 'chunked' array
+		const last = chunked[chunked.length - 1];
 
-  return chunked;
+		//checking if last is undefined or if the last subarray is equal to the size
+		if (!last || last.length === size) {
+			//then we push the element to be a new subarray in 'chunked'
+			chunked.push([ele]);
+		} else {
+			//if not, then we add the element to the 'last' subarray
+			last.push(ele);
+		}
+	}
+	//return the array of subarrays
+	return chunked;
 }
+
+chunk([1, 2, 3, 4], 2);
 
 module.exports = chunk;
 
-// function chunk(array, size) {
-//   const chunked = [];
-//
-//   for (let element of array) {
-//     const last = chunked[chunked.length - 1];
-//
-//     if (!last || last.length === size) {
-//       chunked.push([element]);
-//     } else {
-//       last.push(element);
-//     }
-//   }
-//
-//   return chunked;
-// }
+
+
+let chulen= [[1,2],[3],[5,58]];
+let las = chulen[chulen.length -1]
+
+console.log(las);

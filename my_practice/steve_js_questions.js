@@ -106,7 +106,7 @@
 // }
 
 // const make32Bit = (n) => {
-	
+
 // 	const minBound = -(2 ** 31);
 // 	const maxBound = 2 ** 31 - 1;
 
@@ -121,33 +121,62 @@
 
 // 	s = parseInt(s);
 // 	console.log(s);
-	
 
 // 	if (!s) return 0;
 
 // 	return make32Bit(s);
 // };
 
-
 // console.log(myAtoi('words and 987'));
-
-
 
 ////Consecutive Characters///
 
-function ConChar(word){
-	let count =0;
-	let obj={};
+// function ConChar(word){
+// 	let count =0;
+// 	let obj={};
 
-	for(let char of word){
-		if(obj[char]){
-			obj[char]++;
-		}else{
-			count = 1
+// 	for(let char of word){
+// 		if(obj[char]){
+// 			obj[char]++;
+// 		}else{
+// 			count = 1
+// 		}
+// 	}
+// 	return count
+
+// }
+// ConChar('leetcode')
+
+// chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
+
+function chunk(array, size) {
+	let chunked = [];
+
+	
+
+	for (let element of array) {
+		let last = chunked[chunked.length - 1];
+		if (!last || last.length === size) {
+			chunked.push([element]);
+		} else {
+			last.push(element);
 		}
 	}
-	return count
 
+	return chunked;
+}
+
+console.log(chunk([1, 2, 3, 4, 5], 2));
+
+
+function maxChunksToSorted(arr){
+	let max = [];
+	
+	if(arr ===null || arr.length ===0 ) return 0;
+
+	max = arr.length;
+	max[0] = arr[0];
+	for(int )
+	
 
 }
-ConChar('leetcode')

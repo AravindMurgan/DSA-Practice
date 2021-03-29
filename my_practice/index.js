@@ -332,34 +332,34 @@
 // chunk([1, 2, 3, 4, 5], 4) --> [[ 1, 2, 3, 4], [5]]
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
-// function chunk(array, size) {
-// 	let chunked = [];
-// 	console.log(chunked);
-// 	for (let element of array) {
-// 		let last = chunked[chunked.length - 1];
+function chunk(array, size) {
+	let chunked = [];
+	console.log(chunked);
+	for (let element of array) {
+		let last = chunked[chunked.length - 1];
 
-// 		if (!last || last.length === size) {
-// 			chunked.push([element]);
-// 		} else {
-// 			last.push(element);
-// 		}
+		if (!last || last.length === size) {
+			chunked.push([element]);
+		} else {
+			last.push(element);
+		}
 
-// 		return chunked;
-// 	}
-// }
+		return chunked;
+	}
+}
 
-// ///Better solution///
-// let output = chunk([1, 2, 3, 4], 2);
-// console.log(output);
+///Better solution///
+let output = chunk([1, 2, 3, 4], 2);
+console.log(output);
 
-// function chunk(array, size) {
-// 	let arr = [];
-// 	while (array.length > 0) {
-// 		arr.push(array.slice(0, size));
-// 	}
+function chunk(array, size) {
+	let arr = [];
+	while (array.length > 0) {
+		arr.push(array.slice(0, size));
+	}
 
-// 	return arr;
-// }
+	return arr;
+}
 
 ///Anagrams  = a=hello b=olleh => no .of letter should be same and avoid extra space and non word
 // --- Directions
