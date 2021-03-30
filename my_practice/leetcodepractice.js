@@ -297,73 +297,77 @@
 
 ///Group Anagarms - 49 ///
 
-function groupAnagrams(strs) {
-	let length = strs.length;
-	let result = [];
-	let hash = {};
+// function groupAnagrams(strs) {
+// 	let length = strs.length;
+// 	let result = [];
+// 	let hash = {};
 
-	for (let i = 0; i < length; i++) {
-		let str = strs[i];
-		let sorted = str
-			.split('')
-			.sort((a, b) => (a > b ? 1 : -1))
-			.join('');
-		if (hash[sorted]) {
-			hash[sorted].push(str);
-		} else {
-			hash[sorted] = [str];
-		}
+// 	for (let i = 0; i < length; i++) {
+// 		let str = strs[i];
+// 		let sorted = str
+// 			.split('')
+// 			.sort((a, b) => (a > b ? 1 : -1))
+// 			.join('');
+// 		if (hash[sorted]) {
+// 			hash[sorted].push(str);
+// 		} else {
+// 			hash[sorted] = [str];
+// 		}
 
 
-	}
+// 	}
 
-	for (let i in hash) {
-		result.push(hash[i]);
-	}
+// 	for (let i in hash) {
+// 		result.push(hash[i]);
+// 	}
 
-	return result;
+// 	return result;
+// }
+
+// console.log(groupAnagrams(['eat', 'tea', 'tan', 'ate', 'nat', 'bat']));
+
+
+
+// ///520. Detect Capital////
+
+// //better-space complexity//
+// var detectCapitalUse = function (word) {
+// 	let captial = word.toUpperCase();
+// 	let small = word.toLowerCase();
+// 	let pascal = word[0].toUpperCase() + word.slice(1);
+
+// 	if (word === captial || word === small || word === pascal) {
+// 		return true;
+// 	}
+
+// 	return false;
+// };
+
+// console.log(detectCapitalUse('USaedasra'));
+
+// ///better time complexity//
+// var detectCapitalUse = function (word) {
+// 	debugger
+//     let allCap = /[^A-Z]/
+//     let allLow = /[^a-z]/
+//     let firstCap = /^[A-Z]/
+    
+    
+//     function check(string) {
+//         if(!allCap.test(string)) {
+//             return true
+//         } else if(!allLow.test(string)) {
+//             return true
+//         } else if ( firstCap.test(string) && !allLow.test(string.slice(1)) ) {
+//             return true
+//         } else return false
+//     }
+    
+//     return check(word) 
 }
 
-console.log(groupAnagrams(['eat', 'tea', 'tan', 'ate', 'nat', 'bat']));
 
 
 
-///520. Detect Capital////
-
-//better-space complexity//
-var detectCapitalUse = function (word) {
-	let captial = word.toUpperCase();
-	let small = word.toLowerCase();
-	let pascal = word[0].toUpperCase() + word.slice(1);
-
-	if (word === captial || word === small || word === pascal) {
-		return true;
-	}
-
-	return false;
-};
-
-console.log(detectCapitalUse('USaedasra'));
-
-///better time complexity//
-var detectCapitalUse = function (word) {
-	debugger
-    let allCap = /[^A-Z]/
-    let allLow = /[^a-z]/
-    let firstCap = /^[A-Z]/
-    
-    
-    function check(string) {
-        if(!allCap.test(string)) {
-            return true
-        } else if(!allLow.test(string)) {
-            return true
-        } else if ( firstCap.test(string) && !allLow.test(string.slice(1)) ) {
-            return true
-        } else return false
-    }
-    
-    return check(word) 
-};
 
 
