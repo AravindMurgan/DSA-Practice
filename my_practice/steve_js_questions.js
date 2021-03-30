@@ -209,31 +209,6 @@
 
 // console.log(obj[tea]);
 
-var detectCapitalUse = function (word) {
-	let captial = word.toUpperCase();
-	let small = word.toLowerCase();
-	let pascal = word[0].toUpperCase() + word.slice(1);
-
-	if (word === captial || word === small || word === pascal) {
-		return true;
-	}
-
-	return false;
-};
-
-console.log(detectCapitalUse('USaedasra'));
 
 
-var detectCapitalUse = function(word) {
-    let capitalCount = 0
-    for(let i=0; i<word.length; i++){
-        let char = word[i]
-        if(char ===char.toUpperCase()){
-            capitalCount+=1
-        }
-    }
-    return capitalCount===word.length || 
-        capitalCount===0 || 
-        word[0]===word[0].toUpperCase()&& capitalCount===1
-};
 

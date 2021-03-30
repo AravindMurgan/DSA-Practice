@@ -325,3 +325,45 @@ function groupAnagrams(strs) {
 }
 
 console.log(groupAnagrams(['eat', 'tea', 'tan', 'ate', 'nat', 'bat']));
+
+
+
+///520. Detect Capital////
+
+//better-space complexity//
+var detectCapitalUse = function (word) {
+	let captial = word.toUpperCase();
+	let small = word.toLowerCase();
+	let pascal = word[0].toUpperCase() + word.slice(1);
+
+	if (word === captial || word === small || word === pascal) {
+		return true;
+	}
+
+	return false;
+};
+
+console.log(detectCapitalUse('USaedasra'));
+
+///better time complexity//
+var detectCapitalUse = function (word) {
+	debugger
+    let allCap = /[^A-Z]/
+    let allLow = /[^a-z]/
+    let firstCap = /^[A-Z]/
+    
+    
+    function check(string) {
+        if(!allCap.test(string)) {
+            return true
+        } else if(!allLow.test(string)) {
+            return true
+        } else if ( firstCap.test(string) && !allLow.test(string.slice(1)) ) {
+            return true
+        } else return false
+    }
+    
+    return check(word) 
+};
+
+
