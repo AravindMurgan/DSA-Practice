@@ -179,33 +179,61 @@
 
 //group Anagrams///
 
-var groupAnagrams = function (strs) {
-	debugger;
-	let length = strs.length;
-	let hash = {};
-	let result = [];
-	for (let i = 0; i < length; i++) {
-		let str = strs[i];
-		let sorted = str
-			.split('')
-			.sort((a, b) => (a > b ? -1 : 1))
-			.join('');
+// var groupAnagrams = function (strs) {
+// 	debugger;
+// 	let length = strs.length;
+// 	let hash = {};
+// 	let result = [];
+// 	for (let i = 0; i < length; i++) {
+// 		let str = strs[i];
+// 		let sorted = str
+// 			.split('')
+// 			.sort((a, b) => (a > b ? -1 : 1))
+// 			.join('');
 
-		if (hash[sorted]) {
-			hash[sorted].push(str);
-		} else {
-			hash[sorted] = [str];
-		}
+// 		if (hash[sorted]) {
+// 			hash[sorted].push(str);
+// 		} else {
+// 			hash[sorted] = [str];
+// 		}
+// 	}
+// 	for (let i in hash) {
+// 		result.push(hash[i]);
+// 	}
+// 	return result;
+// };
+
+// groupAnagrams(['eat', 'tea', 'tan', 'ate', 'nat', 'bat']);
+
+// let obj = { tea: [1, 2, 3] };
+
+// console.log(obj[tea]);
+
+var detectCapitalUse = function (word) {
+	let captial = word.toUpperCase();
+	let small = word.toLowerCase();
+	let pascal = word[0].toUpperCase() + word.slice(1);
+
+	if (word === captial || word === small || word === pascal) {
+		return true;
 	}
-	for (let i in hash) {
-		result.push(hash[i]);
-	}
-	return result;
+
+	return false;
 };
 
+console.log(detectCapitalUse('USaedasra'));
 
-groupAnagrams(['eat', 'tea', 'tan', 'ate', 'nat', 'bat']);
 
-let obj = {tea: [1,2,3]};
+var detectCapitalUse = function(word) {
+    let capitalCount = 0
+    for(let i=0; i<word.length; i++){
+        let char = word[i]
+        if(char ===char.toUpperCase()){
+            capitalCount+=1
+        }
+    }
+    return capitalCount===word.length || 
+        capitalCount===0 || 
+        word[0]===word[0].toUpperCase()&& capitalCount===1
+};
 
-console.log(obj[tea]);
