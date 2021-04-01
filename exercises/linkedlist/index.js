@@ -14,9 +14,21 @@ class LinkedList {
         this.head = null
     }
 
+    inserFirst(data){
+        this.head = new Node(data, this.head);
+    }
+
 }
 
 const list = new LinkedList();
 list.head = new Node(10);
+
+list.insertFirst('hello im here');
+list.insertFirst('a');
+list.insertFirst('b');
+list.insertFirst('c');
+console.log(object);
+list.size();
+
 
 module.exports = { Node, LinkedList };
