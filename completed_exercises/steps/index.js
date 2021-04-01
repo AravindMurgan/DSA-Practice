@@ -61,22 +61,67 @@ function printingSteps(steps) {
 			} else {
 				stair += ' ';
 			}
-		
 		}
-    console.log(stair);
+		console.log(stair);
 	}
 }
 
 console.log(printingSteps(3));
 
-
 //recursive solution//
 
-function recursiveSteps(n){
-
-  //base-case//
-  
-
+function recursiveSteps(n) {
+	//base-case//
 }
 
-recursiveSteps(3)
+recursiveSteps(3);
+
+////climbing stairs///
+
+// function climbStairs(n) {
+// 	let countingFunc = function (stairsRemaining, savedResults) {
+// 		if (stairsRemaining < 0) {
+// 			return;
+// 		}
+
+// 		if (stairsRemaining === 0) {
+// 			return 1;
+// 		}
+
+// 		if (savedResults[stairsRemaining]) {
+// 			return savedResults[stairsRemaining];
+// 		}
+
+// 		savedResults[stairsRemaining] =
+// 			countingFunc(stairsRemaining - 1, savedResults) +
+// 			countingFunc(stairsRemaining - 2, savedResults);
+
+// 		return savedResults[stairsRemaining];
+// 	};
+// 	return countingFunc(n, {});
+// }
+
+let climbStairs = function(n) {
+	debugger
+    let countingFunc = function(stairsRemaining, savedResults) {
+      if (stairsRemaining < 0) {
+        return 0;
+      }
+
+      if (stairsRemaining === 0) {
+        return 1;
+      }
+
+      if (savedResults[stairsRemaining]) {
+        return savedResults[stairsRemaining];
+      }
+
+      savedResults[stairsRemaining] = countingFunc(stairsRemaining - 1, savedResults) + countingFunc(stairsRemaining - 2, savedResults);
+
+      return savedResults[stairsRemaining];
+    };
+
+    return countingFunc(n, {});
+};
+
+climbStairs(3)

@@ -209,6 +209,78 @@
 
 // console.log(obj[tea]);
 
+// let minCostClimbingStairs = function (cost) {
+// 	for (let i = 2; i < cost.length; i++) {
+// 		cost[i] = cost[i] + Math.min(cost[i - 2], cost[i - 1]);
+// 	}
+// 	return Math.min(cost[cost.length - 2], cost[cost.length - 1]);
+// };
 
+// minCostClimbingStairs([10, 15, 20]);
+
+////climbing stairs///
+
+// function climbStairs(n) {
+// 	let countingFunc = function (stairsRemaining, savedResults) {
+// 		if (stairsRemaining < 0) {
+// 			return;
+// 		}
+
+// 		if (stairsRemaining === 0) {
+// 			return 1;
+// 		}
+
+// 		if (savedResults[startsRemaining]) {
+// 			return savedResults[stairsRemaining];
+// 		}
+
+// 		savedResults[stairsRemaining] =
+// 			countingFunc(startsRemaining - 1, savedResults) +
+// 			countingFunc(stairsRemaining - 2, savedResults);
+
+//         return savedResults[stairsRemaining];
+// 	};
+//     return countingFunc(n,{});
+// }
+
+// console.log(climbStairs(3));
+
+// ///fib///
+// function fib(n) {
+// 	debugger;
+// 	const result = [0, 1];
+
+// 	for (let i = 2; i <= n; i++) {
+// 		const a = result[i - 1];
+// 		const b = result[i - 2];
+
+// 		return result.push(a + b);
+// 	}
+
+// 	return result[n];
+// }
+// fib(3);
+
+function lenLongestFibSubseq(A) {
+	debugger;
+	const map = {};
+	const N = A.length;
+
+	const dp = [...Array(N)].map((r) => Array(N).fill(2));
+
+	let max = 0;
+	for (let i = 0; i < N; i++) {
+		map[A[i]] = i;
+		for (let j = 0; j < i; j++) {
+			if (A[i] - A[j] < A[j] && A[i] - A[j] in map) {
+				dp[j][i] = Math.max(dp[j][i], 1 + dp[map[A[i] - A[j]]][j]);
+			}
+			max = Math.max(max, dp[j][i]);
+		}
+	}
+	return max === 2 ? 0 : max;
+}
+
+lenLongestFibSubseq([1, 2, 3, 4, 5, 6, 7, 8]);
 
 
