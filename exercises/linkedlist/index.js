@@ -28,7 +28,8 @@ list.insertFirst('a');
 list.insertFirst('b');
 list.insertFirst('c');
 console.log(object);
-list.size();
+
+console.log(list.size());
 
 
 module.exports = { Node, LinkedList };
