@@ -67,7 +67,7 @@ class LinkedList {
 
 		if (!this.head.next) {
 			this.head = null;
-			return
+			return;
 		}
 
 		let previous = this.head;
@@ -80,11 +80,31 @@ class LinkedList {
 
 		previous.next = null;
 	}
+
+	insertLast(data) {
+		const last = this.getLast();
+		console.log(this.head);
+		
+
+		if (last) {
+			last.next = new Node(data);
+			console.log(last);
+		} else {
+			this.head = new Node(data);
+		}
+		
+	}
+
+
+	getAt(){
+		
+	}
 }
 
 let list = new LinkedList();
 list.head = new Node(10);
 list.insertFirst('Hello');
 console.log(list.size());
+list.insertLast('Aravind')
 
 module.exports = { Node, LinkedList };
