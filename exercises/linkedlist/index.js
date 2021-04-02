@@ -59,6 +59,8 @@ class LinkedList {
 
 		this.head = node.next;
 	}
+
+	
 }
 
 let list = new LinkedList();
