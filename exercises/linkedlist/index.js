@@ -4,7 +4,8 @@
 
 class Node {
 	constructor(data, next = null) {
-		(this.data = data), (this.next = next);
+		this.data = data;
+		this.next = next;
 	}
 }
 
@@ -13,7 +14,7 @@ class LinkedList {
 		this.head = null;
 	}
 
-	inserFirst(data) {
+	insertFirst(data) {
 		this.head = new Node(data, this.head);
 	}
 
@@ -32,26 +33,39 @@ class LinkedList {
 	}
 
 	getLast() {
-
-		if(!this.head){
-			return null
+		if (!this.head) {
+			return null;
 		}
-
-		while(node){
-			if(!node.next){
-				return node
+		let node = this.head;
+		while (node) {
+			if (!node.next) {
+				return node;
 			}
 
-			node = node.next
+			node = node.next;
+		}
+	}
+
+	clear() {
+		this.head = null;
+	}
+
+	removeFirst() {
+		if (!this.head) {
+			return;
 		}
 
-		
+		let node = this.head;
 
-		 
+		this.head = node.next;
 	}
 }
 
-const list = new LinkedList();
+let list = new LinkedList();
 list.head = new Node(10);
+list.insertFirst('Hello');
+console.log(list.size());
+
+ 
 
 module.exports = { Node, LinkedList };
