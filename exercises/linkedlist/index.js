@@ -9,27 +9,31 @@ class Node {
 }
 
 class LinkedList {
-    
-    constructor(){
-        this.head = null
-    }
+	constructor() {
+		this.head = null;
+	}
 
-    inserFirst(data){
-        this.head = new Node(data, this.head);
-    }
+	inserFirst(data) {
+		this.head = new Node(data, this.head);
+	}
 
+	size() {
+		let counter = 0;
+		let node = this.head;
+
+		while (node) {
+			counter++;
+			node = node.next;
+		}
+		return counter;
+
+		getFirst(){
+			return this.head
+		}
+	}
 }
 
 const list = new LinkedList();
 list.head = new Node(10);
-
-list.insertFirst('hello im here');
-list.insertFirst('a');
-list.insertFirst('b');
-list.insertFirst('c');
-console.log(object);
-
-console.log(list.size());
-
 
 module.exports = { Node, LinkedList };
