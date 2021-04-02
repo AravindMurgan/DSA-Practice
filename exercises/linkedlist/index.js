@@ -3,7 +3,7 @@
 // See 'directions' document
 
 class Node {
-	constructor(data, next) {
+	constructor(data, next = null) {
 		(this.data = data), (this.next = next);
 	}
 }
@@ -29,6 +29,25 @@ class LinkedList {
 	}
 	getFirst() {
 		return this.head;
+	}
+
+	getLast() {
+
+		if(!this.head){
+			return null
+		}
+
+		while(node){
+			if(!node.next){
+				return node
+			}
+
+			node = node.next
+		}
+
+		
+
+		 
 	}
 }
 

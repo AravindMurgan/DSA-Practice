@@ -320,4 +320,19 @@ list.head = new Node(10);
 
 console.log(list.size());
 
+class Nodea {
+	constructor() {
+		this.head = null;
+	}
+
+	myMethod() {
+		if(!this.head){
+			console.log('it is null');
+		}
+	}
+}
+
+let nodes = new Nodea();
+nodes.myMethod();
+
 module.exports = { Node, LinkedList };
