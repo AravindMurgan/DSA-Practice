@@ -84,7 +84,6 @@ class LinkedList {
 	insertLast(data) {
 		const last = this.getLast();
 		console.log(this.head);
-		
 
 		if (last) {
 			last.next = new Node(data);
@@ -92,12 +91,16 @@ class LinkedList {
 		} else {
 			this.head = new Node(data);
 		}
-		
 	}
 
-
-	getAt(){
-		
+	getAt() {
+		if (!this.head) {
+			return;
+		}
+		let node = this.head;
+		while (node) {
+			console.log(node);
+		}
 	}
 }
 
@@ -105,6 +108,12 @@ let list = new LinkedList();
 list.head = new Node(10);
 list.insertFirst('Hello');
 console.log(list.size());
-list.insertLast('Aravind')
+list.insertLast('Aravind');
+list.getAt();
 
 module.exports = { Node, LinkedList };
+
+function aa(a) {
+	console.log(a);
+}
+aa('kkkk');
