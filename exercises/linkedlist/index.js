@@ -26,10 +26,9 @@ class LinkedList {
 			node = node.next;
 		}
 		return counter;
-
-		getFirst(){
-			return this.head
-		}
+	}
+	getFirst() {
+		return this.head;
 	}
 }
 
