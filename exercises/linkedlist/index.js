@@ -136,10 +136,13 @@ class LinkedList {
 			this.head = new Node(data);
 			return;
 		}
+		if (index === 0) {
+			this.head = new Node(data, this.head);
+		}
 
-		
-
-		
+		const previous = this.getAt(index - 1) || this.getLast();
+		const node = new Node(data, previous.next);
+		previous.next = node;
 	}
 }
 
@@ -148,7 +151,7 @@ list.head = new Node(10);
 list.insertFirst('Hello');
 console.log(list.size());
 list.insertLast('Aravind');
-list.getAt();
-list.removeAt(2);
+
+console.log(list.insertAt('Hai', 2));
 
 module.exports = { Node, LinkedList };
