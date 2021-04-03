@@ -93,14 +93,22 @@ class LinkedList {
 		}
 	}
 
-	getAt() {
-		if (!this.head) {
-			return;
-		}
+	getAt(index) {
+	
+		let counter = 0;
 		let node = this.head;
 		while (node) {
-			console.log(node);
+
+			if(index === counter){
+				return node;
+			}
+
+			counter ++;
+			node = node.next;
+			
 		}
+
+		return null
 	}
 }
 
