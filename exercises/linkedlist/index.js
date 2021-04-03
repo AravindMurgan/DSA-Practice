@@ -110,6 +110,8 @@ class LinkedList {
 
 		return null
 	}
+
+	
 }
 
 let list = new LinkedList();
