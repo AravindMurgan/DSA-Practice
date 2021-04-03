@@ -353,19 +353,19 @@
 //     let firstCap = /^[A-Z]/
     
     
-//     function check(string) {
-//         if(!allCap.test(string)) {
-//             return true
-//         } else if(!allLow.test(string)) {
-//             return true
-//         } else if ( firstCap.test(string) && !allLow.test(string.slice(1)) ) {
-//             return true
-//         } else return false
-//     }
+    function check(string) {
+        if(!allCap.test(string)) {
+            return true
+        } else if(!allLow.test(string)) {
+            return true
+        } else if ( firstCap.test(string) && !allLow.test(string.slice(1)) ) {
+            return true
+        } else return false
+        
+    }
     
-//     return check(word) 
-}
-
+   
+check('hello')
 
 
 

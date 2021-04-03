@@ -38,6 +38,7 @@ class LinkedList {
 		}
 		let node = this.head;
 		while (node) {
+			console.log(node);
 			if (!node.next) {
 				return node;
 			}
@@ -110,17 +111,35 @@ class LinkedList {
 
 	removeAt(index) {
 		let node = this.head;
+
 		if (!this.head) {
 			return;
 		}
 
-		if (index <= 1) {
-			node = node.next;
+		if (index === 0) {
+			this.head = this.head.next;
+			return;
 		}
 
-		while (node) {
-			console.log(node);
+		let previous = this.getAt(index - 1);
+		console.log(previous);
+
+		if (!previous || !previous.next) {
+			return;
 		}
+
+		previous.next = previous.next.next;
+	}
+
+	insertAt(data, index) {
+		if (!this.head) {
+			this.head = new Node(data);
+			return;
+		}
+
+		
+
+		
 	}
 }
 
@@ -130,11 +149,6 @@ list.insertFirst('Hello');
 console.log(list.size());
 list.insertLast('Aravind');
 list.getAt();
-list.removeAt(1);
+list.removeAt(2);
 
 module.exports = { Node, LinkedList };
-
-function aa(a) {
-	console.log(a);
-}
-aa('kkkk');
