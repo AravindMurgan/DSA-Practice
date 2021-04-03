@@ -94,24 +94,34 @@ class LinkedList {
 	}
 
 	getAt(index) {
-	
 		let counter = 0;
 		let node = this.head;
 		while (node) {
-
-			if(index === counter){
+			if (index === counter) {
 				return node;
 			}
 
-			counter ++;
+			counter++;
 			node = node.next;
-			
 		}
 
-		return null
+		return null;
 	}
 
-	
+	removeAt(index) {
+		let node = this.head;
+		if (!this.head) {
+			return;
+		}
+
+		if (index <= 1) {
+			node = node.next;
+		}
+
+		while (node) {
+			console.log(node);
+		}
+	}
 }
 
 let list = new LinkedList();
@@ -120,6 +130,7 @@ list.insertFirst('Hello');
 console.log(list.size());
 list.insertLast('Aravind');
 list.getAt();
+list.removeAt(1);
 
 module.exports = { Node, LinkedList };
 
