@@ -146,7 +146,9 @@ class LinkedList {
 		previous.next = node;
 	}
 
-	forEach() {}
+	forEach(node) {
+		
+	}
 }
 
 let list = new LinkedList();
