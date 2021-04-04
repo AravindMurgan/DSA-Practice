@@ -287,52 +287,23 @@
 // Implement classes Node and Linked Lists
 // See 'directions' document
 
-class Node {
-	constructor(data, next) {
-		(this.data = data), (this.next = next);
-	}
+//Iterators & Generators///
+
+let char = ['Ben Stokes','Jason Holder', 'MS Dhoni','Virat Kohli', 'AB Devillers' , 'Sam Curran','Pat Cummins', 'Jasprit Bumrah'];
+
+function* genny(){
+	yield char[0];
+	yield char[1];
+	yield char[2];
+	yield char[3];
+	yield char[4];
+	yield char[5];
+	yield char[6];
 }
-
-class LinkedList {
-	constructor() {
-		this.head = null;
-	}
-
-	insertFirst(data) {
-		this.head = new Node(data, this.head);
-	}
-
-	size() {
-		let counter = 0;
-		let node = this.head;
-
-		while (node) {
-			counter++;
-			node = node.next;
-		}
-
-		return counter;
-	}
-}
-
-const list = new LinkedList();
-list.head = new Node(10);
-
-console.log(list.size());
-
-class Nodea {
-	constructor() {
-		this.head = null;
-	}
-
-	myMethod() {
-		if(!this.head){
-			console.log('it is null');
-		}
-	}
-}
-
-let nodes = new Nodea();
-nodes.myMethod();
-
-module.exports = { Node, LinkedList };
+let iter = genny();
+console.log(iter.next());
+console.log(iter.next());
+console.log(iter.next());
+console.log(iter.next());
+console.log(iter.next());
+console.log(iter.next());

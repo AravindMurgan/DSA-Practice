@@ -97,6 +97,7 @@ class LinkedList {
 	getAt(index) {
 		let counter = 0;
 		let node = this.head;
+
 		while (node) {
 			if (index === counter) {
 				return node;
@@ -145,9 +146,7 @@ class LinkedList {
 		previous.next = node;
 	}
 
-	forEach(){
-		
-	}
+	forEach() {}
 }
 
 let list = new LinkedList();
@@ -155,7 +154,6 @@ list.head = new Node(10);
 list.insertFirst('Hello');
 console.log(list.size());
 list.insertLast('Aravind');
-
 console.log(list.insertAt('Hai', 2));
 
 module.exports = { Node, LinkedList };
