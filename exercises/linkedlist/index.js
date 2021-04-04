@@ -146,16 +146,34 @@ class LinkedList {
 		previous.next = node;
 	}
 
-	forEach(node) {
-		
+	forEach(fn) {
+		let node = this.head;
+		let counter = 0;
+		while (node) {
+			fn(node, counter);
+			node = node.next;
+			counter++;
+		}
+	}
+
+	*[Symbol.iterator]() {
+		let node = this.head;
+		while (node) {
+			yield node;
+			node = node.next;
+		}
 	}
 }
 
 let list = new LinkedList();
-list.head = new Node(10);
-list.insertFirst('Hello');
-console.log(list.size());
-list.insertLast('Aravind');
+list.insertLast(1);
+list.insertLast(2);
+list.insertLast(3);
+list.insertLast(4);
+list.forEach((node) => {
+	node.data += 10;
+});
+console.log(list.getAt(0));
 console.log(list.insertAt('Hai', 2));
 
 module.exports = { Node, LinkedList };
