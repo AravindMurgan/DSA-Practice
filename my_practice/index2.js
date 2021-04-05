@@ -1,18 +1,30 @@
-// // --- Directions
-// // Given an integer, return an integer that is the reverse
-// // ordering of numbers.
-// // --- Examples
-// //   reverseInt(15) === 51
-// //   reverseInt(981) === 189
-// //   reverseInt(500) === 5
-// //   reverseInt(-15) === -51
-// //   reverseInt(-90) === -9
+// --- Directions
+// Return the 'middle' node of a linked list.
+// If the list has an even number of elements, return
+// the node at the end of the first half of the list.
+// *Do not* use a counter variable, *do not* retrieve
+// the size of the list, and only iterate
+// through the list one time.
+// --- Example
+//   const l = new LinkedList();
+//   l.insertLast('a')
+//   l.insertLast('b')
+//   l.insertLast('c')
+//   midpoint(l); // returns { data: 'b' }
 
-console.log( reverseInt(-500));
-function reverseInt(num){
+function midpoint(list) {
+    debugger;
+    let slow = list.getFirst();
+    let fast = list.getFirst();
 
-    const reversed = num.toString().split('').reverse().join('');
-    parseInt(reversed);
-   
-   return parseInt(reversed) * Math.sign(num)
+    while(fast.next && fast.next.next){
+        slow = list.next;
+        fast = list.next.next
+    }
+
+    return slow
+
+
 }
+
+module.exports = midpoint;
