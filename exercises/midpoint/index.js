@@ -14,12 +14,6 @@
 
 function midpoint(list) {
 
-    let slow = list.head;
-    let fast = list.head.next;
-
-    while(list){
-      
-    }
 
 }
 
