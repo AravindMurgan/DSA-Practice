@@ -38,6 +38,7 @@ class LinkedList {
 			return null;
 		}
 		let node = this.head;
+		debugger
 		while (node) {
 			console.log(node);
 			if (!node.next) {
@@ -74,7 +75,7 @@ class LinkedList {
 
 		let previous = this.head;
 		let node = this.head.next;
-		debugger;
+		
 		while (node.next) {
 			previous = node;
 			node = node.next;
