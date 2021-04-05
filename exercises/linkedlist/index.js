@@ -36,7 +36,7 @@ class LinkedList {
 	}
 
 	getLast() {
-		debugger
+		
 		if (!this.head) {
 			return null;
 		}
@@ -90,11 +90,9 @@ class LinkedList {
 
 	insertLast(data) {
 		const last = this.getLast();
-		console.log(this.head);
 
 		if (last) {
 			last.next = new Node(data);
-			console.log(last);
 		} else {
 			this.head = new Node(data);
 		}
