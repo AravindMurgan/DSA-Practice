@@ -30,17 +30,21 @@ class LinkedList {
 		return counter;
 	}
 	getFirst() {
+
 		return this.head;
+		;
 	}
 
 	getLast() {
+		debugger
 		if (!this.head) {
 			return null;
 		}
 		let node = this.head;
-		debugger
+		
+		
 		while (node) {
-			console.log(node);
+			
 			if (!node.next) {
 				return node;
 			}
@@ -168,16 +172,14 @@ class LinkedList {
 }
 
 let list = new LinkedList();
-list.insertLast(1);
-list.insertLast(2);
-list.insertLast(3);
-list.insertLast(4);
-list.size();
-list.removeLast()
-list.forEach((node) => {
-	node.data += 10;
-});
-console.log(list.getAt(0));
-console.log(list.insertAt('Hai', 2));
+list.insertFirst(1);
+list.insertFirst(2);
+list.insertFirst(3);
+list.insertFirst(4);
+console.log(list.size());
+
+console.log(list.getLast());
+
+
 
 module.exports = { Node, LinkedList };
