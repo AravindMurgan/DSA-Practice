@@ -19,7 +19,7 @@ class LinkedList {
 	}
 
 	size() {
-		debugger;
+	
 		let counter = 0;
 		let node = this.head;
 
@@ -74,7 +74,7 @@ class LinkedList {
 
 		let previous = this.head;
 		let node = this.head.next;
-
+		debugger;
 		while (node.next) {
 			previous = node;
 			node = node.next;
@@ -172,6 +172,7 @@ list.insertLast(2);
 list.insertLast(3);
 list.insertLast(4);
 list.size();
+list.removeLast()
 list.forEach((node) => {
 	node.data += 10;
 });
