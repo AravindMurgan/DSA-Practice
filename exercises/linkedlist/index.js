@@ -127,7 +127,6 @@ class LinkedList {
 		}
 
 		let previous = this.getAt(index - 1);
-		console.log(previous);
 
 		if (!previous || !previous.next) {
 			return;
