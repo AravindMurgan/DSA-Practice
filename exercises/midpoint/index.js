@@ -13,7 +13,7 @@
 //   midpoint(l); // returns { data: 'b' }
 
 function midpoint(list) {
-    debugger;
+   
     let slow = list.getFirst();
     let fast = list.getFirst();
 
@@ -27,4 +27,6 @@ function midpoint(list) {
 
 }
 
+
+midpoint('hello')
 module.exports = midpoint;
