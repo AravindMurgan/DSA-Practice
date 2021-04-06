@@ -888,15 +888,45 @@ class Queue {
 // console.log(wve);
 
 
-///LeetCode Queue problem///
-function RecentCounter () {
-    this.requests = [];
-};
+// ///LeetCode Queue problem///
+// function RecentCounter () {
+//     this.requests = [];
+// };
 
-RecentCounter.prototype.ping = function(t) {
-    this.requests.push(t);
-    this.requests = this.requests.filter(x => x >= t - 3000);
-    return this.requests.length;
-};
+// RecentCounter.prototype.ping = function(t) {
+//     this.requests.push(t);
+//     this.requests = this.requests.filter(x => x >= t - 3000);
+//     return this.requests.length;
+// };
 
- console.log(ping.call(10)); 
+//  console.log(ping.call(10)); 
+
+/////LinkedList -- Midpoint ////
+// --- Directions
+// Return the 'middle' node of a linked list.
+// If the list has an even number of elements, return
+// the node at the end of the first half of the list.
+// *Do not* use a counter variable, *do not* retrieve
+// the size of the list, and only iterate
+// through the list one time.
+// --- Example
+//   const l = new LinkedList();
+//   l.insertLast('a')
+//   l.insertLast('b')
+//   l.insertLast('c')
+//   midpoint(l); // returns { data: 'b' }
+
+// function midpoint(list) {
+// 	let slow = list.getFirst();
+// 	let fast = list.getFirst();
+
+// 	while (fast.next && fast.next.next) {
+// 		slow = slow.next;
+// 		fast = fast.next.next;
+// 	}
+
+// 	return slow;
+// }
+
+// module.exports = midpoint;
+
