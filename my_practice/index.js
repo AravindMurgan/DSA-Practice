@@ -869,7 +869,6 @@ class Queue {
 
 // function weave(sourceOne, sourceTwo) {
 // 	const q = new Queue();
-	
 
 // 	while (sourceOne.peek() || sourceTwo.peek()) {
 // 		if (sourceOne.peek()) {
@@ -887,7 +886,6 @@ class Queue {
 // let wve = weave([1, 2, 3], [4, 5, 6]);
 // console.log(wve);
 
-
 // ///LeetCode Queue problem///
 // function RecentCounter () {
 //     this.requests = [];
@@ -899,7 +897,7 @@ class Queue {
 //     return this.requests.length;
 // };
 
-//  console.log(ping.call(10)); 
+//  console.log(ping.call(10));
 
 /////LinkedList -- Midpoint ////
 // --- Directions
@@ -939,3 +937,11 @@ class Queue {
 //     return slow
 // };
 
+function myLoop() {
+	debugger;
+	let n = 5;
+	while (n > 0) {
+		return n;
+	}
+}
+myLoop();
