@@ -11,26 +11,22 @@
 // function that gets called with each element in the tree
 
 class Node {
-    debugger;
-    constructor(data,){
-        this.data = data;
-        this.children  = [];
-        console.log(this.children);
+	debugger;
+	constructor(data) {
+		this.data = data;
+		this.children = [];
+		console.log(this.children);
+	}
 
-    }
+	add(data) {
+		return this.children.push(new Node(data));
+	}
 
-    add(data){
-       return this.children.push(new Node(data))
-    }
-
-    remove(data){
-
-        this.children.filter((node)=>{
-            return node.data !== data
-        })
-
-    }
-
+	remove(data) {
+		this.children.filter((node) => {
+			return node.data !== data;
+		});
+	}
 }
 
 const newNode = new Node();
@@ -38,15 +34,19 @@ const newNode = new Node();
 console.log(newNode.add(456));
 
 class Tree {
+	constructor() {
+		this.root = null;
+	}
 
-    constructor(){
-        this.root = null;
-    }
+	traverseBF(fn) {
+		const arr = [this.root];
 
-    traverseBF(fn){
-        const arr = [this.root];
-    }
-
+		while (arr.length) {
+			const node = arr.shift();
+            arr.push(...node.children);
+			fn(node);
+		}
+	}
 }
 
 module.exports = { Tree, Node };
