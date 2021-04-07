@@ -23,5 +23,5 @@ function midpoint(list) {
 
 	return slow;
 }
-
+midpoint('hello')
 module.exports = midpoint;
