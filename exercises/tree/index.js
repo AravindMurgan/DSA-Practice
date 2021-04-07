@@ -11,23 +11,31 @@
 // function that gets called with each element in the tree
 
 class Node {
-
+    debugger;
     constructor(data,){
         this.data = data;
         this.children  = [];
+        console.log(this.children);
 
     }
 
     add(data){
-        this.children.push(new Node(data))
+       return this.children.push(new Node(data))
     }
 
     remove(data){
 
-        while()
+        this.children.filter((node)=>{
+            return node.data !== data
+        })
+
     }
 
 }
+
+const newNode = new Node();
+
+console.log(newNode.add(456));
 
 class Tree {
 
