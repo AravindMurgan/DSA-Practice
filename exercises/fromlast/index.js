@@ -32,6 +32,6 @@ function fromLast(list, n) {
 
 }
 
-fromLast(1,3);
+console.log(fromLast(list, 2));
 
 module.exports = fromLast;
