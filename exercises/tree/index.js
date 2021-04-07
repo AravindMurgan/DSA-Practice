@@ -43,6 +43,10 @@ class Tree {
         this.root = null;
     }
 
+    traverseBF(fn){
+        const arr = [this.root];
+    }
+
 }
 
 module.exports = { Tree, Node };
