@@ -11,7 +11,7 @@
 // function that gets called with each element in the tree
 
 class Node {
-	debugger;
+	
 	constructor(data) {
 		this.data = data;
 		this.children = [];
@@ -19,6 +19,7 @@ class Node {
 	}
 
 	add(data) {
+
 		return this.children.push(new Node(data));
 	}
 
@@ -31,8 +32,6 @@ class Node {
 
 const newNode = new Node();
 
-console.log(newNode.add(456));
-
 class Tree {
 	constructor() {
 		this.root = null;
@@ -44,6 +43,7 @@ class Tree {
 		while (arr.length) {
 			const node = arr.shift();
             arr.push(...node.children);
+            debugger
 			fn(node);
 		}
 	}
