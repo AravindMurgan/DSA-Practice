@@ -11,15 +11,12 @@
 // function that gets called with each element in the tree
 
 class Node {
-	
 	constructor(data) {
 		this.data = data;
 		this.children = [];
-		console.log(this.children);
 	}
 
 	add(data) {
-
 		return this.children.push(new Node(data));
 	}
 
@@ -42,21 +39,21 @@ class Tree {
 
 		while (arr.length) {
 			const node = arr.shift();
-            arr.push(...node.children);
-            debugger
+			arr.push(...node.children);
+			debugger;
 			fn(node);
 		}
 	}
 
-    traverseDF(fn){
-        const arr = [this.root];
+	traverseDF(fn) {
+		const arr = [this.root];
 
-        while(arr.length){
-            const node = arr.shift();
-            arr.unshift(...node.children);
-            fn(node);
-        }
-    }
+		while (arr.length) {
+			const node = arr.shift();
+			arr.unshift(...node.children);
+			fn(node);
+		}
+	}
 }
 
 module.exports = { Tree, Node };
