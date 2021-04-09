@@ -11,10 +11,17 @@
 // // 4       5
 // // Answer: [1, 3, 2]
 
-// function levelWidth(root) {
-
-
-}
+// function levelWidth(root) {}
 
 // module.exports = levelWidth;
 
+
+function myFunc(){
+
+    let counter = [0];
+
+    counter.push(1);
+    console.log(counter);
+
+}
+myFunc()
