@@ -40,7 +40,7 @@ class Tree {
 		while (arr.length) {
 			const node = arr.shift();
 			arr.push(...node.children);
-			debugger;
+			
 			fn(node);
 		}
 	}
