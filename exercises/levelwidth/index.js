@@ -10,6 +10,22 @@
 // // |       |
 // // 4       5
 // // Answer: [1, 3, 2]
+class Node {
+	constructor(data) {
+		this.data = data;
+		this.children = [];
+	}
+
+	add(data) {
+		return this.children.push(new Node(data));
+	}
+
+	remove(data) {
+		this.children.filter((node) => {
+			return node.data !== data;
+		});
+	}
+}
 
 function levelWidth(root) {
 
@@ -32,6 +48,14 @@ function levelWidth(root) {
 
 
 }
+
+const root = new Node(0);
+debugger
+root.add(1);
+root.add(2);
+root.add(3);
+root.children[0].add(4);
+root.children[2].add(5);
 
 module.exports = levelWidth;
 
