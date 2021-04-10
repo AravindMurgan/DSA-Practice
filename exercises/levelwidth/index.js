@@ -14,7 +14,7 @@ class Node {
 	constructor(data) {
 		this.data = data;
 		this.children = [];
-	}
+    }
 
 	add(data) {
 		return this.children.push(new Node(data));
