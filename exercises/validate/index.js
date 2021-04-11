@@ -31,7 +31,7 @@ class Node {
   }
 
   function validate(node, min = null, max = null) {
-      
+
     if( max !== null && node.data > max ){
         return false
     }
@@ -59,7 +59,8 @@ class Node {
   n.insert(0);
   n.insert(20);
 
-  validate(n)
+
+  console.log(  validate(n));
 
 
 module.exports = validate;
