@@ -31,6 +31,7 @@ class Node {
   }
 
   function validate(node, min = null, max = null) {
+      
     if( max !== null && node.data > max ){
         return false
     }
