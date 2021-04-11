@@ -51,4 +51,15 @@ class Node {
   
 }
 
+const node = new Node(10);
+  node.insert(5);
+  node.insert(15);
+  node.insert(20);
+  node.insert(0);
+  node.insert(-5);
+  node.insert(3);
+
+  node.contains(3);
+  console.log(object);
+
 module.exports = Node;
