@@ -2,35 +2,32 @@
 // Implement bubbleSort, selectionSort, and mergeSort
 
 function bubbleSort(arr) {
-
 	let length = arr.length;
 
-	// for (let i = 0; i < length; i++) {
-	// 	for (let j = 0; j < length - i - 1; j++) {
-	// 		if (arr[j] > arr[j + 1]) {
-	// 			const less = arr[j + 1];
+	for (let i = 0; i < length; i++) {
+		for (let j = 0; j < length - i - 1; j++) {
+			if (arr[j] > arr[j + 1]) {
+				const less = arr[j + 1];
 
-	// 			arr[j + 1] = arr[j];
-	// 			arr[j] = less;
-	// 		}
+				arr[j + 1] = arr[j];
+				arr[j] = less;
+			}
+		}
+	}
+
+	// for (let i = 0; i < length - 1; i++) {
+	// 	if (arr[i] > arr[i + 1]) {
+	// 		const less = arr[i + 1];
+
+	// 		arr[i + 1] = arr[i];
+	// 		arr[i] = less;
 	// 	}
 	// }
-
-    for(let i =0; i< length - 1; i++){
-        if(arr[i] > arr[i+1] ){
-            const less = arr[i+1];
-
-            arr[i+1] = arr[i];
-            arr[i] = less
-        }
-    }
-
 
 	return arr;
 }
 
-bubbleSort([-60,95,0,20,10]);
-
+console.log(bubbleSort([-40, +100, -124, -40, 0, +21, 7, -21, -100, 500]));
 
 // let i =0;
 // while( i < nums.length){
