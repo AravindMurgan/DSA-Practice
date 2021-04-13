@@ -47,7 +47,7 @@ function selectionSort(arr) {
 	for(let i = 0 ; i < arr.length ; i++){
 		let indexofMin = i;
 
-		for(let j = i+1; j<arr.length ; i++ ){
+		for(let j = i+1; j<arr.length ; j++ ){
 			if(arr[j] < arr[indexofMin] ){
 				indexofMin = j;
 			}
@@ -62,6 +62,8 @@ function selectionSort(arr) {
 	}
 
 }
+
+selectionSort([9,4,6,0,1,3]);
 
 function mergeSort(arr) {}
 
