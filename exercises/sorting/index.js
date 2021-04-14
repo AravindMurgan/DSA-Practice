@@ -4,19 +4,20 @@
 function bubbleSort(arr) {
 	let length = arr.length;
 
-	for (let i = 0; i < length - 1; i++) {
-		if (arr[i] > arr[i + 1]) {
-			const less = arr[i + 1];
-
-			arr[i + 1] = arr[i];
-			arr[i] = less;
+	for (let i = 0; i < arr.length; i++) {
+		for (let j = 0; j < (arr.length - i - 1); j++) {
+		  if (arr[j] > arr[j+1]) {
+			const lesser = arr[j+1];
+			arr[j+1] = arr[j];
+			arr[j] = lesser;
+		  }
 		}
-	}
+	  }
 
 	return arr;
 }
 
-console.log(bubbleSort([-40, +100, -124, -40, 0, +21, 7, -21, -100, 500]));
+bubbleSort([9,4,6,0,1,3])
 
 
 function selectionSort(arr) {
