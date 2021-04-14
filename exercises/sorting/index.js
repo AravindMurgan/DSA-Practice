@@ -2,7 +2,6 @@
 // Implement bubbleSort, selectionSort, and mergeSort
 
 function bubbleSort(arr) {
-	let length = arr.length;
 
 	for (let i = 0; i < arr.length; i++) {
 		for (let j = 0; j < arr.length - i - 1; j++) {
@@ -17,7 +16,6 @@ function bubbleSort(arr) {
 	return arr;
 }
 
-bubbleSort([9, 4, 6, 0, 1, 3]);
 
 function selectionSort(arr) {
 	for (let i = 0; i < arr.length; i++) {
@@ -35,11 +33,11 @@ function selectionSort(arr) {
 			arr[i] = lesser;
 		}
 	}
+	
 }
 
-selectionSort([9, 4, 6, 0, 1, 3]);
 
-// function mergeSort(arr) {}
+function mergeSort(arr) {}
 
 function merge(left, right) {
 	const results = [];
