@@ -47,6 +47,26 @@ selectionSort([9,4,6,0,1,3]);
 
 // function mergeSort(arr) {}
 
-// function merge(left, right) {}
+function merge(left, right) {
+
+
+	const results = [];
+
+	while(left && right){
+		if(left[0] < right[0]){
+			const leftElement = left.shift();
+			results.push(leftElement);
+		}else{
+			const rightElement = right.shift();
+			results.push(rightElement)
+		}
+	}
+
+	results.push(left,right);
+
+}
+
+
+
 
 module.exports = { bubbleSort, selectionSort, mergeSort, merge };
