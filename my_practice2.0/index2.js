@@ -88,12 +88,71 @@ log(reverseString('Hello'))
 */
 
 /*2.Palindrome*/
-
+/*
 function palindrome(str){
   let reversed = str.split('').reverse('').join('');
   
+  if(str === reversed){
+    return true
+  }else{
+    return false
+  }
   
 }
+
+log(palindrome('acca'))
+
+*/
+
+/*2.Interger*/
+
+function myFunc(num){
+  
+  let reverse = num.toString().split('').reverse().join('');
+  let reversed = reversed.parseInt();
+  return reversed;
+  
+}
+
+myFunc(123545)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
   
   
   
