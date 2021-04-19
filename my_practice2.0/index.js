@@ -6,3 +6,4 @@ function reverseString(str){
 }
 
 log(reverseString('Hello'))
+
