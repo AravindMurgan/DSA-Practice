@@ -33,7 +33,7 @@ function selectionSort(arr) {
 			arr[i] = lesser;
 		}
 	}
-	
+	return arr;
 }
 
 
