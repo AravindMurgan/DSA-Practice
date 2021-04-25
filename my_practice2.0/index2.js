@@ -106,7 +106,7 @@ log(palindrome('acca'))
 
 /*2.Interger*/
 
-function myFunc(num){
+/*function myFunc(num){
   
   let reverse = num.toString().split('').reverse().join('');
   let reversed = reversed.parseInt();
@@ -114,9 +114,17 @@ function myFunc(num){
   
 }
 
-myFunc(123545)
+myFunc(123545)*/
 
+/*3.reversewithloops 25/4/2021 */
+function reverseString(str){
+  	let reversed=''
+  for(let char of str){
+    reversed = char+reversed
+  }
+}
 
+reverseString('hello')
 
 
 
