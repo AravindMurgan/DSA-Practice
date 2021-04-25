@@ -117,7 +117,8 @@ log(palindrome('acca'))
 myFunc(123545)*/
 
 /*3.reversewithloops 25/4/2021 */
-function reverseString(str){
+
+/*function reverseString(str){
   	let reversed=''
   for(let char of str){
     reversed = char+reversed
@@ -125,8 +126,48 @@ function reverseString(str){
 }
 
 reverseString('hello')
+*/
+
+/*4.ReverseNumberWithLoops 25/4/2021 */
+
+/*function reverseInt(number){
+  let str = number.toString();
+  let reversed=''
+  for(let num of str){
+    reversed=num+reversed
+  }
+  return parseInt(reversed)
+  
+}
+
+console.log(reverseInt(12345))*/
+
+/*5.Max 25/4/2021 */
+function MaxChar(str){
+  const charMap={};
+  const max=0;
+  const maxChar='';
+  
+  for(let char of str){
+    if(!charMap[char]){
+      charMap[char]=1;
+    }else{
+      charMap[char]++;
+
+    }
+  }
+  
+  for(let char in charMap){
+    if(charMap[char] > max ){
+      max=charMap[char];
+      maxChar=char;
+    }
+  }
+  return maxChar
+}
 
 
+MaxChar('heloooo')
 
 
 
