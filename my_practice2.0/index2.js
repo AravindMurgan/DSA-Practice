@@ -54,7 +54,6 @@ const sen = a('aasdasd');
 log(sen)
 */
 
-
 ///////weird question////
 /*
 var log = console.log;
@@ -143,10 +142,10 @@ reverseString('hello')
 console.log(reverseInt(12345))*/
 
 /*5.Max 25/4/2021 */
-function MaxChar(str){
+/*function MaxChar(str){
   const charMap={};
-  const max=0;
-  const maxChar='';
+  let max=0;
+  let maxChar='';
   
   for(let char of str){
     if(!charMap[char]){
@@ -165,129 +164,51 @@ function MaxChar(str){
   }
   return maxChar
 }
+console.log(MaxChar('heloooo'))
+*/
+/*6.Alternate Characters 25/4/2021 */
 
-
-MaxChar('heloooo')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* i/p: AAA => o/p: 3 Deletions i/p: ABAB => o/p: 0 Deletions   */
+/*
+function alternateChar(str){
+  	let deleteCount=0;
+ 	for(let i=0;i<str.length;i++){
+      if(str[i]===str[i+1]){
+        deleteCount++
+      }
+      
+    }
+  return deleteCount
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
+
+console.log(alternateChar('BBB'))
+*/
+
+/*7.Sherlock and the valid string 25/4/2021 */
+
+function isValid(s) {
+  debugger
+	const cMap = {};
+	for (let c of s) {
+		cMap[c] ? cMap[c]++ : (cMap[c] = 1);
+	}
+	const freqs = new Set(Object.values(cMap));
+	if (freqs.size === 1) return 'YES';
+	if (freqs.size === 2) {
+		const max = Math.max(...freqs);
+		const min = Math.min(...freqs);
+		let maxCt = 0;
+		let minCt = 0;
+		for (let c in cMap) {
+			if (cMap[c] === max) maxCt++;
+			if (cMap[c] === min) minCt++;
+		}
+		if ((minCt === 1 && min === 1) || (maxCt === 1 && max === min + 1))
+			return 'YES';
+	}
+	return 'NO';
+}
+
+
+isValid('ABCC');
