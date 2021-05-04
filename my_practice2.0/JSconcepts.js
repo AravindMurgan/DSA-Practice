@@ -62,6 +62,66 @@
 
 // const memoizeSquare = Memoization();
 
+/* 4/5/2021 this-keyword */
+/* Implicit binding */
+/*
+const person = {
+	name:'Jhon',
+  sayMyName ( ) {
+    console.log(`${name}`)
+  }
+}
+
+console.log(person.sayMyName())
+*/
+
+/* Explicit Binding */
+/*
+const person2 = {
+  name:'Jhon Doe',
+}
+ function sayMyName(hobby1,hobby2  ){
+    console.log(`My Name is ${this.name} and my hobby is ${hobby1} and ${hobby2} `)
+  }
+
+
+sayMyName.apply(person2,['Cricket','Football'])
+
+*/
+
+/*New Binding */
+
+function Person(name){
+  /* this = {} */
+  this.name=name;
+}
+
+const p1 = new Person('Jhon Doe');
+const p2 = new Person('Aravind');
+const p3 = new Person('Vijay');
+console.log(p2.name)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
