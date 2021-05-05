@@ -165,6 +165,7 @@ jhondoe.getMyName()
 
 /* ES6 - Class Methods   */
 
+/*
 class Calculator{
   constructor(){
     this.value=0;
@@ -197,8 +198,26 @@ const s = new ScientificCalculator();
 
 s.add(10).sub(5).square().print()
 
+*/
 
 
+const debounce = (fn,delay)=>{
+	let timeoutID;
+  return function(...args){
+  
+  if(timeoutID){
+  	clearTimeout(timeoutID);
+  }
+  
+   timeoutID = setTimeout(()=>{
+  fn(...args);
+  },delay)
+  
+  }
+}
+
+
+document.getElementById('myid').addEventListener('click', debounce((e)=>{console.log('Clicked')},2000) )
 
 
 
