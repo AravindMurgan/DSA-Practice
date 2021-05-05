@@ -90,16 +90,145 @@ sayMyName.apply(person2,['Cricket','Football'])
 */
 
 /*New Binding */
-
+ /* this = {} */
+/*
 function Person(name){
-  /* this = {} */
+ 
   this.name=name;
 }
+
 
 const p1 = new Person('Jhon Doe');
 const p2 = new Person('Aravind');
 const p3 = new Person('Vijay');
 console.log(p2.name)
+*/
+/*
+const person = {
+  firstName:'Jhon',
+  lastName:'Doe',
+  
+  sayMyName(){
+  const fullName = ()=>{
+    return ` ${this.firstName} ${this.lastName} `
+  }
+	console.log(`FullName is ${fullName()} `)
+  }
+}
+
+person.sayMyName()
+ */
+
+/*Arrow Function */
+/*
+const person = {
+  name:'Jhon Doe',
+  hobbies:['Cricket','Football'],
+  printBio(){
+    const printHobbies = ( ) => {
+      return ` ${this.hobbies[0]} and ${this.hobbies[1]}  `
+    }
+    console.log(`My Name is ${this.name} `)
+    console.log(`I like ${printHobbies()}  `)
+  }
+}
+person.printBio()
+*/
+
+/*Prototype */
+/*
+function Person(name){
+  this.name = name
+}
+
+Person.prototype.getMyName = function() {
+  console.log(`My Name is  ${this.name} `)
+}
+
+Person.prototype.food = function(food){
+  console.log(`Im eating ${food} `)
+}
+
+Person.prototype.sleep = function(){
+  console.log(`Im Sleeping`)
+}
+
+const jhondoe = new Person('Jhon Doe');
+
+console.log(Person.prototype )
+
+jhondoe.getMyName()
+     
+ */
+
+/*5/5/2021  JS-Concepts  **************************************/
+
+
+
+
+
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
