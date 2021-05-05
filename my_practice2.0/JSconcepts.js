@@ -189,12 +189,13 @@ class Calculator{
 class ScientificCalculator extends Calculator {
   	square(){
       this.value *= this.value
+      return this
     }
-}
+} 
 
 const s = new ScientificCalculator();
 
-s.add(10).sub(5).print().square()
+s.add(10).sub(5).square().print()
 
 
 
