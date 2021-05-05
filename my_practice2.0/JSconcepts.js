@@ -200,8 +200,18 @@ s.add(10).sub(5).square().print()
 
 */
 
+const now = new Date().getTime();
+const last =0;
+const delay= 5000;
+
+if(now-last > delay){
+  console.log(true);
+}else{
+  console.log(false);
+}
 
 const debounce = (fn,delay)=>{
+
 	let timeoutID;
   return function(...args){
   
@@ -213,7 +223,7 @@ const debounce = (fn,delay)=>{
   fn(...args);
   },delay)
   
-  }
+  } 
 }
 
 
