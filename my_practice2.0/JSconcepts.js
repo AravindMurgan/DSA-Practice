@@ -200,6 +200,8 @@ s.add(10).sub(5).square().print()
 
 */
 
+/* De Bounce */
+/*
 const now = new Date().getTime();
 const last =0;
 const delay= 5000;
@@ -228,6 +230,85 @@ const debounce = (fn,delay)=>{
 
 
 document.getElementById('myid').addEventListener('click', debounce((e)=>{console.log('Clicked')},2000) )
+*/
+
+/* Callbacks ******************/
+/*
+function greet(name){
+  console.log(`Vanakam ${name} `)
+}
+
+function greetAravind(greetFn){
+  const name = 'Aravind';
+  greetFn(name)
+} 
+
+greetAravind(greet)
+*/
+
+/* Promise All */
+/*
+let datafile1 = fetch('https://jsonplaceholder.typicode.com/users');
+let datafile2 = fetch('https://jsonplaceholder.typicode.com/posts');
+
+
+Promise.all([datafile1,datafile2])
+.then(res => process(res[0].json()) )
+.catch(err=>{
+  console.log(err)
+})
+
+function process(promise){
+  promise.then(data => console.log(data))
+}
+*/
+
+/*import React, { useEffect, useState } from "react";
+
+function FetchData() {
+  const [state, setState] = useState({
+    data1: [],
+    data2: []
+  });
+
+  let datafile1 = fetch("https://jsonplaceholder.typicode.com/users");
+  let datafile2 = fetch("https://jsonplaceholder.typicode.com/posts");
+
+  useEffect(() => {
+    Promise.all([datafile1, datafile2])
+      .then((res) => process1(res[0].json()))
+      .catch((err) => console.log(err));
+
+    function process1(res) {
+      res.then((data) =>
+        setState({
+          ...state,
+          data1: data
+        })
+      );
+    }
+  
+  }, []);
+
+  console.log(state.data1);
+  const dummy = state.data1.map((feed) => <p key={feed.id} >
+    {feed.name}
+  </p>);
+
+  return (
+    <div>
+      <h1>Promise All</h1>
+      {dummy}
+    </div>
+  );
+}
+
+export default FetchData;
+*/
+
+
+
+
 
 
 
