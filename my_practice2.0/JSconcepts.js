@@ -306,6 +306,28 @@ function FetchData() {
 export default FetchData;
 */
 
+/* JS Concepts - Revision - 8/5/2021 */
+
+/*Memoization*/
+
+function square(num){
+  return num * num
+}
+
+function Memoization(num){
+  let cache = {};
+	
+  if(num in cache){
+      return cache[num]
+    }else{
+      const result = square(num);
+      cache[num] = result
+       return result
+    }
+
+}
+const answer = Memoization(95862626546);
+console.log(answer)
 
 
 
