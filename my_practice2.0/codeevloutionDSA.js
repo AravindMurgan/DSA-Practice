@@ -8,7 +8,7 @@
 //Unusual => [2,2,2,7,7,7] any pair of 2,7 would be acceptable
 //complexity?
 //brute force and optimal solution
-/*
+
 const nums = [2,2,2,7,7,7]
 
 function twoSum(nums, target) {
@@ -28,7 +28,7 @@ console.log(twoSum(nums, 9))
 const nums=[2,7,5,11];
 
 twoSums(nums,9)
-*/
+
 
 /* Factorial Number */
 /*
