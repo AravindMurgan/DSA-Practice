@@ -20,8 +20,7 @@
 //     counter ++
 //     console.log(counter)
 //   }
-//   return inner
-// }
+//   return inner// }
 
 // let fn = outer()
 // fn()
@@ -309,7 +308,7 @@ export default FetchData;
 /* JS Concepts - Revision - 8/5/2021 */
 
 /*Memoization*/
-
+/*
 function square(num){
   return num * num
 }
@@ -328,15 +327,59 @@ function Memoization(num){
 }
 const answer = Memoization(95862626546);
 console.log(answer)
+*/
 
+/* 12/5/2021 - JS Concepts revision for Recro  */
+/*
+let a = 10;
+function exercise(){
+   a=20;
+  console.log(a)
+}
 
+exercise()
+console.log(a)
 
+const profile={
+  name:'Jhon Doe',
+  email:'jhondoe@gmail.com'
+}
 
-
-
-
-
-
+profile.name = 'Mary Jhonson'
+console.log(profile.name)
+*/
+/*
+function myscope(){
+  let a =10;
+}
+myscope()
+console.log(a)
+*/
+/*
+const a =10;
+function exampleSix(){
+  const b = 20
+    console.log(a,b,c)
+  function inner(){
+    const c = 30
+  
+  }
+  inner()
+}
+exampleSix()
+*/
+/*
+function outer(){
+  let counter=0
+  function inner(){
+    counter++
+    console.log(counter)
+  }
+  re  inner()
+}
+outer()
+outer()
+*/
 
 
 
