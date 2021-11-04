@@ -130,6 +130,7 @@ function smallestSubArray(arr,s){
 const answer =  smallestSubArray([1,2,3,4,5],9);
 
 console.log(answer,'answer')
+console.log(answer,'answer')
 
 let minlen = Math.min(Infinity,3-0 + 1);
 console.log(minlen);
