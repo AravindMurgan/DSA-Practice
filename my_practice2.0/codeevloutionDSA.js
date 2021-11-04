@@ -129,6 +129,7 @@ function smallestSubArray(arr,s){
 
 const answer =  smallestSubArray([1,2,3,4,5],9);
 
+console.log(answer,'answer')
 
 let minlen = Math.min(Infinity,3-0 + 1);
 console.log(minlen);
@@ -136,6 +137,7 @@ console.log(minlen);
 
 
 
+import { clearConfigCache } from 'prettier';
 import React, { Component } from 'react'
 
  class codeevloutionDSA extends Component {
