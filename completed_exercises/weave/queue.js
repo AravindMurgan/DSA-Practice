@@ -4,13 +4,15 @@
 // one to be returned) from the queue *without*
 // removing it.
 
-class Queue {
+
+export default class Queue {
   constructor() {
     this.data = [];
   }
 
   add(record) {
     this.data.unshift(record);
+    console.log(this.data)
   }
 
   remove() {
@@ -22,4 +24,6 @@ class Queue {
   }
 }
 
-module.exports = Queue;
+
+
+// module.exports = Queue;
