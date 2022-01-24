@@ -47,14 +47,22 @@ function weave(queueOne, queueTwo) {
             q.add(queueTwo.remove());
         }
 
-
-
-
     }
-    console.log(q.remove(), q.remove())
+    console.time();
+    console.log(q.remove(), q.remove());
 
+    console.timeEnd();
 
+    console.time();
     console.log(q);
+    console.timeEnd();
 }
 
 weave(queueOne, queueTwo);
+
+// const arr = [];
+// arr.push(1);
+// arr.push(2);
+// arr.shift();
+// arr.shift();
+// console.log(arr)
