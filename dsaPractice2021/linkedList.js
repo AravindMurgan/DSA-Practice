@@ -27,3 +27,12 @@ console.log(list.insertFirst(25));
 console.log(list.insertFirst(35));
 
 
+
+function callMe() {
+    console.log('hello world')
+}
+const arr = [1, 2, 3];
+
+//takes the reference based on truthy value,
+//here its callMe function
+const validate = arr.includes(5) || callMe();
