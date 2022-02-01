@@ -1,3 +1,23 @@
+var twoSum = function (nums, target) {
+    let result = [];
+    for (let i = 0; i < nums.length; i++) {
+        let rem = target - nums[i];
+        let index = nums.indexOf(rem, i);
+        if (index > 0) {
+            result.push(i);
+            result.push(index);
+            break;
+        }
+    }
+    return result;
+};
+
+
+console.log(twoSum([2, 7, 11, 15], 9));
+
+
+
+
 // function twoSum(nums, target) {
 //     let obj = {};
 //     for (let num of nums) {
@@ -50,18 +70,26 @@
 
 // console.log(temp_arr);
 
-function twoSum(nums, target) {
-    const obj = new Map();
-    const length = nums.length;
+// function twoSum(nums, target) {
+//     const obj = new Map();
+//     const length = nums.length;
 
 
-    for (let i = 0; i < length; i++) {
-        const diff = target - nums[i];
+//     for (let i = 0; i < length; i++) {
+//         const diff = target - nums[i];
 
-        if (obj.has(diff)) {
-            return
-        }
+//         if (obj.has(diff)) {
+//             console.log(nums[i]);
+//             return [obj.get(nums[i]), i]
+//         }
+//         console.log(obj);
+//         obj.set(nums[i], i);
+//     }
 
-        obj.set(nums[i], i);
-    }
-}
+//     return obj
+// }
+
+
+
+
+// console.log(twoSum([2, 7, 11, 15], 9));
