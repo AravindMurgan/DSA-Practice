@@ -33,23 +33,12 @@ var isIsomorphic = function (s, t) {
             tMap[tChar] = sChar
         }
 
-
-
         if (sMap[sChar] !== tChar || tMap[tChar] !== sChar) {
             return false
         }
     }
 
     return true
-
-    // console.log('sMap:::', sMap);
-    // console.log('tMap:::', tMap);
-    // console.log('sKeys:::', Object.keys(sMap).join());
-    // let sKey = Object.keys(sMap).join().replace(/[^a-zA-Z0-9]/g, '');
-    // let tValue = Object.values(tMap).join().replace(/[^a-zA-Z0-9]/g, '');
-    // console.log('tValues:::', Object.values(tMap).join().replace(/[^a-zA-Z0-9]/g, ''));
-
-    // return sKey === tValue
 
 }
 
