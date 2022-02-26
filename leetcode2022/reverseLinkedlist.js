@@ -4,44 +4,77 @@
 // Output: [5,4,3,2,1]
 
 
-// var reverseList = function (head) {
-//     let prev = null
-//     let curr = head;
-
-//     while (curr) {
-//         let nxt = curr.next
-//         curr.next = prev
-//         prev = curr
-//         curr = nxt
-//     }
-
-//     return prev
-// }
-
-function ListNode(val, next) {
-    let val = val ? val : 0
-    let next = next ? next : 0
-}
-
 var reverseList = function (head) {
-    let newHead = null;
-    const reverse = (node) => {
-        if (!node) return null;
-        const nextNode = reverse(node.next);
-        node.next = null;
-        if (nextNode) {
-            nextNode.next = node;
-        } else {
-            newHead = node;
-        }
-        return node;
+    let prev = null
+    let curr = head;
+
+    while (curr) {
+        let nxt = curr.next
+        curr.next = prev
+        prev = curr
+        curr = nxt
     }
 
-    reverse(head);
+    return prev
+}
 
-    return newHead;
-};
+///recursive approach//
+// Recursive javascript program to reverse
+// a linked list
 
+// var head; // head of list
+// class Node {
+//     constructor(val) {
+//         this.data = val;
+//         this.next = null;
+//     }
+// }
 
+// function reverse(head) {
+//     if (head == null || head.next == null)
+//         return head;
 
-//{val:1,next:val:2,next:val:3,next:null}
+//     /*
+//     * reverse the rest list and put the first element at the end
+//     */
+//     var rest = reverse(head.next);
+//     head.next.next = head;
+
+//     /* tricky step -- see the diagram */
+//     head.next = null;
+
+//     /* fix the head pointer */
+//     return rest;
+// }
+
+// // function print() {
+// //     var temp = head;
+// //     while (temp != null) {
+// //         document.write(temp.data + " ");
+// //         temp = temp.next;
+// //     }
+// //     document.write();
+// // }
+
+// function push(data) {
+//     var temp = new Node(data);
+//     temp.next = head;
+//     head = temp;
+// }
+
+// /* Driver program to test above function */
+
+// /* Start with the empty list */
+
+// push(3);
+// push(2);
+// push(1);
+
+// // document.write("Given linked list<br/>");
+// // print();
+
+// head = reverse(head);
+
+// // document.write("<br/>Reversed Linked list<br/>");
+// // print();
+
