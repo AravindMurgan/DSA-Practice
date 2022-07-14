@@ -12,9 +12,11 @@ const depthFirstValues = (root) => {
     const leftValues = depthFirstValues(root.left);
     const rightValues = depthFirstValues(root.right);
 
-    return [root.val, ...leftValues, ...rightValues];
-}
+    console.log('leftValues::', ...leftValues);
+    console.log('rightValues::', ...rightValues);
+    return [root.val, ...leftValues, ...rightValues]
 
+}
 
 // const depthFirstValues = (root) => {
 //     const result = []
@@ -25,6 +27,22 @@ const depthFirstValues = (root) => {
 
 //         if (current.right) stack.push(current.right)
 //         if (current.left) stack.push(current.left)
+//     }
+
+//     return result
+// }
+
+// const depthFirstValues = (root) => {
+//     const result = [];
+//     const stack = [root];
+//     while (stack.length > 0) {
+
+//         const current = stack.pop();
+//         result.push(current.val)
+
+//         if (current.right) stack.push(current.right)
+//         if (current.left) stack.push(current.left)
+
 //     }
 
 //     return result
@@ -43,6 +61,6 @@ A.right = C
 B.left = D
 B.right = E
 C.left = F
-depthFirstValues(A)
+console.log('RESULT:::', depthFirstValues(A));
 
 
