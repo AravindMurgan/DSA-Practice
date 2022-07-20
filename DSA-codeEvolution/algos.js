@@ -1,6 +1,6 @@
 // A number prime or not
 function isPrime(n) {
-    if (n <= 3) {
+    if (n < 2) {
         return false
     }
 
@@ -27,6 +27,7 @@ function isPowerOfTwo(n) {
     }
 
     return true
+    //TC: O(logn)
 }
 
 function isPowerOfTwoBitWise(n) {
@@ -34,6 +35,7 @@ function isPowerOfTwoBitWise(n) {
     a = n
     b = n - 1
     return (a & b) === 0
+    //TC: O(1)
 }
 
 
@@ -50,3 +52,17 @@ function factorial(n) {
 }
 
 console.log('FF::', factorial(5));
+
+
+///isFactorial
+function isFactorial(n) {
+    if (n <= 1) return 1
+    let sum = 1;
+    for (let i = 1; i <= n; i++) {
+        sum *= i
+    }
+
+    return sum
+}
+
+console.log('ISFAC:::', isFactorial(1))
