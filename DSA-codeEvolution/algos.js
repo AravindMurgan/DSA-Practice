@@ -4,6 +4,7 @@
 //         return false
 //     }
 
+
 //     for (let i = 2; i <= Math.sqrt(n); i++) {
 //         if (n % i === 0) {
 //             return false
@@ -206,27 +207,58 @@ console.log('bubbleSort:::', bubbleSort([8, 20, -2, 4, - 6]))
 // console.log(quickSort([8, 20, -2, 4, -6]))
 
 
-//27/2/2022
+//1/8/22
 //i/p:[8,20,-2,4,-6] o/p:[-6,-2,4,8,20]
+// function mergeSort(arr, key) {
+//     // baseCase
+//     console.log('::::==>>>', key)
+//     if (arr.length < 2) {
+//         return arr
+//     }
+//     const mid = Math.floor(arr.length / 2)
+//     const leftArr = arr.slice(0, mid)
+//     const rightArr = arr.slice(mid)
+
+//     return merge(mergeSort(leftArr, 'leftArr'), mergeSort(rightArr, 'rightArr'), 'MERGE')
+// }
+
+// function merge(leftArr, rightArr, key) {
+//     console.log('leftArr:::', leftArr)
+//     console.log('rightArr:::', rightArr)
+//     console.log('KEY:::', key)
+
+//     const sortedArr = []
+//     while (leftArr.length && rightArr.length) {
+//         if (leftArr[0] <= rightArr[0]) {
+//             sortedArr.push(leftArr.shift())
+//         } else {
+//             sortedArr.push(rightArr.shift())
+//         }
+//     }
+
+//     return [...sortedArr, ...leftArr, ...rightArr]
+// }
+
+// console.log('OUTPUT:::', mergeSort([8, 20, -2, 4, -6]))
+
+//2/8/22
 function mergeSort(arr, key) {
-    // baseCase
-    console.log('::::==>>>', key)
+    //bc
+    console.log(key)
     if (arr.length < 2) {
         return arr
     }
+
     const mid = Math.floor(arr.length / 2)
     const leftArr = arr.slice(0, mid)
     const rightArr = arr.slice(mid)
 
-    return merge(mergeSort(leftArr, 'leftArr'), mergeSort(rightArr, 'rightArr'), 'MERGE')
+    return merge(mergeSort(leftArr, 'im left'), mergeSort(rightArr, 'im right'), 'im merge')
 }
 
 function merge(leftArr, rightArr, key) {
-    console.log('leftArr:::', leftArr)
-    console.log('rightArr:::', rightArr)
-    console.log('KEY:::', key)
-
     const sortedArr = []
+    console.log(key)
     while (leftArr.length && rightArr.length) {
         if (leftArr[0] <= rightArr[0]) {
             sortedArr.push(leftArr.shift())
@@ -238,4 +270,4 @@ function merge(leftArr, rightArr, key) {
     return [...sortedArr, ...leftArr, ...rightArr]
 }
 
-console.log('OUTPUT:::', mergeSort([8, 20, -2, 4, -6]))
+console.log(mergeSort([8, 20, -2, 4, -6]))
