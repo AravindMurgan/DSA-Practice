@@ -183,24 +183,59 @@ function bubbleSort(arr) {
 console.log('bubbleSort:::', bubbleSort([8, 20, -2, 4, - 6]))
 
 //27/2/2022
+// //i/p:[8,20,-2,4,-6] o/p:[-6,-2,4,8,20]
+// function quickSort(arr) {
+//     //baseCase
+//     if (arr.length < 2) {
+//         return arr
+//     }
+//     let pivot = arr[arr.length - 1]
+//     let left = []
+//     let right = []
+//     for (let i = 0; i < arr.length - 1; i++) {
+//         if (arr[i] < pivot) {
+//             left.push(arr[i])
+//         } else {
+//             right.push(arr[i])
+//         }
+//     }
+
+//     return [...quickSort(left), pivot, ...quickSort(right)];
+// }
+
+// console.log(quickSort([8, 20, -2, 4, -6]))
+
+
+//27/2/2022
 //i/p:[8,20,-2,4,-6] o/p:[-6,-2,4,8,20]
-function quickSort(arr) {
-    //baseCase
+function mergeSort(arr, key) {
+    // baseCase
+    console.log('::::==>>>', key)
     if (arr.length < 2) {
         return arr
     }
-    let pivot = arr[arr.length - 1]
-    let left = []
-    let right = []
-    for (let i = 0; i < arr.length - 1; i++) {
-        if (arr[i] < pivot) {
-            left.push(arr[i])
+    const mid = Math.floor(arr.length / 2)
+    const leftArr = arr.slice(0, mid)
+    const rightArr = arr.slice(mid)
+
+    return merge(mergeSort(leftArr, 'leftArr'), mergeSort(rightArr, 'rightArr'), 'MERGE')
+}
+
+function merge(leftArr, rightArr, key) {
+    console.log('leftArr:::', leftArr)
+    console.log('rightArr:::', rightArr)
+    console.log('KEY:::', key)
+
+    const sortedArr = []
+    while (leftArr.length && rightArr.length) {
+        if (leftArr[0] <= rightArr[0]) {
+            sortedArr.push(leftArr.shift())
         } else {
-            right.push(arr[i])
+            sortedArr.push(rightArr.shift())
         }
     }
 
-    return [...quickSort(left), pivot, ...quickSort(right)];
+    return [...sortedArr, ...leftArr, ...rightArr]
 }
 
-console.log(quickSort([8, 20, -2, 4, -6]))
+console.log('OUTPUT:::', mergeSort([8, 20, -2, 4, -6]))
