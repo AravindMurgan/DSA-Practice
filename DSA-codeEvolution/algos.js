@@ -241,33 +241,53 @@ console.log('bubbleSort:::', bubbleSort([8, 20, -2, 4, - 6]))
 
 // console.log('OUTPUT:::', mergeSort([8, 20, -2, 4, -6]))
 
-//2/8/22
-function mergeSort(arr, key) {
-    //bc
-    console.log(key)
-    if (arr.length < 2) {
-        return arr
-    }
+// //2/8/22
+// function mergeSort(arr, key) {
+//     //bc
+//     console.log(key)
+//     if (arr.length < 2) {
+//         return arr
+//     }
 
-    const mid = Math.floor(arr.length / 2)
-    const leftArr = arr.slice(0, mid)
-    const rightArr = arr.slice(mid)
+//     const mid = Math.floor(arr.length / 2)
+//     const leftArr = arr.slice(0, mid)
+//     const rightArr = arr.slice(mid)
 
-    return merge(mergeSort(leftArr, 'im left'), mergeSort(rightArr, 'im right'), 'im merge')
-}
+//     return merge(mergeSort(leftArr, 'im left'), mergeSort(rightArr, 'im right'), 'im merge')
+// }
 
-function merge(leftArr, rightArr, key) {
-    const sortedArr = []
-    console.log(key)
-    while (leftArr.length && rightArr.length) {
-        if (leftArr[0] <= rightArr[0]) {
-            sortedArr.push(leftArr.shift())
-        } else {
-            sortedArr.push(rightArr.shift())
+// function merge(leftArr, rightArr, key) {
+//     const sortedArr = []
+//     console.log(key)
+//     while (leftArr.length && rightArr.length) {
+//         if (leftArr[0] <= rightArr[0]) {
+//             sortedArr.push(leftArr.shift())
+//         } else {
+//             sortedArr.push(rightArr.shift())
+//         }
+//     }
+
+//     return [...sortedArr, ...leftArr, ...rightArr]
+// }
+
+// console.log(mergeSort([8, 20, -2, 4, -6]))
+
+//4/8/2022
+function bubbleSort(arr) {
+    let swap = false
+    do {
+        swap = false
+        for (let i = 0; i < arr.length; i++) {
+            let temp = arr[i]
+            if (temp > arr[i + 1]) {
+                arr[i] = arr[i + 1]
+                arr[i + 1] = temp
+                swap = true
+            }
         }
-    }
-
-    return [...sortedArr, ...leftArr, ...rightArr]
+    } while (swap)
+    return arr
 }
 
-console.log(mergeSort([8, 20, -2, 4, -6]))
+console.log('BS::::', bubbleSort([8, 20, -2, 4, -6]))
+
