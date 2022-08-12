@@ -272,22 +272,165 @@ console.log('bubbleSort:::', bubbleSort([8, 20, -2, 4, - 6]))
 
 // console.log(mergeSort([8, 20, -2, 4, -6]))
 
-//4/8/2022
-function bubbleSort(arr) {
-    let swap = false
-    do {
-        swap = false
-        for (let i = 0; i < arr.length; i++) {
-            let temp = arr[i]
-            if (temp > arr[i + 1]) {
-                arr[i] = arr[i + 1]
-                arr[i + 1] = temp
-                swap = true
-            }
-        }
-    } while (swap)
-    return arr
+// //4/8/2022
+// function bubbleSort(arr) {
+//     let swap = false
+//     do {
+//         swap = false
+//         for (let i = 0; i < arr.length; i++) {
+//             let temp = arr[i]
+//             if (temp > arr[i + 1]) {
+//                 arr[i] = arr[i + 1]
+//                 arr[i + 1] = temp
+//                 swap = true
+//             }
+//         }
+//     } while (swap)
+//     return arr
+// }
+
+// console.log('BS::::', bubbleSort([8, 20, -2, 4, -6]))
+
+//5/8/2022
+// function insertionSort(nums) {
+
+//     for (let i = 1; i < nums.length; i++) {
+//         for (let j = i; j >= 0; j--) {
+//             if (nums[j] < nums[j - 1]) {
+//                 [nums[j], nums[j - 1]] = [nums[j - 1], nums[j]]
+//             } else {
+//                 break
+//             }
+//         }
+//     }
+
+//     return nums
+// }
+
+// function insertionSort2(arr) {
+//     for (let i = 1; i < arr.length; i++) {
+
+//         let j = i - 1
+//         while (j >= 0 && arr[j] > arr[i]) {
+//             arr[j + 1] = arr[j]
+//             j = j - 1
+//         }
+//         arr[j + 1] = arr[i]
+
+//     }
+
+//     return arr
+// }
+
+// console.log('IS:::', insertionSort([8, 20, -2, 4, -6]))
+// console.log('IS:::', insertionSort2([8, 20, -2, 4, -6]))
+
+
+// function quickSort(arr) {
+//     //bc//
+//     if (arr.length < 2) {
+//         return arr
+//     }
+//     let pivot = arr[arr.length - 1]
+//     let left = []
+//     let right = []
+//     for (let i = 0; i < arr.length - 1; i++) {
+//         if (arr[i] < pivot) {
+//             left.push(arr[i])
+//         } else {
+//             right.push(arr[i])
+//         }
+//     }
+
+//     return [...quickSort(left), ...pivot, ...quickSort(right)]
+// }
+
+// console.log('op::',quickSort())
+
+//cartesian product
+// i/p: [1,2] [3,4]  o/p:[[1,3],[1,4],[2,3],[2,4]]
+// function cartesianProduct(arr1, arr2) {
+//     let result = []
+//     for (let i of arr1) {
+//         for (let j of arr2) {
+//             result.push([i, j])
+//         }
+//     }
+//     return result
+// }
+
+// console.log('CP:::', cartesianProduct([1, 2], [3, 4]))
+
+//9/8/22
+// climbing stairs : find no of ways to climb the steps
+// 1 or 2 step at a time
+// i/p : 2   o/p: 1step+1step,2step == 2
+// i/p:3 o/p:1+1+1,1+2,2+1 == 3
+// var climbStairs = function (n) {
+//     let first = 1;
+//     let second = 1;
+//     for (let i = 0; i < n - 1; i++) {
+//         let temp = first;
+//         first = first + second;
+//         second = temp;
+//     }
+//     return first;
+// };
+
+// var climbStairs = function (n) {
+//     const noOfways = [1, 2]
+//     for (let i = 2; i <= n; i++) {
+//         noOfways[i] = noOfways[i - 1] + noOfways[i - 2]
+//         console.log('No of ways ', i, 'number:::', i + 1, noOfways[i])
+//     }
+
+//     return noOfways[n - 1]
+// }
+
+// i/p: n=2
+// 1 step or 2 step
+// 1 1
+// 2 
+// // 5 = n-1 + n-2
+// 1 1 1
+// 1 2
+// 2 1
+
+const climbStairs = (n, set = {}) => {
+    if (n in set) return set[n];
+    if (n < 0) return 0;
+    if (n === 0) return 1;
+
+    set[n] = climbStairs(n - 1, set) + climbStairs(n - 2, set);
+    return set[n];
 }
 
-console.log('BS::::', bubbleSort([8, 20, -2, 4, -6]))
 
+console.log('climbstairs:::', climbStairs(3))
+
+// // 11/8/22 
+// TowerOfHanoi-problem
+// forumla or patter for this problem:
+// * Take 1 disk (n-1) from A to B
+// *Take 1 disk (n-1) from B to C
+// *Take last disk from A to C 
+// f-A
+// t-C
+// u-B
+function towerOfHanoi(n, fromRod, toRod, usingRod, key) {
+    console.log(key)
+    // baseCase
+    if (n === 1) {
+        //last disk
+        console.log(`Move disk 1 from ${fromRod} to ${toRod}`)
+        return
+    }
+
+    towerOfHanoi((n - 1), fromRod, usingRod, toRod, '1st-call')
+    console.log(`Move disk ${n} from ${fromRod} to ${toRod}`)
+
+    towerOfHanoi((n - 1), usingRod, toRod, fromRod, '2nd-call')
+    console.log('HEY console me')
+}
+
+// console.log(towerOfHanoi(3, 'A', 'C', 'B', 'main-call'))
