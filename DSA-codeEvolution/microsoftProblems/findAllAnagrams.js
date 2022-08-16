@@ -170,4 +170,75 @@ var findAnagrams = function (s, p) {
     return result;
 };
 
-console.log(findAnagrams("cbaebabacd", "abc"))
+const checkForAnagrams = (sCount, pCount, s, p) => {
+    let isValidAnagram = true
+    for (let char in pCount) {
+        if (pCount[char] !== sCount[char]) {
+            isValidAnagram = false
+        }
+    }
+
+    return isValidAnagram
+}
+
+
+
+var findAnagrams2 = function (s, p) {
+    if (p.length > s.length) return []
+
+    let pCount = {}
+    let sCount = {}
+    let result = []
+    let isValidAnagram;
+
+    for (let i = 0; i < p.length; ++i) {
+        // if (pCount[p[i]] || sCount[s[i]]) {
+        //     pCount++
+        //     sCount++
+        // } else {
+        //     pCount[p[i]] = 1
+        //     sCount[s[i]] = 1
+        // }
+        pCount[p[i]] = pCount[p[i]] + 1 || 1
+        sCount[s[i]] = sCount[s[i]] + 1 || 1
+    }
+
+    isValidAnagram = checkForAnagrams(sCount, pCount, s, p)
+    // for(let i=0; i<p.length ;++i){
+    //     if(pCount[p[i]] !== sCount[s[i]]){
+    //         isValidAnagram=false
+    //     }
+    // }
+    if (isValidAnagram) {
+        result.push(0)
+    }
+
+    console.log(pCount)
+    console.log(sCount)
+    let right = p.length
+    let left = 0
+
+    while (right < s.length) {
+
+        sCount[s[right]] = sCount[s[right]] + 1 || 1
+        sCount[s[left]] -= 1
+
+        if (sCount[s[left]] === 0) {
+            delete sCount[s[left]]
+        }
+
+        left++
+        let isValidAnagram = checkForAnagrams(sCount, pCount, s, p)
+        if (isValidAnagram) {
+            result.push(left)
+        }
+        right++
+
+    }
+
+    return result
+
+}
+
+
+console.log(findAnagrams2("aa", "bb"))
