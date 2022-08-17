@@ -108,4 +108,4 @@ var compress2 = function (chars) {
     return l
 };
 
-console.log(compress3(['a', 'a', 'b', 'b', 'c', 'c', 'c', 'l']))
+console.log(compress3(['a', 'a', 'a', 'a', 'c', 'c', 'c', 'l']))
