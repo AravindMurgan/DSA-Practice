@@ -49,3 +49,39 @@ function buildCharMap(str) {
 
   return charMap;
 }
+
+
+function buildCharMap(str) {
+  let map = new Map()
+
+  for (let char of str) {
+    map.set(str[char], (map.get(str[char] || 0) + 1))
+  }
+  return map
+}
+
+var findAnagrams = function (s, p) {
+  const arr = []
+  let n = s.length
+  let k = p.length
+
+  const pCount = buildCharMap(p)
+
+  for (let i = 0; i < n - k + 1; ++i) {
+    let isValidAnagram = true
+    let str = s.substring(i, (i + k))
+    const sCount = buildCharMap(str)
+
+    for (let char in pCount.keys()) {
+      if (map.get(char) !== map.get(char)) {
+        isValidAnagram = false
+      }
+    }
+    if (isValidAnagram) {
+      arr.push(i)
+    }
+  }
+  return arr
+};
+
+findAnagrams("cbaebabacd", "abc")

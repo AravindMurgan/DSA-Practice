@@ -37,10 +37,10 @@
 //     return max_sum
 // }
 
-// // let arr = [100, 200, 300, 400]
-// // let k = 2
-// // let n = arr.length
-// // console.log(maxSum(arr, n, k))
+// let arr = [100, 200, 300, 400]
+// let k = 2
+// let n = arr.length
+// console.log(maxSum(arr, n, k))
 
 // // sliding window technique
 // // Javascript code for
@@ -70,31 +70,78 @@
 //     return max;
 // }
 
-function maxSum3(arr, n, k) {
-    // form the window sub array
+// function maxSum3(arr, n, k) {
+//     // form the window sub array
+//     let max = 0
+//     let sum = 0
+
+//     //initial window sub array using k element
+//     for (let i = 0; i < k; ++i) {
+//         sum = arr[i] + sum
+//         max = sum
+//     }
+
+//     ///traverse array and window to find max sum
+//     for (let j = k; j < n; ++j) {
+//         sum += arr[j] - arr[j - k]
+//         if (sum > max) {
+//             max = sum
+//         }
+//     }
+
+//     return max
+// }
+
+
+
+// let arr = [100, 200, 300, 400]
+// let k = 2
+// let n = arr.length
+// console.log(maxSum3(arr, n, k))
+
+// function longestSubstring(s, k) {
+//     if (k > s.length) return 0
+//     let arr = []
+//     let obj = {}
+//     for (let i = 0; i < s.length; ++i) {
+//         obj[s[i]] = obj[s[i]] + 1 || 1
+
+//         if (Object.keys(obj).length > k) break
+//         arr.push(s[i])
+//     }
+//     console.log('test', arr)
+//     return arr.length
+// }
+
+// console.log(longestSubstring("aabbcc", 1))
+
+function longestSubstring(s, k) {
     let max = 0
-    let sum = 0
+    let map = new Map()
+    let left = 0
+    let right = 0
 
-    //initial window sub array using k element
-    for (let i = 0; i < k; ++i) {
-        sum = arr[i] + sum
-        max = sum
-    }
+    while (right < s.length) {
+        let rightChar = s[right]
 
-    ///traverse array and window to find max sum
-    for (let j = k; j < n; ++j) {
-        sum += arr[j] - arr[j - k]
-        if (sum > max) {
-            max = sum
+        map.set(rightChar, (map.get(rightChar) || 0) + 1)
+
+        while (map.size > k) {
+            let leftChar = s[left]
+            map.set(leftChar, map.get(leftChar) - 1)
+
+            if (map.get(leftChar) === 0) {
+                map.delete(leftChar)
+            }
+
+            left++
         }
+
+        max = Math.max(max, right - left + 1)
+        right++
     }
 
     return max
 }
-
-
-
-let arr = [100, 200, 300, 400]
-let k = 2
-let n = arr.length
-console.log(maxSum3(arr, n, k))
+console.log(
+    longestSubstring('aabacbebebe', 3))

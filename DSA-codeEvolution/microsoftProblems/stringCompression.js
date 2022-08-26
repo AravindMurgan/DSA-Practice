@@ -108,4 +108,28 @@ var compress2 = function (chars) {
     return l
 };
 
-console.log(compress3(['a', 'a', 'a', 'a', 'c', 'c', 'c', 'l']))
+var compress4 = function (chars) {
+    let index = 0
+    let i = 0
+    while (i < chars.length) {
+        let j = i
+        while ((j < chars.length) && chars[i] === chars[j]) {
+            j++
+        }
+        chars[index] = chars[i]
+        index++
+
+        if (j - i > 1) {
+            let count = j - i + ''
+            for (let num of count) {
+                chars[index] = num
+                index++
+            }
+        }
+        i = j
+    }
+    return index
+
+};
+
+console.log(compress4(["a", "a", "b", "b", "c", "c", "c"]))

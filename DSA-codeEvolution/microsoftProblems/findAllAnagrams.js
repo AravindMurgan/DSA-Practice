@@ -129,46 +129,46 @@
 // };
 
 
-var findAnagrams = function (s, p) {
-    let L = 0, R = 0, windowSize = p.length, count = 0, map = new Map(), result = [];
-    for (let ch of p) {
-        if (!map.has(ch)) {
-            map.set(ch, 1);
-        } else {
-            let c = map.get(ch);
-            map.set(ch, c + 1);
-        }
-    }
-    count = map.size;
-    while (R < s.length) {
-        if (map.has(s[R])) {
-            let c = map.get(s[R]);
-            c--;
-            if (!c) {
-                count--;
-            }
-            map.set(s[R], c);
-        }
-        if (R - L + 1 < p.length) {
-            R++;
-        } else if (R - L + 1 === p.length) {
-            if (count === 0) {
-                result.push(L);
-            }
-            if (map.has(s[L])) {
-                let c = map.get(s[L]);
-                c++;
-                if (c === 1) {
-                    count++;
-                }
-                map.set(s[L], c);
-            }
-            L++;
-            R++;
-        }
-    }
-    return result;
-};
+// var findAnagrams = function (s, p) {
+//     let L = 0, R = 0, windowSize = p.length, count = 0, map = new Map(), result = [];
+//     for (let ch of p) {
+//         if (!map.has(ch)) {
+//             map.set(ch, 1);
+//         } else {
+//             let c = map.get(ch);
+//             map.set(ch, c + 1);
+//         }
+//     }
+//     count = map.size;
+//     while (R < s.length) {
+//         if (map.has(s[R])) {
+//             let c = map.get(s[R]);
+//             c--;
+//             if (!c) {
+//                 count--;
+//             }
+//             map.set(s[R], c);
+//         }
+//         if (R - L + 1 < p.length) {
+//             R++;
+//         } else if (R - L + 1 === p.length) {
+//             if (count === 0) {
+//                 result.push(L);
+//             }
+//             if (map.has(s[L])) {
+//                 let c = map.get(s[L]);
+//                 c++;
+//                 if (c === 1) {
+//                     count++;
+//                 }
+//                 map.set(s[L], c);
+//             }
+//             L++;
+//             R++;
+//         }
+//     }
+//     return result;
+// };
 
 const checkForAnagrams = (sCount, pCount, s, p) => {
     let isValidAnagram = true
@@ -241,4 +241,53 @@ var findAnagrams2 = function (s, p) {
 }
 
 
-console.log(findAnagrams2("aa", "bb"))
+console.log(findAnagrams2("cbaebabacd", "abc"))
+
+
+const findAnagrams = (str, pattern) => {
+    const charFrequencyMap = new Map()
+    for (let i = 0; i <= pattern.length - 1; i++) {
+        const newValue = (charFrequencyMap.get(pattern[i]) || 0) + 1
+        charFrequencyMap.set(pattern[i], newValue)
+    }
+
+    let windowStart = 0;
+    let windowEnd = 0;
+    let currCorrectLetters = 0;
+    let currWindowFrequencyMap = new Map()
+    let arrOfIndices = []
+    while (windowStart <= windowEnd && windowStart <= str.length - 1
+        && windowEnd <= str.length - 1) {
+        const windowEndFrequency = (currWindowFrequencyMap.get(str[windowEnd]) || 0) + 1
+        currWindowFrequencyMap.set(str[windowEnd], windowEndFrequency)
+
+        if (charFrequencyMap.get(str[windowEnd]) === currWindowFrequencyMap.get(str[windowEnd])) {
+            currCorrectLetters += 1
+        } else if (charFrequencyMap.get(str[windowEnd]) + 1 ===
+            currWindowFrequencyMap.get(str[windowEnd])) {
+            currCorrectLetters -= 1
+        }
+
+        if (currCorrectLetters === charFrequencyMap.size) {
+            arrOfIndices.push(windowStart)
+        }
+
+        if (windowEnd >= pattern.length - 1) {
+            const windowStartFrequency = currWindowFrequencyMap.get(str[windowStart])
+            if (charFrequencyMap.get(str[windowStart])
+                === currWindowFrequencyMap.get(str[windowStart])) {
+                currCorrectLetters -= 1
+            } else if (charFrequencyMap.get(str[windowStart]) + 1 ===
+                currWindowFrequencyMap.get(str[windowStart])) {
+                currCorrectLetters += 1
+            }
+            currWindowFrequencyMap.set(str[windowStart],
+                !windowStartFrequency ? 0 : windowStartFrequency - 1)
+            windowStart += 1;
+        }
+
+        windowEnd += 1
+    }
+
+    return arrOfIndices
+}
