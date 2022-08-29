@@ -116,7 +116,7 @@
 // console.log(longestSubstring("aabbcc", 1))
 
 function longestSubstring(s, k) {
-    let max = 0
+    let max = Number.MIN_VALUE
     let map = new Map()
     let left = 0
     let right = 0
@@ -128,7 +128,7 @@ function longestSubstring(s, k) {
 
         while (map.size > k) {
             let leftChar = s[left]
-            map.set(leftChar, map.get(leftChar) - 1)
+            map.set(leftChar, (map.get(leftChar)) - 1)
 
             if (map.get(leftChar) === 0) {
                 map.delete(leftChar)
@@ -137,11 +137,15 @@ function longestSubstring(s, k) {
             left++
         }
 
-        max = Math.max(max, right - left + 1)
+        if (map.size === k) {
+            max = Math.max(max, right - left + 1)
+        }
         right++
     }
+    if (max == Number.MIN_VALUE) return -1
 
     return max
 }
+S = "asdasfwgrgghhdfhfgdfdfgfgfgfggffgfgfggffggfg", K = 3
 console.log(
-    longestSubstring('aabacbebebe', 3))
+    longestSubstring(S, K))
