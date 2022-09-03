@@ -15,40 +15,67 @@
 // Output: 2
 // Explanation: One way to split maximally is ['a', 'ba']
 
-function maxUniqueSplit(s) {
-    const set = new Set();
+// function maxUniqueSplit(s) {
+//     const set = new Set();
 
-    let result = 1;
+//     let result = 1;
 
-    function bfs(startIndex) {
-        if (startIndex === s.length) {
-            // reached end of recursion
-            result = Math.max(result, set.size);
-            return;
-        }
+//     function bfs(startIndex) {
+//         if (startIndex === s.length) {
+//             // reached end of recursion
+//             result = Math.max(result, set.size);
+//             return;
+//         }
 
-        // optimization
-        // even if we will split rest of string with onу-symbol chunks, we will not get sulution better then existing
-        console.log('formula::', set.size + (s.length - startIndex), result)
-        if (set.size + (s.length - startIndex) <= result) {
-            return;
-        }
+//         // optimization
+//         // even if we will split rest of string with onу-symbol chunks, we will not get sulution better then existing
+//         console.log('formula::', set.size + (s.length - startIndex), result)
+//         if (set.size + (s.length - startIndex) <= result) {
+//             return;
+//         }
 
-        for (let endIndex = startIndex + 1; endIndex <= s.length; endIndex++) {
-            let str = s.slice(startIndex, endIndex);
-            if (!set.has(str)) {
-                set.add(str);
-                // store current set of strings
-                bfs(endIndex);
-                // remove
-                set.delete(str);
-            }
+//         for (let endIndex = startIndex + 1; endIndex <= s.length; endIndex++) {
+//             let str = s.slice(startIndex, endIndex);
+//             if (!set.has(str)) {
+//                 set.add(str);
+//                 // store current set of strings
+//                 bfs(endIndex);
+//                 // remove
+//                 set.delete(str);
+//             }
+//         }
+//     }
+
+//     bfs(0);
+
+//     return result
+// }
+
+
+function dfs(set, idx, s) {
+    if (idx >= s.length) return 0
+
+    let result = -1;
+    for (let i = idx + 1; i <= s.length; ++i) {
+        let sub = s.substring(idx, i)
+        if (!(set.add(sub))) continue
+        let next = dfs(set, i, s)
+        if (next >= 0) {
+            result = Math.max(result, next + 1)
+            set.delete(sub)
         }
     }
 
-    bfs(0);
-
     return result
+
 }
+
+
+function maxUniqueSplit(s) {
+    let set = new Set()
+
+    return dfs(set, 0, s)
+}
+
 s = "abc"
-maxUniqueSplit(s)
+console.log(maxUniqueSplit(s))
