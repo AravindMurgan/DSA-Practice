@@ -318,16 +318,36 @@
 //     return count
 // };
 
-var numTimesAllBlue = function (flips) {
-    let count = 0, hi = -1, on = 0;
-    flips.forEach(i => {
-        ++on;                  // total number of bits flipped
-        hi = Math.max(hi, i);  // highest point where bit is flipped
-        if (hi === on) {    // if total number of bits flipped equals highest point where but is flipped, that means binary string is prefix-aligned
-            ++count;      // i.e., all bits between [1, hi] are flipped
-        }
-    })
-    return count;
-};
+// var numTimesAllBlue = function (flips) {
+//     let count = 0, hi = -1, on = 0;
+//     flips.forEach(i => {
+//         ++on;                  // total number of bits flipped
+//         hi = Math.max(hi, i);  // highest point where bit is flipped
+//         if (hi === on) {    // if total number of bits flipped equals highest point where but is flipped, that means binary string is prefix-aligned
+//             ++count;      // i.e., all bits between [1, hi] are flipped
+//         }
+//     })
+//     return count;
+// };
 
-numTimesAllBlue([3, 2, 4, 1, 5])
+// numTimesAllBlue([3, 2, 4, 1, 5])
+
+// function callMe() {
+//     let count = 0;
+//     function recursion(count) {
+//         if (count >= 5) return
+//         console.log('count::::', count);
+//         count++
+//         recursion(count)
+//         console.log('count2:::::', count)
+//     }
+//     recursion(count)
+// }
+// callMe()
+
+function backTrack(i, n) {
+    if (i < 1) return;
+    backTrack(i - 1, n);
+    console.log('i:::', i);
+}
+backTrack(3, 3)
