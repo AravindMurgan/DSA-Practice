@@ -1,3 +1,88 @@
+// Hoisiting
+// debugger
+// console.log(abc)
+// let abc = 8;
+// abcFunc()
+
+
+// function abcFunc() {
+//     console.log('my name is aravind')
+// }
+
+//How JS functions works
+// debugger
+// var x = 1;
+// console.log(x);
+
+// a();
+// b();
+
+// function a() {
+//     var x = 10;
+//     console.log(x);
+// }
+
+// function b() {
+//     var x = 100;
+//     console.log(x);
+// }
+
+//Block scopes//
+// {
+//     console.log(c)
+//     var a = 10;
+//     let b = 20;
+//     let c = 30;
+
+// }
+
+//Closures//
+// function x() {
+//     let x = 10;
+//     function y() {
+//         console.log(x)
+//     }
+//     y()
+// }
+// x()
+// {
+//     let x = 10;
+//     function y() {
+//         console.log(x)
+//     }
+//     y()
+// }
+// function x() {
+//     z = 100;
+//     let abc = function () {
+//         console.log(z)
+//     }
+//     abc()
+// }
+// x()
+
+// function x() {
+//     let g = 10;
+//     return function y(val) {
+//         console.log(g);
+//         console.log(val)
+
+//     }
+// }
+
+// var z = x()
+// console.log(z(50))
+
+// function x() {
+//     var i = 10;
+//     setTimeout(() => {
+//         console.log(i)
+//     }, 5000)
+//     console.log('namaste javascript')
+// }
+
+// x()
+
 const addressApiService = () => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
