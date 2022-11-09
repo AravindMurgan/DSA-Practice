@@ -1,0 +1,42 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+}
+
+.user-card-container {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 10px;
+}
+
+.user-card-container .card {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.header {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.body {
+    font-size: 14px;
+    color: #777;
+}
+
+.hide {
+    display: none;
+}

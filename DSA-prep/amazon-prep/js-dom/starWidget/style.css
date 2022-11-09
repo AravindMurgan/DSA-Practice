@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.star-container {
+    width: 350px;
+    margin: 50px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.star::before {
+    content: '';
+    width: 50px;
+    height: 50px;
+    background-color: gray;
+    display: block;
+    margin-right: 20px;
+    position: relative;
+}
+
+.star::after {
+    content: '';
+    width: 50px;
+    height: 50px;
+    background-color: gold;
+    margin-right: 20px;
+    position: absolute;
+    display: block;
+    top: 3.1rem;
+    opacity: 0;
+}
+
+.star:hover::after,
+.star:hover~.star::after,
+.star.star__checked:after,
+.star__checked~.star::after {
+    opacity: 1;
+}

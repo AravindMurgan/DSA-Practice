@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <main class="container">
+        <div class="search-container">
+            <label for="search" class="title">
+                Search Users
+            </label>
+            <div class="search-area">
+                <input type="search" id="search">
+            </div>
+        </div>
+
+        <section class="user-card-container" data-user-card-container>
+        </section>
+        <template data-template-card-container>
+            <div class="card">
+                <div class="header" data-header>Aravind</div>
+                <div class="body" data-body>mail@mail.com</div>
+            </div>
+        </template>
+
+    </main>
+</body>
+<script src="./index.js"></script>
+
+</html>
