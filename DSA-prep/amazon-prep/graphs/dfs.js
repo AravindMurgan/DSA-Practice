@@ -7,6 +7,22 @@ const graph = {
     f: []
 }
 
+const dfs = (graph, source) => {
+    if (!graph) return ''
+
+    const stack = [soruce];
+    while (stack.length > 0) {
+        const current = stack.pop()
+        console.log(current);
+
+        for (let neighbour of graph[source]) {
+            stack.push(neighbour);
+        }
+    }
+}
+
+dfs(graph, 'a')
+
 // const dfsIterative = (graph, source) => {
 //     const stack = [source]
 //     const result = []
@@ -32,19 +48,19 @@ const graph = {
 //     return result
 // }
 
-const bfs = function (graph, source) {
-    const queue = [source]
-    const result = []
+// const bfs = function (graph, source) {
+//     const queue = [source]
+//     const result = []
 
-    while (queue.length > 0) {
-        const current = queue.shift()
-        result.push(current)
+//     while (queue.length > 0) {
+//         const current = queue.shift()
+//         result.push(current)
 
-        for (let neighbour of graph[current]) {
-            queue.push(neighbour)
-        }
-    }
-    return result
-}
+//         for (let neighbour of graph[current]) {
+//             queue.push(neighbour)
+//         }
+//     }
+//     return result
+// }
 
-console.log(bfs(graph, 'a'))
+// console.log(bfs(graph, 'a'))
