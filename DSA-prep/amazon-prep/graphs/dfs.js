@@ -7,21 +7,31 @@ const graph = {
     f: []
 }
 
-const dfs = (graph, source) => {
-    if (!graph) return ''
+// const dfs = (graph, source) => {
+//     // if (!graph) return ''
+//     debugger
 
-    const stack = [soruce];
-    while (stack.length > 0) {
-        const current = stack.pop()
-        console.log(current);
+//     const stack = [source];
+//     while (stack.length > 0) {
+//         const current = stack.pop()
+//         console.log(current);
 
-        for (let neighbour of graph[source]) {
-            stack.push(neighbour);
-        }
+//         for (let neighbour of graph[current]) {
+//             stack.push(neighbour);
+//         }
+//     }
+// }
+
+const dfsRecursive = (graph, source) => {
+    console.log(source)
+
+    for (let neighbour of graph[source]) {
+        dfsRecursive(graph, neighbour);
     }
+
 }
 
-dfs(graph, 'a')
+dfsRecursive(graph, 'a')
 
 // const dfsIterative = (graph, source) => {
 //     const stack = [source]
