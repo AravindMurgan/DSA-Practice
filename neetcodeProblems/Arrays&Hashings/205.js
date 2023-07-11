@@ -13,4 +13,4 @@ var isIsomorphic = function (s, t) {
     return true;    // Otherwise return true...
 };
 
-isIsomorphic('foo', 'baa')
+isIsomorphic('bbbaaaba', 'aaabbbba')
