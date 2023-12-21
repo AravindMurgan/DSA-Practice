@@ -49,3 +49,38 @@ console.log('wS::::', wiggleSort([3, 5, 2, 1, 6, 4]))
 // Input: [3, 5, 2, 1, 6, 4]
 // Output: [1, 6, 2, 5, 3, 4]
 // Explanation: This question may have multiple answers, and [2, 6, 1, 5, 3, 4] is also ok.
+
+
+const inputJSON={
+    state:[
+        {
+            values:'BE',
+            selected:'yes'
+        },{
+            values:'HE',
+            selected:'no'
+        }
+    ],
+
+    serviceType:{
+            value:'FDTV',
+            selected:'no'
+    },
+
+    selectTag1:{
+        value:'test1',
+        selected:'yes'
+    },
+    selectTag2:{
+        value:'test2',
+        selected:'yes'
+    },
+    selectTag3:{
+        value:'test3',
+        selected:'yes'
+    },
+    selectTag4:{
+        value:'test4',
+        selected:'yes'
+    }
+}
