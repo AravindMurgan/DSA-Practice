@@ -70,6 +70,6 @@ var wordPattern = function (pattern, s) {
 };
 
 pattern = "abba"
-s = "dog dog constructor constructor"
+s = "dog cat cat dog"
 
 wordPattern(pattern, s)
