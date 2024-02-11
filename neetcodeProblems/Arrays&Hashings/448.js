@@ -17,16 +17,20 @@
 // };
 
 var findDisappearedNumbers = function (nums) {
-    let res = [];
-    for (let i = 0; i < nums.length; i++) {
-        let num = nums[i]
-        let idx = num - 1;
-        nums[idx] = Math.abs(nums[idx]) * -1;
+    const result =[]
+
+    for(let i=0; i< nums.length ; ++i ){
+        let num = Math.abs(nums[i])
+        let idx= num -1
+        nums[idx]= Math.abs(nums[idx])* -1
+
     }
-    for (let i = 0; i < nums.length; i++) {
-        if (nums[i] > 0) res.push(i + 1);
+
+    for(let i=0; i< nums.length ; ++i){
+        if(nums[i] > 0) result.push(i+1)
     }
-    return res;
+
+    return result
     // Time Complexity: O(N)
     // Space Complexity: O(1)
 };
@@ -36,4 +40,4 @@ negate the number at the index. For example, if we encounter 4, we will negate t
 The reason the index is not four is because the array is zero-indexed.
 */
 
-findDisappearedNumbers([4, 3, 2, 7, 8, 2, 3, 1]);
+findDisappearedNumbers([1,4,4,4]);
