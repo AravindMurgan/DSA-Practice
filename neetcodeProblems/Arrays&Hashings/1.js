@@ -8,7 +8,7 @@ var twoSum = function(nums, target) {
             map[nums[i]]=i
         }
     }
-    console.log(map[7-2])
+    console.log(map)
 
     return []
 };
