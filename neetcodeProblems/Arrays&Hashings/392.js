@@ -10,21 +10,41 @@
 //     return i == s.length
 // };
 
+// var isSubsequence = function(s, t) {
+//     let str=s;
+//     let i=0;
+//     let j=0;
+
+//     while(i < s.length){
+//         if(s[i] == t[j]){
+//             str= str.replace(s[i],'');
+//             console.log(s);
+//             i+=1
+//         }
+//         j+=1
+//     }
+
+//     return str.length ==0
+// };
+
 var isSubsequence = function(s, t) {
-    let str=s;
+    let str=s
     let i=0;
     let j=0;
 
-    while(i < s.length){
-        if(s[i] == t[j]){
-            str= str.replace(s[i],'');
-            console.log(s);
-            i+=1
+    while(j <t.length){
+        console.log('s',str[i])
+        console.log('t',t[j])
+        if(str[i] === t[j]){
+            str= str.replace(str[i-1],'')
+            i++
         }
-        j+=1
+          console.log('str:::',str)
+        j++;
     }
 
-    return str.length ==0
+  
+    return str.length === 0
 };
 
 
