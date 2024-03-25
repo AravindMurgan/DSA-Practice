@@ -10,7 +10,7 @@ var productExceptSelf = function (nums) {
     }
 
     //postfix calculation of all numbers in output
-    for (let j = nums.length; j >= 0; --j) {
+    for (let j = nums.length-1; j >= 0; --j) {
         output[j] *= postfix
         postfix *= nums[j]
     }

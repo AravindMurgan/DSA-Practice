@@ -19,5 +19,5 @@ var topKFrequent = function (nums, k) {
     return result;
 };
 
-nums = [1, 1, 1, 2, 2, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10], k = 3
+nums = [1, 1, 1, 2, 2, 3], k = 2
 topKFrequent(nums, k)
