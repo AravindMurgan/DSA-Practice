@@ -54,38 +54,38 @@
 // //     return res;
 // // }
 
-var countPalindromicSubsequence = function (s) {
-    let set = new Set()
-    let result = 0
-    let left = {}
-    let right = {}
+// var countPalindromicSubsequence = function (s) {
+//     let set = new Set()
+//     let result = 0
+//     let left = {}
+//     let right = {}
 
 
-    for (let i = 0; i < s.length; ++i) {
-        let char = s[i]
-        if (left[char] == undefined) left[char] = i
-        right[char] = i
-        console.log('left:::', left)
-        console.log('right:::', right)
-    }
+//     for (let i = 0; i < s.length; ++i) {
+//         let char = s[i]
+//         if (left[char] == undefined) left[char] = i
+//         right[char] = i
+//         console.log('left:::', left)
+//         console.log('right:::', right)
+//     }
 
-    for (let key in left) {
-        console.log('key:::', key)
-        console.log('left:::', left[key])
-        console.log('right:::', right[key])
+//     for (let key in left) {
+//         console.log('key:::', key)
+//         console.log('left:::', left[key])
+//         console.log('right:::', right[key])
 
-        for (let i = left[key] + 1; i < right[key]; ++i) {
-            let str = key + s[i] + key
-            if (!set.has(str)) {
-                set.add(str)
-                result++
-            }
-        }
-    }
+//         for (let i = left[key] + 1; i < right[key]; ++i) {
+//             let str = key + s[i] + key
+//             if (!set.has(str)) {
+//                 set.add(str)
+//                 result++
+//             }
+//         }
+//     }
 
-    return result
-};
-countPalindromicSubsequence('aabca')
+//     return result
+// };
+// countPalindromicSubsequence('aabca')
 
 // function countPalindromicSubsequences(s) {
 //     const mod = 1e9 + 7;
@@ -110,5 +110,51 @@ countPalindromicSubsequence('aabca')
 // const input = "aabcaa";
 // console.log(countPalindromicSubsequences(input)); // Output: 6
 
+// function countPalindromicSubsequences(s) {
+//     let count = 0;
+//     const n = s.length;
+    
+//     for (let i = 0; i < n - 2; i++) {
+//         for (let j = i + 1; j < n - 1; j++) {
+//             for (let k = j + 1; k < n; k++) {
+//                 if (s[i] === s[k]) {
+//                     count++;
+//                 }
+//             }
+//         }
+//     }
+    
+//     return count;
+// }
 
-// countPalindromicSubsequence("aabca")
+
+var countPalindromicSubsequences = function(s) {
+    
+    const left={}
+    const right={}
+    const set=new Set()
+
+    for(let i=0; i<s.length ; ++i){
+        let char=s[i]
+
+        if(left[char] == undefined) left[char]=i
+        right[char]=i
+    }
+
+    for(let key in left){
+
+        for(let i=left[key]+1 ; i<right[key]; ++i){
+            let str= key+s[i]+key
+            if(!set.has(str)){
+                set.add(str)
+            }
+
+        }
+    }
+
+    return set.size
+};
+
+
+
+console.log(countPalindromicSubsequences("aabca"));

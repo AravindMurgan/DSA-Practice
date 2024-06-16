@@ -6,30 +6,27 @@ class Node {
     }
 }
 
-// const a = new Node(2)
-// const b = new Node(1)
-// const c = new Node(1)
-// // const d = new Node(4)
-// // const e = new Node(null)
-// // const f = new Node(2)
-// // const g = new Node(4)
-// // const h = new Node(null)
-// // const i = new Node(null)
-// // const k = new Node(4)
+const a = new Node(2)
+const b = new Node(1)
+const c = new Node(1)
+const d = new Node(4)
+const e = new Node(null)
+const f = new Node(2)
+const g = new Node(4)
+const h = new Node(null)
+const i = new Node(null)
+const k = new Node(4)
 
 
-// a.left = b
-// a.right = c
-
-// a.left = b
-// a.right = c
-// b.left = d
-// b.right = e
-// c.left = f
-// c.right = g
-// d.left = h
-// d.right = i
-// e.left = k
+a.left = b
+a.right = c
+b.left = d
+b.right = e
+c.left = f
+c.right = g
+d.left = h
+d.right = i
+e.left = k
 //         1
 //      /     \
 //   2          3
