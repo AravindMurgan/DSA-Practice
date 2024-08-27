@@ -16,12 +16,40 @@
 //     console.log(name)
 // }
 
+// "use strict"
 
+//this Key word in global space
+// console.log(this)
 
-// console.log(name)
+// //this keyword inside function
+// function x(){
+//     console.log(this)
+// }
+// x()
 
-// Set a cookie. More options are available too.
-cookieStore.set('auth_token', 'abc123def');
+//this in strcit mode
+//function - undefined
+//without strict mode - global object
 
-// Async method to access a single cookie and do something with it.
-cookieStore.get('auth_token').then((val)=> console.log(val))
+//this substitutiion
+//If the value of this is undefined or null, it is converted to the global object.
+//only in non strict mode
+// "use strict"
+//this values depends on how a function is called
+const obj ={
+    name:"Billy",
+    sing: function(){
+        console.log(this)
+        var anotherFunction = function(){
+            console.log(this)
+        }
+        anotherFunction()
+    }
+}
+// obj.sing()
+
+const obj2= {
+    name:'Aravind'
+}
+
+obj.sing.call(obj2)

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browsing Context Example</title>
+</head>
+<body>
+    <h1>Main Document</h1>
+    <p>This is the main browsing context, displayed in the current tab.</p>
+
+    <!-- Link that opens a new browsing context in a new window -->
+    <a href="https://www.example.com" target="_blank">Open Example.com in a New Window</a>
+
+    <br><br>
+
+    <!-- Inline frame (iframe) creating a new browsing context within the same page -->
+    <iframe src="http://localhost:3000/" width="600" height="300">
+        Your browser does not support iframes.
+    </iframe>
+</body>
+</html>

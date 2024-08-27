@@ -5,6 +5,21 @@
         "javascript": "javascriptreact",
         "razor": "html",
         "plaintext": "pug"
-    }
+    },
+    "C_Cpp.autocomplete": "disabled",
+    "github.copilot.renameSuggestions.triggerAutomatically": false,
+    "editor.inlineSuggest.enabled": false,
+    "terminal.integrated.suggest.quickSuggestions": false,
+    "terminal.integrated.suggest.suggestOnTriggerCharacters": false,
+    "javascript.suggest.enabled": false,
+    "typescript.suggest.enabled": false,
+    "typescript.suggest.includeAutomaticOptionalChainCompletions": false,
+    "javascript.suggest.includeAutomaticOptionalChainCompletions": false,
+    "javascript.suggest.autoImports": false,
+    "typescript.suggest.autoImports": false,
+    "github.copilot.editor.enableCodeActions": false,
+    "github.copilot.editor.enableAutoCompletions": false,
+    "github.copilot.chat.runCommand.enabled": false,
+    "github.copilot.chat.useProjectTemplates": false
 
 }
