@@ -1,11 +1,24 @@
-const treeA = new DOMParser().parseFromString(
-    `<div><span>Foo</span><p>Para</p></div>`,
-    'text/html',
-  );
-  const treeB = new DOMParser().parseFromString(
-    `<div><span>Bar</span><p>Para</p></div>`,
-    'text/html',
-  );
+// import { DOMParser } from "https://deno.land/x/deno_dom/deno-dom-wasm.ts";
+import jsdom from "jsdom"
+import { parseFromString } from 'dom-parser';
+
+// const jsdom = require("jsdom");
+// const treeA = new jsdom.JSDOM( `<div><span>Foo</span><p>Para</p></div>`,
+//   'text/html');
+//   const treeB = new jsdom.JSDOM(`<div><span>Bar</span><p>Para</p></div>`,
+//     'text/html');
+// const treeA = new DOMParser().parseFromString(
+//     `<div><span>Foo</span><p>Para</p></div>`,
+//     'text/html',
+//   );
+  // const treeB = new DOMParser().parseFromString(
+  //   `<div><span>Bar</span><p>Para</p></div>`,
+  //   'text/html',
+  // );
+  const html1= `<div><span>Bar</span><p>Para</p></div>`
+    const html2= `<div><span>Bar</span><p>Para</p></div>`
+  const treeA=  parseFromString(html1,'text/html')
+  const treeB=  parseFromString(html2,'text/html')
 
 
 
@@ -15,7 +28,7 @@ const treeA = new DOMParser().parseFromString(
 //  * @return {boolean}
 //  */
  function identicalDOMTrees(nodeA, nodeB) {
-    debugger;
+
     if (nodeA.nodeType !== nodeB.nodeType) {
       return false;
     }
@@ -54,4 +67,4 @@ const treeA = new DOMParser().parseFromString(
   }
   
 
-  identicalDOMTrees(treeA.body, treeB.body)
+console.log(  identicalDOMTrees(treeA.body, treeB.body))
