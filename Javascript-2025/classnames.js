@@ -1,33 +1,30 @@
-export default function classNames(...args) {
-    const classes=[]
+function classNames(...args) {
+  const classes = []
 
-    args.forEach(arg=>{
-      if(!arg) return 
+  args.forEach(item => {
+    if (!item) return;
 
-      const argType = typeof arg
+    if (typeof item === 'string') {
+      classes.push(item)
+      return;
+    }
 
-      if(argType === 'string' || argType === 'number'){
-        classes.push(arg)
-        return
-      }
+    if (Array.isArray(item) && item.length) {
+      classes.push(classNames(...item))
+      return;
+    }
 
-      if(Array.isArray(argType)){
-        classes.push(classNames(...arg))
-        return
-      }
-
-      if(argType === 'object'){
-        for(let key in arg){
-        if (Object.hasOwn(arg, key) && arg[key]) {
-          classes.push(key);
+    if (typeof item === 'object') {
+      for (let key in item) {
+        if (Object.hasOwn(key, item)) {
+          if (item[key]) {
+            classes.push(key)
+          }
         }
-        }
-
-        return 
       }
+    }
+  })
 
-    })
-
-    return classes.join(' ')
+  return classes.join(' ')
 }
-console.log(classNames("foo bar baz"))
+console.log(classNames({ 'foo-bar': true }))
